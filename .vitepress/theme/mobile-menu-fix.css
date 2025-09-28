@@ -1,0 +1,259 @@
+/* Mobile menu - Minimal version for mobile */
+
+/* Mobile-first approach: Default styles (no padding) */
+.wrapper[data-v-0fddd3e1] {
+  padding: 0;
+  width: 100%;
+}
+
+/* Add padding for larger screens */
+@media (min-width: 960px) {
+  .wrapper[data-v-0fddd3e1] {
+    padding: 0 8px 0 24px;
+  }
+}
+
+/* Hide hamburger and keep only essentials on mobile */
+@media (max-width: 959px) {
+  .VPNavBarHamburger {
+    display: none !important;
+  }
+
+  /* Hide the nav screen completely */
+  .VPNavScreen {
+    display: none !important;
+  }
+
+  /* Keep the navbar visible */
+  .VPNavBar {
+    display: flex !important;
+  }
+
+  /* Ensure nav bar content is visible */
+  .VPNavBarMenu {
+    display: flex !important;
+  }
+
+  /* Show search button only - hide expanded search box */
+  .VPNavBarSearch {
+    display: flex !important;
+  }
+
+  /* Hide search input field and text on mobile */
+  .VPNavBarSearch .DocSearch-Button-Placeholder,
+  .VPNavBarSearch .DocSearch-Button-Keys,
+  .VPNavBarSearch input,
+  .VPNavBarSearch .search-box {
+    display: none !important;
+  }
+
+  /* Keep search button compact */
+  .VPNavBarSearch button {
+    width: 36px !important;
+    min-width: 36px !important;
+  }
+
+  /* Keep theme switcher visible but hide its popup */
+  .VPNavBarAppearance {
+    display: flex !important;
+  }
+
+  /* Hide the appearance popup menu on mobile */
+  .VPFlyout,
+  .VPMenu,
+  .VPNavBarMenuGroup {
+    display: none !important;
+  }
+
+  /* Show only essential social links */
+  .VPNavBarSocialLinks {
+    display: flex !important;
+  }
+
+  /* These are already hidden globally, no need to repeat here */
+
+  /* Hide and remove space for any element after social links */
+  .VPSocialLinks ~ * {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    visibility: hidden !important;
+  }
+
+  /* Also hide VPNavBarMenu specifically and remove its space */
+  .VPNavBarExtra .VPNavBarMenu {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+  }
+
+  /* Show nav bar extra section - force center alignment */
+  .VPNavBarExtra {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    height: 56px !important;
+  }
+
+  /* Force all direct children to align center */
+  .VPNavBarExtra > * {
+    align-self: center !important;
+  }
+
+  /* Compact spacing for mobile */
+  .VPNavBar {
+    padding: 0 12px !important;
+    height: 56px !important;
+  }
+
+  /* Adjust nav bar layout for mobile - keep logo left, icons right */
+  .VPNavBar > .container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Force title/logo to stay left */
+  .VPNavBarTitle {
+    margin-right: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Push all nav content to the right */
+  .VPNavBar .content {
+    margin-left: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Group right side items with uniform spacing */
+  .VPNavBar .content {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    height: 56px !important;
+  }
+
+  /* Hide menu links on mobile */
+  .VPNavBarMenuLink {
+    display: none !important;
+  }
+
+  /* Uniform icon button sizing for all nav items */
+  .VPNavBarSearch button,
+  .VPSocialLink {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Special handling for theme switch - force vertical centering */
+  .VPSwitchAppearance {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 36px !important;
+    margin: 0 !important;
+    padding: 0 4px !important;
+    position: relative !important;
+    top: 0 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Fix switch vertical position */
+  .VPSwitchAppearance .VPSwitch {
+    position: relative !important;
+    top: 0 !important;
+    margin: 0 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Ensure switch track is centered */
+  .VPSwitchAppearance .VPSwitchTrack {
+    margin: auto !important;
+  }
+
+  /* Consistent icon sizes inside buttons */
+  .VPNavBarSearch svg,
+  .VPSwitchAppearance svg,
+  .VPSocialLink svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Ensure proper flex layout for nav items */
+  .VPNavBar .container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+  }
+
+  /* Logo section - removed duplicate, now handled above */
+
+  /* Right side content group - uniform spacing */
+  .VPNavBar .content {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-left: auto !important;
+  }
+
+  /* Social links container with consistent spacing */
+  .VPSocialLinks {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  /* Prevent any dropdown or flyout on mobile */
+  .VPNavBarAppearance .VPFlyout,
+  .VPNavBarAppearance .VPMenu,
+  .VPNavBarAppearance .VPMenuGroup,
+  .VPNavBarAppearance .text {
+    display: none !important;
+  }
+
+  /* Direct theme toggle without menu */
+  .VPNavBarAppearance .VPSwitch {
+    display: flex !important;
+    align-items: center !important;
+    height: 22px !important;
+  }
+
+  /* Center the switch appearance vertically - now handled by uniform sizing above */
+
+  /* Ensure the switch container is centered */
+  .VPNavBarAppearance {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 36px !important;
+    margin: 0 !important;
+    align-self: center !important;
+  }
+
+  /* Clean up any extra spacing */
+  .VPNavBar .divider {
+    display: none !important;
+  }
+
+  /* Ensure clean mobile layout */
+  .VPNavBar .container > .content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

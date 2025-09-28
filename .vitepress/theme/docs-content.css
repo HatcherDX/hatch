@@ -1,0 +1,156 @@
+/* Documentation Content Styles - Ensure proper spacing for docs pages */
+
+/* ONLY apply to actual documentation pages (pages with has-sidebar or VPDoc but NOT VPHome) */
+.VPDoc:not(.VPHome .VPDoc) .container {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+}
+
+/* Content area - ONLY for actual article content, not navigation */
+.VPDoc:not(.VPHome .VPDoc) > .container > main .content {
+  padding: 32px 24px 96px !important;
+  max-width: 768px !important;
+  margin: 0 auto !important;
+}
+
+/* Sidebar layout content */
+.VPDoc.has-sidebar:not(.VPHome .VPDoc) .content-container {
+  padding: 32px 32px 128px !important;
+}
+
+.VPDoc:not(.has-sidebar):not(.VPHome .VPDoc) .content-container {
+  padding: 32px 32px 128px !important;
+  max-width: 768px !important;
+  margin: 0 auto !important;
+}
+
+/* Ensure proper spacing for content elements ONLY in main doc article content */
+.VPDoc main .content h1,
+.VPDoc main .content h2,
+.VPDoc main .content h3,
+.VPDoc main .content h4,
+.VPDoc main .content h5,
+.VPDoc main .content h6,
+.VPDoc .VPDocContent > div > h1,
+.VPDoc .VPDocContent > div > h2,
+.VPDoc .VPDocContent > div > h3,
+.VPDoc .VPDocContent > div > h4,
+.VPDoc .VPDocContent > div > h5,
+.VPDoc .VPDocContent > div > h6 {
+  margin-top: 24px !important;
+  margin-bottom: 16px !important;
+  padding-top: 24px !important;
+}
+
+/* H3 styling with premium gold brand color - ONLY in main content */
+.VPDoc main h3,
+.vp-doc main h3,
+.VPDoc .VPDocContent h3,
+.content-container h3 {
+  color: #DFA927 !important;  /* Premium gold, not too yellow */
+  font-weight: 600 !important;
+}
+
+.VPDoc main .content h1:first-child,
+.VPDoc .VPDocContent > div > h1:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Reset for home page headers */
+.VPHome .VPDoc h1,
+.VPHome .VPDoc h2,
+.VPHome .VPDoc h3 {
+  margin-top: initial;
+  margin-bottom: initial;
+  padding-top: initial;
+}
+
+.VPDoc main .content p,
+.VPDoc .VPDocContent > div > p {
+  margin: 16px 0 !important;
+  line-height: 1.7 !important;
+}
+
+.VPDoc main .content ul,
+.VPDoc main .content ol,
+.VPDoc .VPDocContent > div > ul,
+.VPDoc .VPDocContent > div > ol {
+  margin: 16px 0 !important;
+  padding-left: 1.5rem !important;
+}
+
+.VPDoc main .content li,
+.VPDoc .VPDocContent li {
+  margin: 8px 0 !important;
+}
+
+/* Code blocks spacing */
+.VPDoc main .content pre,
+.VPDoc .VPDocContent pre {
+  margin: 24px 0 !important;
+  padding: 16px !important;
+  border-radius: 8px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .VPDoc .container {
+    padding: 0 24px !important;
+  }
+
+  .VPDoc .content {
+    padding: 24px 16px 64px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .VPDoc .container {
+    padding: 0 16px !important;
+  }
+
+  .VPDoc .content {
+    padding: 20px 16px 48px !important;
+  }
+}
+
+/* Ensure aside (sidebar) proper spacing */
+.VPDoc .aside {
+  padding: 32px 0 96px !important;
+}
+
+/* CRITICAL: Override h3 colors ONLY in main content area */
+/* Exclude sidebar and navigation */
+.vp-doc main h3,
+.VPDocContent h3,
+article h3:not(.VPSidebar h3) {
+  color: #DFA927 !important;  /* Premium gold */
+}
+
+/* Ensure sidebar items keep their default colors */
+.VPSidebar h3,
+.VPSidebar .title,
+aside h3 {
+  color: inherit !important;
+}
+
+/* Reduce excessive top margin on sidebar section headers */
+.VPSidebar h2,
+.VPSidebarItem.level-0 > .items > .VPSidebarItem:first-child > .item > .text,
+.VPSidebar .group + .group {
+  margin-top: 1rem !important;
+}
+
+/* First section should have no top margin */
+.VPSidebar > .nav > .group:first-child,
+.VPSidebar > .nav > .VPSidebarItem:first-child {
+  margin-top: 0 !important;
+}
+
+/* Fix for doc footer */
+.VPDoc .VPDocFooter {
+  padding: 32px 0 !important;
+  margin-top: 64px !important;
+  border-top: 1px solid var(--vp-c-divider) !important;
+}

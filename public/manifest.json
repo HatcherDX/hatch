@@ -1,0 +1,32 @@
+{
+  "name": "Hatcher - The IDE for Controlled AI Development",
+  "short_name": "Hatcher",
+  "description": "An open-source IDE that gives professional developers deterministic control over AI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1b1b1f",
+  "theme_color": "#FFD700",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/brand/egg-white.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/brand/egg-white.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["developer", "productivity", "education"],
+  "lang": "en-US"
+}

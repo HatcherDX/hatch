@@ -1,0 +1,13 @@
+/**
+ * LEGACY HERO STYLES - DEPRECATED
+ * These styles are kept for reference but are no longer used
+ * The hero is now handled by the HeroSection.vue component
+ * Following atomic design principles
+ */
+
+/* All VPHero related styles have been moved to components/organisms/HeroSection.vue */
+
+/*
+ * If you need to modify hero styles, please edit:
+ * /apps/docs/.vitepress/theme/components/organisms/HeroSection.vue
+ */

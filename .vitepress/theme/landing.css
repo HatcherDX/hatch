@@ -1,0 +1,3377 @@
+/* General font-face and root settings */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+
+/* Prevent horizontal scroll globally but allow vertical */
+html {
+  overflow-x: clip !important; /* Clip horizontal but allow content */
+  overflow-y: auto !important;
+  max-width: 100vw !important;
+  min-height: 100vh;
+}
+
+body {
+  overflow-x: clip !important; /* Clip horizontal but allow content */
+  overflow-y: visible !important;
+  max-width: 100vw !important;
+  min-height: 100vh;
+  position: relative !important;
+}
+
+/* Remove VitePress default paddings for landing page */
+.VPHome {
+  padding: 0 !important;
+  overflow: visible !important; /* Allow content to overflow */
+  border: none !important;
+  outline: none !important;
+  margin-bottom: 0 !important; /* Remove bottom margin */
+  max-width: 100vw !important;
+  min-height: auto; /* Changed to auto to allow content to determine height */
+}
+
+/* Allow vertical overflow for showcase while preventing horizontal scroll - ONLY for home page */
+.VPHome .VPContent,
+.VPHome .Layout,
+.VPHome .VPDoc,
+.VPHome #app {
+  overflow-x: clip !important; /* Clip horizontal but allow vertical overflow */
+  overflow-y: visible !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.container,
+.VPHomeContent,
+.VPHero,
+.VPFeatures,
+.showcase-section {
+  overflow: visible !important; /* Allow all overflow for showcase */
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure all sections respect viewport width but allow vertical content */
+section,
+.section,
+[class*='-section'] {
+  max-width: 100vw !important;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}
+
+/* Fix any absolutely positioned elements */
+* {
+  max-width: 100vw !important;
+}
+
+/* Fix container widths that might cause horizontal scroll */
+[class*='container'] {
+  max-width: min(100%, 1400px) !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Prevent wide content from breaking layout */
+img,
+video,
+iframe,
+embed,
+object {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Remove bottom margin for all viewports */
+.VPHome[data-v-1ccc7700] {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .VPHome[data-v-1ccc7700] {
+    margin-bottom: 0 !important;
+  }
+}
+
+.VPHome .VPHomeContent {
+  padding: 0 !important;
+  max-width: 100% !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Fix VitePress sidebar push issue - ONLY on home page */
+.VPHome.has-sidebar {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Remove any borders or lines on hero section */
+.VPHome::before,
+.VPHome::after,
+.VPHomeContent::before,
+.VPHomeContent::after {
+  border: none !important;
+  outline: none !important;
+}
+
+.VPHome .container {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Remove this overly aggressive padding override that breaks the sidebar */
+
+/* Specific overrides for VitePress home layout */
+.VPHome > div:first-child {
+  padding: 0 !important;
+}
+
+.VPHome main {
+  padding: 0 !important;
+}
+
+/* Landing wrapper - full width without horizontal scroll */
+.landing-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background: var(--vp-c-bg);
+  border: none !important;
+  outline: none !important;
+  overflow: visible !important;
+}
+
+/* Premium off-white background for light mode */
+:root .VPHome {
+  background: var(--vp-c-bg) !important; /* Use consistent theme background */
+}
+
+/* Apply same off-white to navbar in light mode */
+:root .VPNav {
+  background: var(--vp-c-bg) !important;
+}
+
+/* Preserve dark mode background */
+.dark .VPHome {
+  background: var(--vp-c-bg) !important;
+}
+
+.dark .VPNav {
+  background: var(--vp-c-bg) !important;
+}
+
+/* Sidebar - Hide on home page for desktop */
+.VPHome .VPSidebar {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+}
+
+/* For larger screens, ensure sidebar doesn't affect home page */
+@media (min-width: 960px) {
+  .VPHome .VPSidebar {
+    display: none !important;
+  }
+}
+
+/* Ensure VPLocalNav is always visible on mobile, even on home page */
+@media (max-width: 959px) {
+  .VPHome .VPLocalNav {
+    display: flex !important;
+    visibility: visible !important;
+  }
+}
+
+/* Fix content width ONLY on home page when sidebar is present */
+.VPHome .VPDoc {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+/* Specific fix for potential DevTools artifacts */
+.VPHome > div:first-child,
+.VPHome .VPHero:first-child {
+  border-left: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Remove any line artifacts from VPDoc on home page */
+.VPHome .VPDoc > div:first-child {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Fix hamburger menu on mobile for home page */
+@media (max-width: 959px) {
+  .VPHome .VPNavBarHamburger {
+    display: flex !important;
+    visibility: visible !important;
+  }
+
+  /* Ensure mobile nav screen is accessible on home */
+  .VPHome .VPNavScreen {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+
+/* Ensure VPLocalNav toggle button is visible on mobile */
+@media (max-width: 959px) {
+  .VPLocalNav {
+    display: flex !important;
+    visibility: visible !important;
+  }
+
+  .VPLocalNavOutlineDropdown {
+    display: flex !important;
+  }
+
+  .VPLocalNav button {
+    display: flex !important;
+    visibility: visible !important;
+  }
+}
+
+/* Ensure no left offset from sidebar on home */
+.VPHome {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.VPHome .VPContent {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Specific override for data attribute selectors */
+[class*='Layout_content'] {
+  padding-left: 0 !important;
+}
+
+/* Navbar Customization - Transparent to blend with page */
+.VPNav {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border-bottom: none !important;
+}
+
+.dark .VPNav {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+/* Container - Only for home pages (NOT content pages) */
+.VPHome .VPDoc .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Home page container - full width */
+.VPHome .container {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* VitePress Hero - Moved to HeroSection.vue component */
+/* Hero styles are now handled by components/organisms/HeroSection.vue */
+
+/* Hero gradient background - Moved to HeroSection.vue component */
+
+/* Hero z-index - Moved to HeroSection.vue component */
+
+.VPHero.has-image {
+  padding: 140px 20px 100px !important;
+}
+
+/* Reset ALL container rules for hero */
+.VPHero .container,
+.VPHero.has-image .container {
+  max-width: 800px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+/* Ensure main content in hero is centered */
+.VPHero .main,
+.VPHero.has-image .main {
+  width: 100% !important;
+}
+
+/* Target the actual content div directly */
+.VPHero .container > div,
+.VPHero.has-image .container > div {
+  width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* Specific styling for hero content */
+.VPHero .VPHeroContent,
+.VPHero.has-image .VPHeroContent {
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Reset padding for content wrapper */
+.VPHero[data-v-d3fe867c],
+.VPHero.has-image[data-v-d3fe867c] {
+  width: 100% !important;
+  padding: 80px 20px !important;
+}
+
+/* Hero Name (Hatcher) */
+.VPHero .name,
+.VPHero.has-image .name {
+  display: none !important;
+}
+
+/* Title directly from markdown - Premium Typography */
+h1.name,
+.VPHero h1.name,
+.VPHero.has-image h1.name {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  font-size: clamp(1rem, 2.5vw, 1.2rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: #dfa927 !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  width: 100% !important;
+  text-shadow: 0 2px 4px rgba(223, 169, 39, 0.15) !important;
+  position: relative !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+/* Hero Title */
+.VPHero .text {
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  color: var(--vp-c-text-1) !important;
+  margin: 1.5rem 0 1rem !important;
+  max-width: 100% !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Hero Tagline */
+.VPHero .tagline {
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+  color: var(--vp-c-text-2) !important;
+  font-weight: 400 !important;
+  max-width: 600px !important;
+  margin: 0 0 28px !important;
+  opacity: 0.85 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Hero Wrapper/Content Container */
+.VPHero .main {
+  text-align: center !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0 !important;
+}
+
+/* Hero Actions */
+.VPHero .actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hero CTA Button - Mobile Optimized */
+.VPButton {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 14px 32px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  transition: all 0.25s ease !important;
+  text-decoration: none !important;
+  border: 1px solid transparent !important;
+  min-width: 180px !important;
+  white-space: nowrap !important;
+}
+
+.VPButton.brand {
+  background: linear-gradient(135deg, #dfa927 0%, #c99623 100%) !important;
+  color: white !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow:
+    0 2px 12px rgba(223, 169, 39, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.VPButton.alt {
+  background: transparent !important;
+  color: var(--vp-c-text-1) !important;
+  border-color: var(--vp-c-divider) !important;
+}
+
+/* Hero Badge/Image Container */
+.VPHero .image {
+  margin: 2rem auto 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Image container rules removed - now using display: contents */
+
+.VPHero .image-bg {
+  display: none !important;
+}
+
+.VPHero .image img {
+  width: 180px !important;
+  height: auto !important;
+  filter: drop-shadow(0 4px 24px rgba(223, 169, 39, 0.25)) !important;
+}
+
+/* Hero Text Styling Override */
+.VPHero h1.text,
+.VPHero .text[data-v-d3fe867c] {
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  color: var(--vp-c-text-1) !important;
+  margin: 0 0 1.5rem !important;
+  max-width: 100% !important;
+  letter-spacing: -0.02em !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+/* Golden Badge/Logo Styling */
+.VPHero .VPImage,
+.VPHero img[alt*='Admiral'],
+.VPHero img[alt*='Rank'] {
+  width: 300px !important;
+  height: auto !important;
+  filter: drop-shadow(0 4px 24px rgba(223, 169, 39, 0.3))
+    drop-shadow(0 2px 8px rgba(223, 169, 39, 0.5)) !important;
+  transition: all 0.3s ease !important;
+  margin: 0 auto !important;
+  display: block !important;
+  animation: colorShift 8s ease-in-out infinite !important;
+}
+
+/* Color shift animation for logo */
+@keyframes colorShift {
+  0%,
+  100% {
+    filter: hue-rotate(0deg) drop-shadow(0 4px 24px rgba(223, 169, 39, 0.3));
+  }
+  25% {
+    filter: hue-rotate(15deg) drop-shadow(0 4px 24px rgba(223, 169, 39, 0.4));
+  }
+  50% {
+    filter: hue-rotate(-10deg) drop-shadow(0 4px 24px rgba(223, 169, 39, 0.5));
+  }
+  75% {
+    filter: hue-rotate(5deg) drop-shadow(0 4px 24px rgba(223, 169, 39, 0.4));
+  }
+}
+
+.VPHero .VPImage:hover,
+.VPHero img[alt*='Admiral']:hover,
+.VPHero img[alt*='Rank']:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  filter: drop-shadow(0 6px 32px rgba(223, 169, 39, 0.4))
+    drop-shadow(0 3px 12px rgba(223, 169, 39, 0.6)) !important;
+}
+
+/* NEW: Add specific rule to center the golden badge */
+.VPHero .image-src {
+  margin: 0 auto !important;
+  display: block !important;
+  width: fit-content !important;
+}
+
+/* Override any conflicting padding/margin */
+/* Removed duplicate container rules - now handled by display: contents above */
+
+/* Image containers - No longer needed, hero uses custom component */
+
+/* Target image wrapper inside container with data attributes */
+.VPHero .image[data-v-d3fe867c] {
+  width: 100% !important;
+  max-width: 300px !important;
+  margin: 2rem auto 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Target the VPImage component directly */
+.VPHero .VPImage[data-v-2829f822],
+.VPHero .image .VPImage {
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+/* Constitutional Typography for Text Title */
+.VPHero h1,
+.VPHero .text[data-v-d3fe867c],
+.VPHero.has-image .text[data-v-d3fe867c],
+.VPHero.has-image h1 {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  background: linear-gradient(
+    135deg,
+    #f4d03f 0%,
+    #dfa927 35%,
+    #c99623 50%,
+    #dfa927 65%,
+    #f4d03f 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-fill-color: transparent !important;
+  font-size: clamp(2rem, 4vw, 2.5rem) !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+  position: relative !important;
+}
+
+/* Title text - Mobile First with golden gradient */
+.VPHero .text,
+.VPHome .VPHero .text,
+body .VPHero .text,
+div[class*='VPHero'] h1[class*='text'],
+div.VPHero h1.text,
+.VPHero .main .text {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  font-size: 1.3rem !important; /* Small for iPhone SE */
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+  /* Apply bright golden gradient to text */
+  background: linear-gradient(
+    135deg,
+    #f4d03f 0%,
+    #dfa927 35%,
+    #c99623 50%,
+    #dfa927 65%,
+    #f4d03f 100%
+  ) !important;
+  background-image: linear-gradient(
+    135deg,
+    #f4d03f 0%,
+    #dfa927 35%,
+    #c99623 50%,
+    #dfa927 65%,
+    #f4d03f 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-fill-color: transparent !important;
+}
+
+/* iPhone 12/13/14 (390px) */
+@media (min-width: 390px) {
+  .VPHero .text,
+  .VPHome .VPHero .text,
+  body .VPHero .text,
+  div[class*='VPHero'] h1[class*='text'],
+  div.VPHero h1.text,
+  .VPHero .main .text {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* Large phones (430px) */
+@media (min-width: 430px) {
+  .VPHero .text,
+  .VPHome .VPHero .text,
+  body .VPHero .text,
+  div[class*='VPHero'] h1[class*='text'],
+  div.VPHero h1.text,
+  .VPHero .main .text {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+  .VPHero .text,
+  .VPHome .VPHero .text,
+  body .VPHero .text,
+  div[class*='VPHero'] h1[class*='text'],
+  div.VPHero h1.text,
+  .VPHero .main .text {
+    font-size: 1.8rem !important;
+    letter-spacing: 0.12em !important;
+  }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+  .VPHero .text,
+  .VPHome .VPHero .text,
+  body .VPHero .text,
+  div[class*='VPHero'] h1[class*='text'],
+  div.VPHero h1.text,
+  .VPHero .main .text {
+    font-size: clamp(2rem, 4.5vw, 2.5rem) !important;
+    letter-spacing: 0.15em !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Constitutional Typography for Tagline - Mobile First */
+.VPHero.has-image .tagline[data-v-d3fe867c],
+.VPHero.has-image .tagline,
+.VPHero .tagline,
+.VPHome .VPHero .tagline,
+body .VPHero .tagline,
+.VPHero .main .tagline {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+  font-size: 0.8rem !important; /* Adjusted size for iPhone SE */
+  line-height: 1.4 !important;
+  max-width: 90% !important;
+  margin: 0 auto !important;
+  margin-bottom: 20px !important;
+  padding: 0 10px !important;
+}
+
+/* iPhone 12/13/14 (390px) */
+@media (min-width: 390px) {
+  .VPHero.has-image .tagline[data-v-d3fe867c],
+  .VPHero.has-image .tagline,
+  .VPHero .tagline,
+  .VPHome .VPHero .tagline,
+  body .VPHero .tagline,
+  .VPHero .main .tagline {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Large phones (430px) */
+@media (min-width: 430px) {
+  .VPHero.has-image .tagline[data-v-d3fe867c],
+  .VPHero.has-image .tagline,
+  .VPHero .tagline,
+  .VPHome .VPHero .tagline,
+  body .VPHero .tagline,
+  .VPHero .main .tagline {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+  .VPHero.has-image .tagline[data-v-d3fe867c],
+  .VPHero.has-image .tagline,
+  .VPHero .tagline,
+  .VPHome .VPHero .tagline,
+  body .VPHero .tagline,
+  .VPHero .main .tagline {
+    font-size: 0.95rem !important;
+    max-width: 600px !important;
+    letter-spacing: 0.015em !important;
+    padding: 0 !important;
+  }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+  .VPHero.has-image .tagline[data-v-d3fe867c],
+  .VPHero.has-image .tagline,
+  .VPHero .tagline,
+  .VPHome .VPHero .tagline,
+  body .VPHero .tagline,
+  .VPHero .main .tagline {
+    font-size: 1.1rem !important;
+    max-width: 800px !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 30px !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* For desktop, ensure hero content takes proper space */
+@media (min-width: 960px) {
+  .VPHero.has-image .main[data-v-d3fe867c] {
+    max-width: 652px;
+  }
+}
+
+/* Tablet responsive */
+@media (max-width: 768px) {
+  .VPHero .text {
+    font-size: 1.8rem !important;
+  }
+  .VPHero .tagline {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Product Showcase Section - Mobile First */
+.product-showcase-section {
+  background: transparent !important;
+  position: relative !important;
+  overflow: visible !important;
+  min-height: calc(100vh - 450px) !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  padding-bottom: 19rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Larger screens */
+@media (min-width: 769px) {
+  .product-showcase-section {
+    min-height: 60vh !important;
+    padding: 2rem !important;
+    padding-bottom: 16rem !important;
+  }
+}
+
+/* Showcase image styles moved to ShowcaseSection.vue component */
+
+
+/* Container for showcase animation viewport */
+.showcase-container {
+  position: relative;
+  z-index: 1;
+}
+
+.showcase-viewport {
+  position: relative;
+  width: 100%;
+  /* CSS variables for animation */
+  --overlay-opacity: 0;
+  --scroll-progress: 0;
+}
+
+/* Phase-based Immersion Effects */
+.showcase-viewport[data-scroll-phase='color'] {
+  transform: none;
+  box-shadow: none;
+}
+
+.showcase-viewport[data-scroll-phase='expand'] {
+  /* No shadow to prevent artifacts */
+  box-shadow: none;
+}
+
+.showcase-viewport[data-scroll-phase='immerse'] {
+  /* No shadow to prevent artifacts */
+  box-shadow: none;
+}
+
+.showcase-viewport[data-scroll-phase='complete'] {
+  /* No shadow to prevent artifacts */
+  box-shadow: none;
+}
+
+.showcase-item {
+  position: relative;
+}
+
+/* Image Wrapper for Layered Animation with Bidirectional Support */
+.showcase-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 16px;
+  overflow: visible !important;
+  background: transparent;
+  transform: rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+  transform-origin: center center;
+  transition:
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+  --scroll-progress: 0;
+  --scroll-velocity: 0;
+  --scroll-direction: idle;
+  --overlay-opacity: 0;
+  --glow-intensity: 0;
+}
+
+/* Phase-based border radius adjustments */
+.showcase-viewport[data-scroll-phase='expand'] .showcase-image-wrapper,
+.showcase-viewport[data-scroll-phase='immerse'] .showcase-image-wrapper,
+.showcase-viewport[data-scroll-phase='complete'] .showcase-image-wrapper {
+  border-radius: calc(16px * (1 - var(--expansion-progress, 0) * 0.5));
+}
+
+/* Immersion phase - remove all radius */
+.showcase-viewport[data-scroll-phase='immerse'] .showcase-image-wrapper,
+.showcase-viewport[data-scroll-phase='complete'] .showcase-image-wrapper {
+  border-radius: calc(8px * (1 - var(--immersion-progress, 0)));
+}
+
+/* Image styles moved to ShowcaseSection.vue component */
+
+.showcase-base {
+  position: relative;
+  z-index: 1;
+}
+
+.showcase-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: var(--overlay-opacity, 0);
+  clip-path: var(--overlay-clip, circle(0% at 50% 50%));
+  transition:
+    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    clip-path 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: opacity, clip-path;
+}
+
+/* Direction-aware transitions */
+.showcase-viewport[data-scroll-direction='down'] .showcase-overlay {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.showcase-viewport[data-scroll-direction='up'] .showcase-overlay {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Mask Layer for Directional Reveals */
+.showcase-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 45%,
+    rgba(223, 169, 39, 0.15) 50%,
+    transparent 55%,
+    transparent 100%
+  );
+  opacity: var(--mask-opacity, 0);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 3;
+  transition: opacity 0.5s ease;
+}
+
+/* Glow Layer for Depth with Velocity Response */
+.showcase-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(223, 169, 39, calc(var(--glow-intensity, 0) * 0.3)) 0%,
+    transparent 60%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 4;
+  opacity: var(--glow-intensity, 0);
+  transition: opacity 0.3s ease;
+  filter: blur(var(--glow-velocity, 0px));
+}
+
+/* Velocity-based animations */
+@keyframes velocityPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.showcase-viewport[data-scroll-direction='down'] .showcase-glow,
+.showcase-viewport[data-scroll-direction='up'] .showcase-glow {
+  animation: velocityPulse 2s ease-in-out infinite;
+}
+
+/* Elevated Shadow for Depth - Disabled to prevent artifacts */
+.showcase-image-wrapper::after {
+  display: none; /* Shadow removed to prevent visual artifacts */
+}
+
+/* Hero wrapper for scroll indicator */
+.hero-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-wrapper .hero-scroll-indicator {
+  pointer-events: auto;
+}
+
+/* Premium Scroll Indicator - Hero Section */
+.hero-scroll-indicator {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  opacity: 1; /* Ensure initial visibility */
+  animation: fadeInDelay 2s ease-out;
+  transition: opacity 0.5s ease;
+  pointer-events: auto; /* Make clickable */
+  cursor: pointer;
+}
+
+.hero-scroll-indicator.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes fadeInDelay {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-text-hero {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  font-size: 1rem;
+  color: #dfa927;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  display: block;
+  text-transform: uppercase;
+  opacity: 0.9;
+  display: block;
+  white-space: nowrap;
+  text-shadow: 0 2px 8px rgba(223, 169, 39, 0.25);
+  margin-bottom: 0.25rem;
+}
+
+.scroll-arrow-hero {
+  color: #dfa927;
+  animation: bounceDownHero 2s ease-in-out infinite;
+  filter: drop-shadow(0 2px 8px rgba(223, 169, 39, 0.5));
+}
+
+@keyframes bounceDownHero {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(4px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
+}
+
+/* Responsive adjustments for scroll indicator */
+@media (max-width: 768px) {
+  .scroll-text-hero {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+/* Showcase Scroll Indicator - Separate from showcase */
+.showcase-scroll-indicator {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Keep old selector for compatibility */
+.scroll-indicator {
+  display: none;
+}
+
+/* Scroll text styles removed - handled in ShowcaseSection.vue component with mobile-first approach */
+
+/* Scroll arrow styles removed - handled in ShowcaseSection.vue component with mobile-first approach */
+
+/* Original bounce animation */
+@keyframes bounceDown {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(4px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
+}
+
+/* Reveal animations based on scroll direction */
+@keyframes revealDiagonal {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 150% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes concealDiagonal {
+  from {
+    clip-path: polygon(0 0, 150% 0, 100% 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+}
+
+/* Scroll Progress States */
+.showcase-viewport[data-scroll-progress='0'] {
+  --overlay-opacity: 0;
+  --overlay-clip: circle(0% at 50% 50%);
+  --rotate-x: 5deg;
+  --rotate-y: 0deg;
+  --glow-intensity: 0;
+  --mask-opacity: 0;
+  --shadow-scale: 1;
+  --indicator-opacity: 1;
+}
+
+.showcase-viewport[data-scroll-progress='100'] {
+  --overlay-opacity: 1;
+  --overlay-clip: circle(150% at 50% 50%);
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --glow-intensity: 0;
+  --mask-opacity: 0;
+  --shadow-scale: 1;
+  --indicator-opacity: 0;
+}
+
+/* Performance Optimizations */
+.showcase-image-wrapper,
+.showcase-overlay,
+.showcase-mask,
+.showcase-glow {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .product-showcase-section {
+    min-height: calc(100vh - 450px) !important;
+    margin-bottom: 2rem !important; /* Reduced spacing on mobile */
+    padding-bottom: 19rem !important;
+    padding: 0 !important;
+  }
+}
+
+/* Portrait orientation specific */
+@media (orientation: portrait) {
+  .product-showcase-section {
+    min-height: calc(100vh - 450px) !important;
+    padding-bottom: 19rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .showcase-viewport {
+    top: 60px;
+  }
+
+  .showcase-image-wrapper {
+    border-radius: 12px;
+    transform: scale(1.2) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+
+  .scroll-indicator {
+    bottom: -40px;
+  }
+}
+
+/* Mobile Portrait Orientation - Extra zoom for better visibility */
+@media (max-width: 768px) and (orientation: portrait) {
+  .showcase-image-wrapper {
+    transform: scale(1.5) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+
+  .showcase-viewport[data-scroll-phase='expand'] .showcase-image-wrapper,
+  .showcase-viewport[data-scroll-phase='immerse'] .showcase-image-wrapper {
+    transform: scale(1.8) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+
+  .showcase-viewport[data-scroll-phase='complete'] .showcase-image-wrapper {
+    transform: scale(2) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+}
+
+
+/* Extra tall devices (21:9 aspect ratio) - More vertical adjustment */
+@media (max-width: 768px) and (orientation: portrait) and (min-aspect-ratio: 9/20) {
+  .showcase-image-wrapper {
+    transform: scale(1.5) translateY(60px) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+
+  .showcase-viewport[data-scroll-phase='expand'] .showcase-image-wrapper {
+    transform: scale(1.8) translateY(70px) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+
+  .showcase-viewport[data-scroll-phase='immerse'] .showcase-image-wrapper {
+    transform: scale(1.8) translateY(80px) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+
+  .showcase-viewport[data-scroll-phase='complete'] .showcase-image-wrapper {
+    transform: scale(2) translateY(100px) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+}
+
+/* Mobile Landscape Orientation - Moderate zoom */
+@media (max-width: 768px) and (orientation: landscape) {
+  .showcase-image-wrapper {
+    transform: scale(1.3) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+
+  .showcase-viewport[data-scroll-phase='expand'] .showcase-image-wrapper,
+  .showcase-viewport[data-scroll-phase='immerse'] .showcase-image-wrapper {
+    transform: scale(1.5) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+
+  .showcase-viewport[data-scroll-phase='complete'] .showcase-image-wrapper {
+    transform: scale(1.6) rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .showcase-overlay,
+  .showcase-mask,
+  .showcase-glow,
+  .showcase-image-wrapper,
+  .scroll-indicator,
+  .scroll-arrow {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Section title styling - Remove conflicting styles and borders - ONLY for home page custom sections */
+.VPHome .features-section h2,
+.VPHome .systems-section h2,
+.VPHome .hats-section h2,
+.VPHome .metrics-section h2,
+.VPHome .cta-section h2,
+.VPHome .admiral-section h2,
+.VPHome .section-title {
+  margin: 2rem 0 1rem !important;
+  text-align: center !important;
+  border: none !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  overflow: visible !important; /* Allow glow to show */
+}
+
+/* Ensure no borders on home page h2 elements only */
+.VPHome h2.section-title {
+  border: none !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* VitePress Features Grid Customization - Consistent padding */
+.VPFeatures {
+  position: relative !important;
+  padding: 60px 0 !important; /* Consistent with other sections */
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+.VPFeatures::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 200% !important;
+  height: 100% !important;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(223, 169, 39, 0.03) 0%,
+    transparent 60%
+  ) !important;
+  pointer-events: none !important;
+}
+
+/* VitePress button specific overrides */
+.VPButton.medium {
+  padding: 0.75em 2em !important;
+  min-height: 48px !important;
+  font-size: 1rem !important;
+  border-radius: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 600 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.VPButton.brand {
+  background: linear-gradient(135deg, #dfa927 0%, #c99623 100%) !important;
+  color: white !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow:
+    0 2px 12px rgba(223, 169, 39, 0.25),
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-transform: none !important;
+  width: auto !important;
+  min-width: 160px !important;
+  text-align: center !important;
+  display: inline-block !important;
+  line-height: 1.6 !important;
+  padding-left: 2.5em !important;
+  padding-right: 1.5em !important;
+}
+
+.VPButton.brand::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  ) !important;
+  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.VPButton.brand:hover::before {
+  left: 100% !important;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 4px 20px rgba(223, 169, 39, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  background: linear-gradient(135deg, #dfa927, #c99623) !important;
+  color: white !important;
+}
+
+.VPButton.brand:active {
+  transform: translateY(0) !important;
+  box-shadow:
+    0 1px 8px rgba(223, 169, 39, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  background: linear-gradient(135deg, #dfa927, #c99623) !important;
+}
+
+/* Light mode button adjustments */
+:root:not(.dark) .VPButton.brand {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Admiral badge specific styles */
+.VPImage[alt='Admiral Rank'],
+img[alt='Admiral Rank'],
+.image-src[alt='Admiral Rank'] {
+  filter: drop-shadow(0 0 20px rgba(223, 169, 39, 0.4))
+    drop-shadow(0 0 40px rgba(223, 169, 39, 0.2)) brightness(1.1) !important;
+}
+
+/* Dark mode adjustments */
+.dark .VPHero h1,
+.dark .VPHero .text[data-v-d3fe867c] {
+  background: linear-gradient(180deg, #f5f5f7 0%, #a1a1a6 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-fill-color: transparent !important;
+}
+
+.dark .VPHero .tagline {
+  color: #a1a1a6 !important;
+}
+
+/* Final override to ensure background color */
+.VPHome,
+.VPHome .VPContent,
+.VPHome main {
+  background: var(--vp-c-bg) !important;
+}
+
+.dark .VPHome,
+.dark .VPHome .VPContent,
+.dark .VPHome main {
+  background: var(--vp-c-bg) !important;
+}
+
+/* CTA Button Group Styling - Centered and Spaced */
+.VPHero .actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin: 2rem auto 3rem !important;
+  width: 100% !important;
+  max-width: 600px !important;
+}
+
+/* Primary CTA - JOIN THE FLEET with military chevrons */
+.VPButton.brand {
+  background: linear-gradient(135deg, #dfa927 0%, #c99623 100%) !important;
+  color: white !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow:
+    0 2px 12px rgba(223, 169, 39, 0.25),
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 4px 20px rgba(223, 169, 39, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  background: linear-gradient(135deg, #dfa927, #c99623) !important;
+}
+
+/* Military-themed Join the Fleet Button Enhancements - Mobile First */
+.VPHero .actions .VPButton.brand {
+  position: relative !important;
+  padding: 6px 16px 6px 32px !important; /* Much smaller padding for mobile */
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
+  margin-bottom: 60px !important; /* Space for scroll indicator */
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important; /* Tighter spacing on mobile */
+  font-weight: 800 !important;
+  font-size: 0.75rem !important; /* Small font for mobile */
+  min-height: auto !important; /* Remove any min-height */
+  line-height: 1.4 !important; /* Tighter line height */
+}
+
+/* Larger phones (390px) */
+@media (min-width: 390px) {
+  .VPHero .actions .VPButton.brand {
+    font-size: 0.8rem !important;
+    padding: 7px 18px 7px 34px !important;
+  }
+}
+
+/* Large phones (430px) */
+@media (min-width: 430px) {
+  .VPHero .actions .VPButton.brand {
+    font-size: 0.85rem !important;
+    padding: 8px 20px 8px 36px !important;
+  }
+}
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+  .VPHero .actions .VPButton.brand {
+    font-size: 0.9rem !important;
+    padding: 10px 24px 10px 40px !important;
+    letter-spacing: 0.1em !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+  .VPHero .actions .VPButton.brand {
+    font-size: 1rem !important;
+    padding-left: 3.5em !important;
+    padding-right: 1.5em !important;
+    padding-top: 0.75em !important;
+    padding-bottom: 0.75em !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .VPHero .VPButton.brand::after {
+    left: 1em !important;
+    width: 1.6em !important;
+    height: 1.6em !important;
+  }
+}
+
+/* Additional spacing for actions container */
+.VPHero .actions {
+  margin-bottom: 40px !important;
+}
+
+/* Improve button text visibility */
+.VPHero .actions .VPButton.brand .text {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+/* Extra emphasis on hover */
+.VPHero .actions .VPButton.brand:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Center content properly on all screen sizes */
+.VPHero .actions .VPButton.brand .text {
+  position: relative !important;
+}
+
+/* Autopilots Military Chevrons icon - Mobile First */
+.VPHero .VPButton.brand::after {
+  content: '' !important;
+  position: absolute !important;
+  left: 0.8em !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 1.2em !important; /* Smaller on mobile */
+  height: 1.2em !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  opacity: 1 !important;
+  animation: pulse-chevrons 2s infinite !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) !important;
+}
+
+/* Light mode - white chevrons for golden button */
+:root:not(.dark) .VPHero .VPButton.brand::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3C!-- Military chevrons (sergeant stripes) --%3E%3C!-- Top chevron --%3E%3Cpath d='M6 8 L12 4 L18 8' stroke='%23FFFFFF' stroke-width='1.5' fill='none' /%3E%3C!-- Middle chevron --%3E%3Cpath d='M6 13 L12 9 L18 13' stroke='%23FFFFFF' stroke-width='1.5' fill='none' /%3E%3C!-- Bottom chevron --%3E%3Cpath d='M6 18 L12 14 L18 18' stroke='%23FFFFFF' stroke-width='1.5' fill='none' /%3E%3C/svg%3E") !important;
+  opacity: 0.9 !important;
+}
+
+/* Dark mode - black chevrons for golden button */
+.dark .VPHero .VPButton.brand::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3C!-- Military chevrons (sergeant stripes) --%3E%3C!-- Top chevron --%3E%3Cpath d='M6 8 L12 4 L18 8' stroke='%23000000' stroke-width='1.5' fill='none' /%3E%3C!-- Middle chevron --%3E%3Cpath d='M6 13 L12 9 L18 13' stroke='%23000000' stroke-width='1.5' fill='none' /%3E%3C!-- Bottom chevron --%3E%3Cpath d='M6 18 L12 14 L18 18' stroke='%23000000' stroke-width='1.5' fill='none' /%3E%3C/svg%3E") !important;
+  opacity: 1 !important;
+}
+
+/* Secondary CTA - Outline style */
+.VPHero .VPButton.alt {
+  background: transparent !important;
+  border: 2px solid rgba(223, 169, 39, 0.4) !important;
+  color: #dfa927 !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.VPHero .VPButton.alt:hover {
+  background: rgba(223, 169, 39, 0.08) !important;
+  border-color: rgba(223, 169, 39, 0.6) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(223, 169, 39, 0.15) !important;
+}
+
+/* Subtle pulse animation for chevrons */
+@keyframes pulse-chevrons {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+  }
+}
+
+/* Make Join the Fleet text match button background in both modes */
+:root:not(.dark) .VPHero .VPButton.brand {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.98
+  ) !important; /* Slightly more opaque white for light mode */
+}
+
+.dark .VPHero .VPButton.brand {
+  color: rgba(0, 0, 0, 0.9) !important; /* Black text for dark mode */
+}
+
+/* Admiral Rank Image Styling - Centered and Prominent */
+.VPHero .image {
+  margin: 2rem auto !important;
+  text-align: center !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Image wrapper rules removed - containers are now display: contents */
+
+/* Admiral badge - golden with proper glow */
+.VPHero img[alt='Admiral Rank'],
+.VPHero .VPImage[alt='Admiral Rank'],
+.VPHero .image-src[alt='Admiral Rank'],
+.VPHero img[alt='Hatcher DX Engine'],
+.VPHero .VPImage[alt='Hatcher DX Engine'],
+.VPHero .image-src[alt='Hatcher DX Engine'] {
+  width: 300px !important;
+  height: auto !important;
+  filter: drop-shadow(0 0 30px rgba(223, 169, 39, 0.4))
+    drop-shadow(0 0 60px rgba(223, 169, 39, 0.2))
+    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1)) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: block !important;
+  margin: 0 auto !important;
+  animation: colorShift 8s ease-in-out infinite !important;
+}
+
+/* Enhanced hover state for admiral badge */
+.VPHero img[alt='Admiral Rank']:hover,
+.VPHero .VPImage[alt='Admiral Rank']:hover,
+.VPHero .image-src[alt='Admiral Rank']:hover,
+.VPHero img[alt='Hatcher DX Engine']:hover,
+.VPHero .VPImage[alt='Hatcher DX Engine']:hover,
+.VPHero .image-src[alt='Hatcher DX Engine']:hover {
+  transform: translateY(-4px) scale(1.05) rotate(2deg) !important;
+  filter: drop-shadow(0 0 40px rgba(223, 169, 39, 0.5))
+    drop-shadow(0 0 80px rgba(223, 169, 39, 0.3))
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15)) !important;
+}
+
+/* Responsive adjustments for admiral badge */
+@media (max-width: 768px) {
+  .VPHero img[alt='Admiral Rank'],
+  .VPHero .VPImage[alt='Admiral Rank'],
+  .VPHero .image-src[alt='Admiral Rank'],
+  .VPHero img[alt='Hatcher DX Engine'],
+  .VPHero .VPImage[alt='Hatcher DX Engine'],
+  .VPHero .image-src[alt='Hatcher DX Engine'],
+  .VPHero .VPImage,
+  .VPHero img[alt*='Admiral'],
+  .VPHero img[alt*='Rank'] {
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .VPHero img[alt='Admiral Rank'],
+  .VPHero .VPImage[alt='Admiral Rank'],
+  .VPHero .image-src[alt='Admiral Rank'],
+  .VPHero img[alt='Hatcher DX Engine'],
+  .VPHero .VPImage[alt='Hatcher DX Engine'],
+  .VPHero .image-src[alt='Hatcher DX Engine'],
+  .VPHero .VPImage,
+  .VPHero img[alt*='Admiral'],
+  .VPHero img[alt*='Rank'] {
+    width: 200px !important;
+  }
+}
+
+/* Features Grid Styling */
+.features-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 24px !important;
+  margin-top: 40px !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-radius: 16px !important;
+  padding: 32px !important;
+  text-align: center !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+}
+
+.dark .feature-card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 40px rgba(223, 169, 39, 0.12) !important;
+  border-color: rgba(223, 169, 39, 0.2) !important;
+}
+
+.feature-icon {
+  width: 48px !important;
+  height: 48px !important;
+  margin: 0 auto 20px !important;
+  color: #dfa927 !important;
+  opacity: 0.9 !important;
+}
+
+.feature-title {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 12px !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.feature-description {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color: var(--vp-c-text-2) !important;
+}
+
+/* By the Numbers Section - Premium Metrics */
+.metrics-section {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  padding: 100px 0 !important;
+  background: linear-gradient(
+    135deg,
+    rgba(223, 169, 39, 0.03) 0%,
+    rgba(223, 169, 39, 0.01) 100%
+  ) !important;
+  border-top: 1px solid rgba(223, 169, 39, 0.1) !important;
+  border-bottom: 1px solid rgba(223, 169, 39, 0.1) !important;
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Dark mode metrics background */
+.dark .metrics-section {
+  background: linear-gradient(
+    135deg,
+    rgba(223, 169, 39, 0.02) 0%,
+    rgba(223, 169, 39, 0.005) 100%
+  ) !important;
+  border-color: rgba(223, 169, 39, 0.08) !important;
+}
+
+/* Ensure content stays centered and contained */
+.metrics-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Metrics section uses SectionTitle component - removed global h2 styles */
+
+/* Max-width constraints now handled in SectionTitle component */
+
+.metrics-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0 !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+}
+
+.metric-item {
+  text-align: center !important;
+  padding: 40px 20px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Vertical separators between metrics */
+.metric-item:not(:last-child)::after {
+  content: '' !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 20% !important;
+  height: 60% !important;
+  width: 1px !important;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(223, 169, 39, 0.2),
+    transparent
+  ) !important;
+}
+
+/* Remove separator on last item in row */
+@media (max-width: 768px) {
+  .metric-item:nth-child(3)::after {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .metric-item::after {
+    display: none !important;
+  }
+}
+
+.metric-number {
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
+  font-size: 3.5rem !important;
+  font-weight: 700 !important;
+  background: linear-gradient(
+    135deg,
+    #ffd700 0%,
+    #ffed4e 50%,
+    #ffd700 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.metric-label {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  color: var(--vp-c-text-2) !important;
+  margin-top: 0.5rem !important;
+}
+
+.metric-description {
+  font-size: 0.85rem !important;
+  color: var(--vp-c-text-3) !important;
+  margin-top: 0.25rem !important;
+  max-width: 200px !important;
+  line-height: 1.4 !important;
+  opacity: 0.8 !important;
+}
+
+/* Responsive metrics */
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .metric-item {
+    padding: 30px 10px !important;
+  }
+
+  .metric-number {
+    font-size: 2.5rem !important;
+  }
+
+  .metric-label {
+    font-size: 0.75rem !important;
+  }
+
+  .metric-description {
+    font-size: 0.7rem !important;
+    padding: 0 10px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .metrics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .metric-item {
+    padding: 20px !important;
+  }
+
+  /* Add horizontal separators on mobile */
+  .metric-item:not(:last-child) {
+    border-bottom: 1px solid rgba(223, 169, 39, 0.1) !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Apple-style Systems Section */
+.systems-section {
+  padding: 100px 2rem !important;
+  background: transparent !important;
+  position: relative !important;
+}
+
+.systems-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.systems-intro {
+  font-size: 1.25rem !important;
+  line-height: 1.7 !important;
+  color: var(--vp-c-text-2) !important;
+  text-align: center !important;
+  max-width: 800px !important;
+  margin: 0 auto 60px !important;
+  font-weight: 400 !important;
+}
+
+/* Systems Grid - 2x2 Apple style */
+.systems-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 32px !important;
+  margin-top: 60px !important;
+}
+
+/* Premium System Cards with Hover States */
+.system-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  ) !important;
+  border: 1px solid rgba(223, 169, 39, 0.1) !important;
+  border-radius: 20px !important;
+  padding: 48px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.dark .system-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  ) !important;
+  border-color: rgba(223, 169, 39, 0.08) !important;
+}
+
+/* Hover effect with golden accent */
+.system-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: rgba(223, 169, 39, 0.3) !important;
+  box-shadow:
+    0 20px 60px rgba(223, 169, 39, 0.15),
+    0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Gradient overlay on hover */
+.system-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: radial-gradient(
+    circle at top left,
+    rgba(223, 169, 39, 0.1) 0%,
+    transparent 50%
+  ) !important;
+  opacity: 0 !important;
+  transition: opacity 0.4s ease !important;
+  pointer-events: none !important;
+}
+
+.system-card:hover::before {
+  opacity: 1 !important;
+}
+
+/* System Icons with Animation */
+.system-icon {
+  width: 64px !important;
+  height: 64px !important;
+  margin-bottom: 24px !important;
+  position: relative !important;
+}
+
+.system-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  color: #dfa927 !important;
+  opacity: 0.8 !important;
+  transition: all 0.3s ease !important;
+}
+
+.system-card:hover .system-icon svg {
+  transform: scale(1.1) rotate(5deg) !important;
+  opacity: 1 !important;
+}
+
+/* Dark mode icon adjustments */
+.dark .system-icon svg {
+  color: #dfa927 !important;
+  opacity: 0.7 !important;
+}
+
+.dark .system-card:hover .system-icon {
+  color: #dfa927 !important;
+}
+
+/* Specific icon colors for dark mode */
+:root .system-icon svg {
+  color: #c99623;
+}
+
+:root .system-card:hover .system-icon svg {
+  color: #dfa927;
+  opacity: 1;
+}
+
+.dark .system-icon svg {
+  color: #dfa927;
+  opacity: 0.7;
+}
+
+/* Ensure icon inherits color on hover */
+.system-card:hover .system-icon svg path,
+.system-card:hover .system-icon svg circle,
+.system-card:hover .system-icon svg rect,
+.system-card:hover .system-icon svg polygon {
+  stroke: currentColor;
+  fill: none;
+}
+
+/* Override for filled elements */
+.system-card .system-icon svg [fill='currentColor'] {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Ensure proper color in light mode */
+:root .system-icon svg {
+  color: #000;
+  opacity: 0.7;
+}
+
+:root .system-card:hover .system-icon svg {
+  color: #000;
+}
+
+.dark .system-card:hover .system-icon svg {
+  color: #fff;
+  opacity: 1;
+}
+
+/* Typography with Apple's precision */
+.system-title {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  margin-bottom: 16px !important;
+  color: #1d1d1f !important;
+  letter-spacing: -0.018em !important;
+  line-height: 1.2 !important;
+}
+
+.dark .system-title {
+  color: #f5f5f7 !important;
+}
+
+.system-description {
+  font-size: 15px !important;
+  line-height: 1.47 !important;
+  color: #424245 !important;
+  letter-spacing: -0.014em !important;
+  font-weight: 400 !important;
+}
+
+.dark .system-description {
+  color: #a1a1a6 !important;
+}
+
+/* Staggered animations */
+@keyframes systemFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.system-card {
+  animation: systemFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards !important;
+}
+
+.system-card:nth-child(1) {
+  animation-delay: 0.05s !important;
+}
+.system-card:nth-child(2) {
+  animation-delay: 0.15s !important;
+}
+.system-card:nth-child(3) {
+  animation-delay: 0.25s !important;
+}
+.system-card:nth-child(4) {
+  animation-delay: 0.35s !important;
+}
+
+/* Responsive systems */
+@media (max-width: 968px) {
+  .systems-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* HATs Section - Apple-refined */
+.hats-section {
+  margin-top: 60px !important;
+  margin-bottom: 0 !important;
+  padding: 0 2rem !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.hats-intro {
+  font-size: 17px !important;
+  color: #6e6e73 !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 0 auto 48px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.014em !important;
+  line-height: 1.47 !important;
+}
+
+.dark .hats-intro {
+  color: #a1a1a6 !important;
+}
+
+.hats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  position: relative !important;
+  padding-top: 30px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+/* Visual connection removed for cleaner design */
+
+/* Premium HAT cards with Microsoft-style dividers */
+a.hat-card {
+  position: relative !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 48px 32px !important;
+  text-align: center !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block !important;
+  overflow: visible !important;
+  /* Clean grid lines */
+  border-right: 1px solid rgba(0, 0, 0, 0.04) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Remove borders for edge items */
+a.hat-card:nth-child(4n) {
+  border-right: none !important;
+}
+
+a.hat-card:nth-last-child(-n + 4) {
+  border-bottom: none !important;
+}
+
+.dark a.hat-card {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* HAT card hover states with Microsoft-style accents */
+a.hat-card:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(223, 169, 39, 0.02),
+    transparent 50%
+  ) !important;
+  z-index: 2 !important;
+  /* Subtle top accent line */
+  box-shadow:
+    inset 0 2px 0 rgba(223, 169, 39, 0.25),
+    inset 0 0 20px rgba(223, 169, 39, 0.02) !important;
+}
+
+/* Microsoft-style hover gradient overlay */
+a.hat-card::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 2px !important;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #dfa927,
+    transparent
+  ) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+a.hat-card:hover::after {
+  opacity: 0.5 !important;
+}
+
+/* HAT Icons with distinct colors */
+.hat-icon {
+  width: 56px !important;
+  height: 56px !important;
+  margin: 0 auto 20px !important;
+  position: relative !important;
+}
+
+.hat-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Individual HAT card colors - REMOVED: All icons now use golden theme color */
+/* Icons now use the golden color defined in HatsSection.vue component */
+
+a.hat-card:hover .hat-icon svg {
+  transform: translateY(-2px) scale(1.1) !important;
+  filter: drop-shadow(0 4px 12px currentColor) !important;
+}
+
+/* HAT Titles */
+.hat-title {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  color: #1d1d1f !important;
+  letter-spacing: -0.01em !important;
+}
+
+.dark .hat-title {
+  color: #f5f5f7 !important;
+}
+
+.hat-subtitle {
+  font-size: 13px !important;
+  color: #86868b !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.008em !important;
+  line-height: 1.38 !important;
+}
+
+.dark .hat-subtitle {
+  color: #86868b !important;
+}
+
+/* Responsive HATs */
+@media (max-width: 968px) {
+  .hats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  a.hat-card:nth-child(2n) {
+    border-right: none !important;
+  }
+
+  a.hat-card:nth-last-child(-n + 2) {
+    border-bottom: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  a.hat-card {
+    border-right: none !important;
+  }
+
+  a.hat-card:last-child {
+    border-bottom: none !important;
+  }
+}
+
+/* Metrics Section Animation on Scroll */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.metric-item {
+  animation: countUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards !important;
+}
+
+.metric-item:nth-child(1) {
+  animation-delay: 0.1s !important;
+}
+.metric-item:nth-child(2) {
+  animation-delay: 0.2s !important;
+}
+.metric-item:nth-child(3) {
+  animation-delay: 0.3s !important;
+}
+
+/* Apple-style gradient text for metrics */
+.metric-number {
+  background: linear-gradient(
+    135deg,
+    #dfa927 0%,
+    #e5b433 50%,
+    #c99623 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  background-size: 200% 200% !important;
+  animation: shimmer 3s ease infinite !important;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* CTA Section with Premium Gradient */
+.cta-section {
+  padding: 120px 2rem 100px !important;
+  text-align: center !important;
+  position: relative !important;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(223, 169, 39, 0.02)
+  ) !important;
+}
+
+.cta-container {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 2rem !important;
+}
+
+.cta-title {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  font-size: 2.5rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  background: linear-gradient(180deg, #1d1d1f 0%, #6e6e73 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  margin-bottom: 1rem !important;
+}
+
+.dark .cta-title {
+  background: linear-gradient(180deg, #f5f5f7 0%, #a1a1a6 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.cta-description {
+  font-size: 1.125rem !important;
+  color: var(--vp-c-text-2) !important;
+  line-height: 1.6 !important;
+  max-width: 600px !important;
+}
+
+/* Premium Call-to-Action Button Group */
+.cta-buttons {
+  display: flex !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  margin-top: 2rem !important;
+}
+
+.cta-primary {
+  background: linear-gradient(
+    135deg,
+    #ffd700 0%,
+    #ffed4e 50%,
+    #ffd700 100%
+  ) !important;
+  color: white !important;
+  padding: 16px 40px !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow:
+    0 4px 20px rgba(223, 169, 39, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 8px 30px rgba(223, 169, 39, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.cta-secondary {
+  background: transparent !important;
+  color: #dfa927 !important;
+  padding: 16px 40px !important;
+  border: 2px solid rgba(223, 169, 39, 0.3) !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.cta-secondary:hover {
+  background: rgba(223, 169, 39, 0.08) !important;
+  border-color: rgba(223, 169, 39, 0.5) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Footer Section */
+.footer-section {
+  padding: 60px 2rem 40px !important;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.02)
+  ) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.dark .footer-section {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.01)
+  ) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.footer-content {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 2rem !important;
+}
+
+.footer-logo {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1) !important;
+  letter-spacing: 0.1em !important;
+}
+
+.footer-links {
+  display: flex !important;
+  gap: 2rem !important;
+  flex-wrap: wrap !important;
+}
+
+.footer-link {
+  color: var(--vp-c-text-2) !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.footer-link:hover {
+  color: #dfa927 !important;
+}
+
+.footer-social {
+  display: flex !important;
+  gap: 1rem !important;
+}
+
+.social-icon {
+  width: 24px !important;
+  height: 24px !important;
+  color: var(--vp-c-text-2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.social-icon:hover {
+  color: #dfa927 !important;
+  transform: translateY(-2px) !important;
+}
+
+.footer-bottom {
+  margin-top: 3rem !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  text-align: center !important;
+  color: var(--vp-c-text-3) !important;
+  font-size: 0.875rem !important;
+}
+
+.dark .footer-bottom {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.footer-tagline {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  opacity: 0.7 !important;
+}
+
+/* Architect Section - Premium Team Showcase */
+.architect-section {
+  padding: 100px 2rem !important;
+  background: transparent !important;
+  position: relative !important;
+}
+
+.architect-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.architect-header {
+  text-align: center !important;
+  margin-bottom: 60px !important;
+}
+
+.architect-header h2 {
+  font-family: 'Cinzel', 'Georgia', serif !important;
+  font-size: 2.5rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 1rem !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.architect-intro {
+  font-size: 1.125rem !important;
+  color: var(--vp-c-text-2) !important;
+  line-height: 1.6 !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+}
+
+/* Team Grid */
+.architect-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 40px !important;
+  margin-top: 60px !important;
+}
+
+@media (max-width: 968px) {
+  .architect-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .architect-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Architect Cards */
+.architect-card {
+  text-align: center !important;
+  padding: 40px 20px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(223, 169, 39, 0.08) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.architect-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(223, 169, 39, 0.2) !important;
+  box-shadow: 0 12px 40px rgba(223, 169, 39, 0.1) !important;
+}
+
+.architect-avatar {
+  width: 120px !important;
+  height: 120px !important;
+  margin: 0 auto 20px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(
+    135deg,
+    #ffd700 0%,
+    #ffed4e 50%,
+    #ffd700 100%
+  ) !important;
+  padding: 3px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.architect-avatar::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 3px !important;
+  left: 3px !important;
+  right: 3px !important;
+  bottom: 3px !important;
+  background: var(--vp-c-bg) !important;
+  border-radius: 50% !important;
+}
+
+.architect-avatar img {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  z-index: 1 !important;
+}
+
+.architect-name {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.architect-role {
+  font-size: 0.9rem !important;
+  color: #dfa927 !important;
+  font-weight: 500 !important;
+  margin-bottom: 1rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+.architect-bio {
+  font-size: 0.95rem !important;
+  color: var(--vp-c-text-2) !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.architect-links {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+}
+
+.architect-link {
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background: rgba(223, 169, 39, 0.1) !important;
+  color: #dfa927 !important;
+  transition: all 0.3s ease !important;
+}
+
+.architect-link:hover {
+  background: rgba(223, 169, 39, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+.architect-link svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Timeline Section - Development Journey */
+.timeline-section {
+  padding: 100px 2rem !important;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(223, 169, 39, 0.02),
+    transparent
+  ) !important;
+  position: relative !important;
+}
+
+.timeline-container {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+}
+
+/* Central timeline line */
+.timeline-line {
+  position: absolute !important;
+  left: 50% !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 2px !important;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(223, 169, 39, 0.3),
+    rgba(223, 169, 39, 0.3),
+    transparent
+  ) !important;
+  transform: translateX(-50%) !important;
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px !important;
+  }
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative !important;
+  padding: 40px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse !important;
+}
+
+@media (max-width: 768px) {
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    flex-direction: row !important;
+    padding-left: 60px !important;
+  }
+}
+
+/* Timeline dot */
+.timeline-dot {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 16px !important;
+  height: 16px !important;
+  background: #dfa927 !important;
+  border: 3px solid var(--vp-c-bg) !important;
+  border-radius: 50% !important;
+  z-index: 2 !important;
+  box-shadow: 0 0 0 4px rgba(223, 169, 39, 0.2) !important;
+}
+
+@media (max-width: 768px) {
+  .timeline-dot {
+    left: 20px !important;
+  }
+}
+
+/* Timeline content */
+.timeline-content {
+  width: calc(50% - 40px) !important;
+  padding: 24px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(223, 169, 39, 0.1) !important;
+  border-radius: 12px !important;
+  position: relative !important;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: auto !important;
+}
+
+@media (max-width: 768px) {
+  .timeline-content {
+    width: calc(100% - 40px) !important;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 0 !important;
+  }
+}
+
+.timeline-date {
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace !important;
+  font-size: 0.875rem !important;
+  color: #dfa927 !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.timeline-title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.timeline-description {
+  font-size: 0.95rem !important;
+  color: var(--vp-c-text-2) !important;
+  line-height: 1.6 !important;
+}
+
+/* Hover effect for timeline items */
+.timeline-content:hover {
+  transform: scale(1.02) !important;
+  border-color: rgba(223, 169, 39, 0.2) !important;
+  box-shadow: 0 8px 24px rgba(223, 169, 39, 0.08) !important;
+}
+
+/* Responsive Adjustments - Mobile First */
+@media (max-width: 768px) {
+  /* Metrics h2 styles removed - handled by SectionTitle component */
+
+  .metric-item {
+    padding: 30px 15px !important;
+    gap: 0.3rem !important;
+  }
+
+  .metric-number {
+    font-size: 2.5rem !important;
+  }
+
+  .metric-label {
+    font-size: 0.85rem !important;
+  }
+
+  .metric-description {
+    font-size: 0.8rem !important;
+    padding: 0 !important;
+  }
+}
+
+/* Original responsive rules continue below */
+@media (max-width: 1024px) {
+  .product-hero-content {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .product-hero-text {
+    text-align: center !important;
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 640px) {
+  .VPHero {
+    padding: 60px 20px !important;
+  }
+
+  .VPHero h1 {
+    font-size: 2rem !important;
+  }
+
+  .VPHero .tagline {
+    font-size: 1rem !important;
+  }
+
+  .VPButton {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+
+  .feature-card {
+    padding: 24px !important;
+  }
+
+  .systems-grid {
+    gap: 20px !important;
+  }
+
+  .system-card {
+    padding: 32px !important;
+  }
+
+  .hats-grid {
+    gap: 0 !important;
+  }
+
+  a.hat-card {
+    padding: 32px 20px !important;
+  }
+}
+
+/* Ensure proper typography hierarchy - HOME PAGE ONLY */
+.VPHome h1 {
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+}
+
+/* Premium h2 styling with golden gradient and glow - HOME PAGE ONLY */
+.VPHome h2 {
+  font-family: 'Cinzel', serif !important;
+  font-size: clamp(1.5rem, 3vw, 2.5rem) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  background: linear-gradient(
+    135deg,
+    #f4d03f 0%,
+    #dfa927 25%,
+    #c99623 50%,
+    #dfa927 75%,
+    #f4d03f 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  position: relative !important;
+  display: inline-block !important;
+  width: 100% !important;
+  border: none !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  overflow: visible !important;
+  filter: drop-shadow(0 0 0px transparent) !important;
+  transition: filter 0.4s ease, transform 0.3s ease !important;
+}
+
+/* Add visible glow on hover using drop-shadow - HOME PAGE ONLY */
+.VPHome h2:hover {
+  filter: drop-shadow(0 0 30px rgba(223, 169, 39, 0.8))
+          drop-shadow(0 0 60px rgba(223, 169, 39, 0.5))
+          drop-shadow(0 0 90px rgba(223, 169, 39, 0.3)) !important;
+  transform: translateY(-2px) scale(1.02) !important; /* Subtle lift and scale */
+}
+
+/* Alternative approach with ::before for background glow - HOME PAGE ONLY */
+.VPHome h2::before {
+  content: attr(data-text) !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    135deg,
+    #f4d03f 0%,
+    #dfa927 25%,
+    #c99623 50%,
+    #dfa927 75%,
+    #f4d03f 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  opacity: 0 !important;
+  filter: blur(15px) !important;
+  transform: scale(1.1) !important;
+  transition: opacity 0.4s ease !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+.VPHome h2:hover::before {
+  opacity: 0.6 !important;
+}
+
+/* H3 - More refined, less heavy - HOME PAGE ONLY */
+.VPHome h3 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.4 !important;
+}
+
+/* Feature titles - Constitutional Playbooks, etc. */
+.VPFeature h3,
+.VPFeatureItem h3,
+.VPHome .VPFeatures h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1) !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+  text-transform: none !important;
+  margin-bottom: 0.5rem !important;
+}
+.VPHome h4 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem) !important;
+}
+
+/* Final touch - smooth scrolling */
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* Ensure all links have proper hover states */
+a {
+  transition: color 0.3s ease !important;
+}
+
+a:not(.hero-cta):not(.cta-button):hover {
+  color: #dfa927 !important;
+}
+
+/* Custom selection color */
+::selection {
+  background: rgba(223, 169, 39, 0.2) !important;
+  color: inherit !important;
+}
+
+/* Force hero image to display */
+.VPHero.has-image .image {
+  display: block !important;
+  text-align: center !important;
+  margin: 0 auto 2rem !important;
+}
+
+.VPHero .VPImage {
+  display: inline-block !important;
+  max-width: 300px !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Ensure the logo hero image shows */
+.VPHero .image img,
+.VPHero .VPImage img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 300px !important;
+  margin: 0 auto !important;
+  height: auto !important;
+}
+
+/* Remove the incorrectly placed logo */
+.VPHero .image::after {
+  display: none !important;
+}
+
+/* Ensure the text is visible with golden gradient - FORCE IT */
+.VPHero .text,
+.VPHero .main .text,
+.VPHero h1.text,
+.VPHome .VPHero .text {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  background: linear-gradient(
+    135deg,
+    #f4d03f 0%,
+    #dfa927 35%,
+    #c99623 50%,
+    #dfa927 65%,
+    #f4d03f 100%
+  ) !important;
+  background-image: linear-gradient(
+    135deg,
+    #f4d03f 0%,
+    #dfa927 35%,
+    #c99623 50%,
+    #dfa927 65%,
+    #f4d03f 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  -moz-background-clip: text !important;
+  -moz-text-fill-color: transparent !important;
+  color: #dfa927 !important; /* Fallback for browsers that don't support gradient text */
+}
+
+/* Force gradient on all possible text selectors */
+.VPHero .text span,
+.VPHero .main .text span {
+  background: inherit !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Dark mode uses same golden gradient for consistency */
+.dark .VPHero .text,
+.dark .VPHero .main .text,
+.dark .VPHero h1.text {
+  background: linear-gradient(
+    135deg,
+    #f4d03f 0%,
+    #dfa927 35%,
+    #c99623 50%,
+    #dfa927 65%,
+    #f4d03f 100%
+  ) !important;
+  background-image: linear-gradient(
+    135deg,
+    #f4d03f 0%,
+    #dfa927 35%,
+    #c99623 50%,
+    #dfa927 65%,
+    #f4d03f 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: #dfa927 !important; /* Fallback */
+}
+
+/* Add the SAME logo as navbar - properly sized relative to text */
+.VPHero .text::before {
+  content: url('/logo-small-inline-dark.svg') !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  transform: scale(0.5) !important; /* Perfect for mobile */
+  transform-origin: center !important;
+  margin: -20px auto -20px auto !important; /* Compensate for scaled space */
+  filter: none !important; /* No glow/shadow on logo */
+  animation: none !important; /* No color animation */
+  position: relative !important;
+}
+
+/* Larger logo for desktop screens */
+@media (min-width: 768px) {
+  .VPHero .text::before {
+    transform: scale(0.65) !important; /* Slightly bigger for desktop */
+    margin: -10px auto -10px auto !important;
+  }
+}
+
+/* Light mode - use the SAME logo as navbar */
+:root:not(.dark) .VPHero .text::before {
+  content: url('/logo-small-inline-light.svg') !important;
+}
+
+/* Dark mode - use the SAME logo as navbar */
+.dark .VPHero .text::before {
+  content: url('/logo-small-inline-dark.svg') !important;
+}
+
+/* Admiral Rank Enhanced Styling */
+.VPHero .VPImage {
+  filter: drop-shadow(0 0 40px rgba(223, 169, 39, 0.4)) !important;
+}
+
+/* Responsive text size override to ensure readability */
+@media (max-width: 480px) {
+  .VPHero .text {
+    font-size: 1.5rem !important;
+  }
+
+  .VPHero .tagline {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* VPFeatures Container */
+.VPFeatures .container {
+  max-width: 1200px !important;
+  padding: 0 2rem !important;
+}
+
+/* Custom Features Section - Unified styles */
+.features-section {
+  padding: 60px 0 !important; /* Consistent vertical padding */
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0; /* No margin */
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Features container uses SectionTitle component - removed global h2 styles */
+
+/* Remove underline - now handled by global h2 hover glow */
+
+/* Small screens - CTA Container vertical */
+@media (max-width: 480px) {
+  .cta-container {
+    padding: 0 1rem !important;
+  }
+
+  .cta-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+}
+
+/* Ensure proper CTA contrast in both modes */
+:root:not(.dark) .VPButton.brand {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark .VPButton.brand {
+  background: linear-gradient(135deg, #dfa927 0%, #c99623 100%) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Fix mobile menu icon colors */
+.VPNavBarHamburger {
+  color: var(--vp-c-text-1) !important;
+}
+
+/* Ensure showcase section has proper z-indexing */
+.product-showcase-section {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Ensure metrics don't overflow on small screens */
+@media (max-width: 375px) {
+  .metric-number {
+    font-size: 2rem !important;
+  }
+
+  .metric-label {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .metric-description {
+    font-size: 0.65rem !important;
+  }
+}
+
+/* Fix mobile menu on home page */
+@media (max-width: 959px) {
+  .VPLocalNav {
+    display: flex !important;
+  }
+
+  .VPLocalNav.has-sidebar {
+    display: flex !important;
+  }
+}
+
+/* Ensure CTA actions are stacked on very small screens */
+@media (max-width: 400px) {
+  .VPHero .actions {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .VPHero .actions .VPButton {
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+}
+
+/* Center all section headers consistently */
+.section-header {
+  text-align: center !important;
+  margin-bottom: 3rem !important;
+}
+
+/* Section header uses SectionTitle component - removed global h2 styles */
+
+/* Mobile Nav Bar Fixes */
+@media (max-width: 959px) {
+  .VPNavBar {
+    height: var(--vp-nav-height) !important;
+  }
+
+  .VPNavBar > .container {
+    padding: 0 1rem !important;
+  }
+
+  .VPNavBar > .container > .title {
+    flex: 0 0 auto !important;
+  }
+
+  .VPNavBar > .container > .content {
+    flex: 1 1 auto !important;
+    justify-content: flex-end !important;
+  }
+}
+
+/* Ensure golden elements maintain visibility */
+.golden-accent,
+[class*='golden'],
+.metric-number,
+.hat-icon,
+.system-icon {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Improved spacing for mobile feature cards */
+@media (max-width: 640px) {
+  .feature-card {
+    margin-bottom: 1rem !important;
+  }
+
+  .features-grid {
+    gap: 16px !important;
+  }
+}
+
+/* Center navbar content on desktop */
+@media (min-width: 960px) {
+  .VPNavBar > .container {
+    max-width: var(--vp-layout-max-width) !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* VPFeatures override for 4-column layout */
+.VPFeatures.VPHomeFeatures {
+  --vp-home-hero-feature-grid: repeat(4, minmax(0, 1fr)) !important;
+}
+
+/* Proper responsive for VPFeatures items */
+@media (max-width: 1024px) {
+  .VPFeatures.VPHomeFeatures {
+    --vp-home-hero-feature-grid: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .VPFeatures.VPHomeFeatures {
+    --vp-home-hero-feature-grid: 1fr !important;
+  }
+}
+
+/* Fix CTA alignment on hero */
+.VPHero .actions {
+  width: 100% !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+}
+
+/* Navbar logo sizing */
+.VPNavBarTitle .VPImage,
+.VPImage.logo,
+.VPNavBarTitle img,
+.VPNavBar .logo,
+img[src*='logo-small-inline'] {
+  height: 24px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* Ensure proper navbar title spacing */
+.VPNavBarTitle {
+  display: flex !important;
+  align-items: center !important;
+  height: var(--vp-nav-height) !important;
+}

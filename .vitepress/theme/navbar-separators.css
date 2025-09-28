@@ -1,0 +1,55 @@
+/**
+ * Navbar spacing and centering adjustments
+ * No separators - cleaner look
+ * Better spacing between elements
+ */
+
+/* Remove all separators permanently */
+.VPNavBarExtra::before,
+.VPNavBarExtra::after,
+.VPNavBarAppearance::before,
+.VPNavBarAppearance::after,
+.VPNavBarSearch::before,
+.VPNavBarSearch::after,
+.VPSocialLinks::before,
+.VPSocialLinks::after,
+.VPNavBar [class*="VPNavBar"]::before,
+.VPNavBar [class*="VPNavBar"]::after {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+}
+
+/* Also hide any divider elements */
+.VPNavBar .divider,
+.VPNavBar [class*="divider"],
+.VPNavBar [class*="separator"] {
+  display: none !important;
+}
+
+/* Adjust spacing for theme selector - center it better */
+.VPNavBarAppearance {
+  margin: 0 12px !important;  /* Equal margin on both sides */
+  padding: 0 !important;
+}
+
+/* Remove extra margin from language selector */
+.VPNavBarTranslations {
+  margin-right: 0 !important;  /* Remove right margin */
+}
+
+/* Adjust social links spacing for balance */
+.VPSocialLinks {
+  margin-left: 8px !important;  /* Add some left margin */
+}
+
+/* For larger screens, fine-tune the spacing */
+@media (min-width: 768px) {
+  .VPNavBarAppearance {
+    margin: 0 16px !important;  /* Slightly more space on desktop */
+  }
+
+  .VPSocialLinks {
+    margin-left: 12px !important;
+  }
+}
