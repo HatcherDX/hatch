@@ -8,7 +8,7 @@ Every great structure needs a strong foundation. For Hatcher, that foundation co
 
 ## The Pillars
 
-### <DocIcon type="constitutional" inline /> [Constitutional Engineering](/pillars-constitutional-engineering)
+### <DocIcon type="constitutional" inline /> [Constitutional Engineering](/constitutional-engineering)
 
 **The AI must operate under a constitution. Period.**
 
@@ -52,10 +52,11 @@ Together, they create a development environment where:
 
 Ready to explore how these pillars transform development?
 
-1. Start with [Constitutional Engineering](/pillars-constitutional-engineering) to understand how rules create freedom
+1. Start with [Constitutional Engineering](/constitutional-engineering) to understand how rules create freedom
 2. Explore [The Time Graph](/pillars-time-graph) to see how safety enables boldness
 3. Learn about [AI Under Command](/pillars-ai-under-command) to become a force multiplier
 4. Discover [The Universal Fabricator](/pillars-universal-fabricator) to liberate your legacy code
+5. Master the [Visual-to-Code Bridge](/visual-to-code) to eliminate ambiguity in AI interactions
 
 ## The Promise
 

@@ -1,0 +1,147 @@
+/* Fix excessive padding on mobile for VPContent and VPDoc containers */
+
+/* Mobile optimization for content area */
+@media (max-width: 640px) {
+  /* Remove all padding for maximum content space */
+  .VPContent.has-sidebar {
+    padding: 0 !important;
+  }
+
+  /* Remove ALL container padding to maximize space */
+  .VPDoc.has-sidebar,
+  .VPDoc.has-aside {
+    padding: 0 !important;
+  }
+
+  .VPDoc.has-sidebar .container,
+  .VPDoc.has-aside .container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Content container - minimal padding with some top spacing */
+  .VPDoc .content-container {
+    padding: 12px 12px 0 12px !important;
+    margin: 0 !important;
+  }
+
+  /* Main content area */
+  .VPDoc main.main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* The actual content div - this is where we want minimal padding */
+  .VPDoc .vp-doc {
+    padding: 0 12px !important;
+    margin: 0 !important;
+  }
+
+  /* Content wrapper */
+  .VPDoc .content {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Aside container for mobile - completely remove */
+  .VPDoc .aside,
+  .VPDoc .aside-container,
+  .VPDoc .aside-content {
+    display: none !important;
+  }
+
+  /* Remove any default VitePress padding */
+  .VPDoc.has-sidebar > .container > .content {
+    padding: 0 !important;
+  }
+
+  /* First element should have no top margin */
+  .vp-doc > *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* iPhone SE and smaller devices */
+@media (max-width: 375px) {
+  /* Ultra-compact mode for very small screens - with minimal top padding */
+  .VPDoc .content-container {
+    padding: 10px 8px 0 8px !important;
+  }
+
+  .VPDoc .vp-doc {
+    padding: 0 10px !important;
+  }
+
+  /* Remove all nested padding */
+  .VPDoc .content,
+  .VPDoc main,
+  .VPDoc .main {
+    padding: 0 !important;
+  }
+
+  /* Target the actual doc div that contains content */
+  div.VPDoc[data-v-27fcc3b2] {
+    padding: 0 !important;
+  }
+
+  /* Ensure the VPContent doesn't add extra padding */
+  .VPContent {
+    padding-bottom: 0 !important;
+  }
+
+  /* Optimize heading spacing */
+  .vp-doc h1 {
+    font-size: 1.75rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .vp-doc h2 {
+    font-size: 1.375rem !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .vp-doc h3 {
+    font-size: 1.125rem !important;
+    margin-top: 20px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Tighter paragraph spacing */
+  .vp-doc p {
+    margin: 12px 0 !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Optimize list spacing */
+  .vp-doc ul,
+  .vp-doc ol {
+    margin: 12px 0 !important;
+    padding-left: 20px !important;
+  }
+
+  .vp-doc li {
+    margin: 4px 0 !important;
+  }
+}
+
+/* Fix the double padding issue on mobile */
+@media (max-width: 768px) {
+  /* Remove nested container padding to avoid double spacing */
+  .VPDoc.has-sidebar .container > .content,
+  .VPDoc.has-aside .container > .content {
+    padding: 0 !important;
+  }
+
+  /* Ensure content-container has the actual padding */
+  .VPDoc .content-container {
+    padding: 20px 16px !important;
+  }
+
+  /* Remove duplicate padding from main */
+  .VPDoc main.main .vp-doc {
+    padding-top: 0 !important;
+  }
+}

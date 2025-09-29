@@ -5,6 +5,8 @@ description: Travel through your code's timeline. See every decision, understand
 
 # <DocIcon type="time-graph" inline /> The Time Graph HAT
 
+> **Pillar Connection:** This HAT is the direct implementation of our [Time Graph pillar](/pillars-time-graph), ensuring every action is reversible, every decision is auditable, and nothing is ever lost.
+
 ## Your Development Time Machine
 
 The Time Graph HAT transforms your codebase from a snapshot into a **living timeline**. Every decision, every change, every bug becomes a node in an explorable graph that lets you travel through time to understand, debug, and even rewrite history.

@@ -19,7 +19,7 @@ This philosophy transforms AI from a chaotic assistant into a deterministic part
 
 ### Pillar 1: From Textual Guesswork to Visual Intent
 
-**Instead of describing what you want to change, you show it.** Hatcher's Visual-to-Code Bridge eliminates ambiguity by anchoring AI actions directly to visual elements. Click the button you want to modify, drag to where it should go. The AI understands exactly what you mean because you've shown it, not described it. No more wrong component modifications, no more context confusion.
+**Instead of describing what you want to change, you show it.** Hatcher's [Visual-to-Code Bridge](/visual-to-code) eliminates ambiguity by anchoring AI actions directly to visual elements. Click the button you want to modify, drag to where it should go. The AI understands exactly what you mean because you've shown it, not described it. No more wrong component modifications, no more context confusion.
 
 ### Pillar 2: From Context Void to Constitutional AI
 
@@ -27,7 +27,7 @@ This philosophy transforms AI from a chaotic assistant into a deterministic part
 
 ### Pillar 3: From Opaque Black Boxes to Deterministic Control
 
-**Every change is auditable, testable, and reversible.** Hatcher provides complete transparency: preview every modification before it happens, validate with automated quality gates, and maintain a perfect audit trail through the Time Machine. You're never surprised by what the AI does because you see, test, and control everything. Trust through verification, not faith.
+**Every change is auditable, testable, and reversible.** Hatcher provides complete transparency: preview every modification before it happens, validate with automated quality gates, and maintain a perfect audit trail through the [Time Graph](/pillars-time-graph). You're never surprised by what the AI does because you see, test, and control everything. Trust through verification, not faith.
 
 ### Pillar 4: From 'One-Shot' Magic to Iterative Refinement
 
@@ -37,7 +37,7 @@ This philosophy transforms AI from a chaotic assistant into a deterministic part
 
 Controlled Amplification scales with you, turning individual knowledge into an organizational asset:
 
-- **Team Playbooks** ensure consistency and accelerate onboarding
+- **[Team Playbooks](/playbooks-system)** ensure consistency and accelerate onboarding through our [Constitutional Engineering](/constitutional-engineering) framework
 - **Organizational Intelligence** learns from successful patterns across all projects
 - **Institutional Knowledge** is preserved and automatically applied
 

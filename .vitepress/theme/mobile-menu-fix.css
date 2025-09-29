@@ -1,259 +1,375 @@
-/* Mobile menu - Minimal version for mobile */
+/* Mobile-First Configuration for Search and Navigation */
 
-/* Mobile-first approach: Default styles (no padding) */
-.wrapper[data-v-0fddd3e1] {
-  padding: 0;
-  width: 100%;
+/* MOBILE FIRST - Default styles for mobile devices */
+
+/* Hide keyboard shortcut on mobile - not useful on touch devices */
+.DocSearch-Button-Keys {
+  display: none !important;
 }
 
-/* Add padding for larger screens */
-@media (min-width: 960px) {
-  .wrapper[data-v-0fddd3e1] {
-    padding: 0 8px 0 24px;
-  }
+/* Make search button more touch-friendly on mobile */
+.VPNavBarSearch button.DocSearch.DocSearch-Button {
+  width: 44px !important;  /* Minimum touch target size */
+  height: 44px !important;
+  min-width: 44px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-/* Hide hamburger and keep only essentials on mobile */
-@media (max-width: 959px) {
-  .VPNavBarHamburger {
-    display: none !important;
+/* Hide search text on mobile - only show icon */
+.DocSearch-Button-Placeholder {
+  display: none !important;
+}
+
+/* Keep the original search icon visible */
+.DocSearch-Button-Container .DocSearch-Search-Icon {
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* TABLET AND DESKTOP - Styles for larger screens */
+@media (min-width: 768px) {
+  /* Show keyboard shortcut on tablet/desktop */
+  .DocSearch-Button-Keys {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+    border: 1px solid var(--vp-c-divider) !important;
+    border-radius: 4px !important;
+    padding: 0 6px !important;
+    height: 20px !important;
+    line-height: 20px !important;
+    transition: all 0.2s ease !important;
   }
 
-  /* Hide the nav screen completely */
-  .VPNavScreen {
-    display: none !important;
+  /* Show search placeholder text */
+  .DocSearch-Button-Placeholder {
+    display: inline !important;
   }
 
-  /* Keep the navbar visible */
-  .VPNavBar {
-    display: flex !important;
+
+  /* Normal button sizing for desktop */
+  .VPNavBarSearch button.DocSearch.DocSearch-Button {
+    width: auto !important;
+    height: auto !important;
+    min-width: auto !important;
+    padding: 0 12px !important;
+    margin-left: 0 !important;
   }
 
-  /* Ensure nav bar content is visible */
-  .VPNavBarMenu {
-    display: flex !important;
-  }
-
-  /* Show search button only - hide expanded search box */
-  .VPNavBarSearch {
-    display: flex !important;
-  }
-
-  /* Hide search input field and text on mobile */
-  .VPNavBarSearch .DocSearch-Button-Placeholder,
-  .VPNavBarSearch .DocSearch-Button-Keys,
-  .VPNavBarSearch input,
-  .VPNavBarSearch .search-box {
-    display: none !important;
-  }
-
-  /* Keep search button compact */
-  .VPNavBarSearch button {
-    width: 36px !important;
-    min-width: 36px !important;
-  }
-
-  /* Keep theme switcher visible but hide its popup */
-  .VPNavBarAppearance {
-    display: flex !important;
-  }
-
-  /* Hide the appearance popup menu on mobile */
-  .VPFlyout,
-  .VPMenu,
-  .VPNavBarMenuGroup {
-    display: none !important;
-  }
-
-  /* Show only essential social links */
-  .VPNavBarSocialLinks {
-    display: flex !important;
-  }
-
-  /* These are already hidden globally, no need to repeat here */
-
-  /* Hide and remove space for any element after social links */
-  .VPSocialLinks ~ * {
-    display: none !important;
-    width: 0 !important;
-    min-width: 0 !important;
-    margin: 0 !important;
+  /* Style for keyboard keys on desktop */
+  .DocSearch-Button-Key {
+    border: none !important;
     padding: 0 !important;
-    overflow: hidden !important;
-    position: absolute !important;
-    visibility: hidden !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 20px !important;
+    line-height: 20px !important;
   }
 
-  /* Also hide VPNavBarMenu specifically and remove its space */
-  .VPNavBarExtra .VPNavBarMenu {
+  /* Golden border on hover for desktop */
+  button.DocSearch.DocSearch-Button:hover .DocSearch-Button-Keys {
+    border-color: #c9962f !important;
+  }
+}
+
+/* Clean search button - remove default hover effects */
+button.DocSearch.DocSearch-Button::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Remove any hover border from the button container */
+button.DocSearch.DocSearch-Button {
+  border: 1px solid transparent !important;
+}
+
+button.DocSearch.DocSearch-Button:hover {
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+}
+
+/* Keep default VitePress mobile behavior mostly intact */
+
+@media (max-width: 959px) {
+  /* Keep hamburger menu visible on tablets */
+  .VPNavBarHamburger {
+    display: flex !important;
+  }
+
+  /* Hide duplicate theme switcher (keep only the one in hamburger menu) */
+  .VPNavBarAppearance {
     display: none !important;
-    width: 0 !important;
-    min-width: 0 !important;
   }
 
-  /* Show nav bar extra section - force center alignment */
-  .VPNavBarExtra {
+  /* Ensure social icons stay visible in navbar */
+  .VPNavBarExtra .VPSocialLinks {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    height: 56px !important;
+    gap: 2px !important;  /* Tight spacing between social icons */
   }
 
-  /* Force all direct children to align center */
-  .VPNavBarExtra > * {
-    align-self: center !important;
-  }
-
-  /* Compact spacing for mobile */
-  .VPNavBar {
-    padding: 0 12px !important;
-    height: 56px !important;
-  }
-
-  /* Adjust nav bar layout for mobile - keep logo left, icons right */
-  .VPNavBar > .container {
+  /* Main container layout - push everything to the right */
+  .VPNavBar .container {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    width: 100% !important;
-    padding: 0 !important;
   }
 
-  /* Force title/logo to stay left */
+  /* Logo stays on the left */
   .VPNavBarTitle {
-    margin-right: auto !important;
     flex: 0 0 auto !important;
   }
 
-  /* Push all nav content to the right */
-  .VPNavBar .content {
-    margin-left: auto !important;
-    flex: 0 0 auto !important;
-  }
-
-  /* Group right side items with uniform spacing */
+  /* All content (search, social, hamburger) aligned to the right */
   .VPNavBar .content {
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    height: 56px !important;
+    gap: 4px !important;  /* Compact gap between icons */
+    justify-content: flex-end !important;
+    margin-left: auto !important;
   }
 
-  /* Hide menu links on mobile */
-  .VPNavBarMenuLink {
+  /* Ensure content-body takes full available space on tablets */
+  .VPNavBar .content-body {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  /* Keep search visible */
+  .VPNavBarSearch {
+    display: flex !important;
+    margin-left: 0 !important;
+  }
+
+  /* Override the mobile margin we set earlier */
+  @media (max-width: 767px) {
+    .VPNavBarSearch button.DocSearch.DocSearch-Button {
+      margin-left: 0 !important;
+    }
+  }
+
+  /* Show VPNavBarExtra but control what's inside */
+  .VPNavBarExtra {
+    display: flex !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Hide navigation menu links on mobile, show on tablet */
+  .VPNavBarMenu {
     display: none !important;
   }
 
-  /* Uniform icon button sizing for all nav items */
-  .VPNavBarSearch button,
+  @media (min-width: 960px) {
+    /* Show nav menu only on larger tablets and desktop */
+    .VPNavBarMenu {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+      margin-left: 1.5rem !important; /* Add space after logo */
+    }
+
+    /* Ensure container has proper layout */
+    .VPNavBar .container {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 0.75rem !important;
+    }
+
+    /* Keep title/logo in place */
+    .VPNavBarTitle {
+      flex: 0 0 auto !important;
+      margin-right: 0.75rem !important;
+    }
+  }
+
+  /* Hide the three dots menu on tablets and mobile (below 960px) */
+  @media (max-width: 959px) {
+    .VPNavBarExtra .VPFlyout {
+      display: none !important;
+    }
+
+    .VPNavBarExtra .VPNavBarMenuGroup {
+      display: none !important;
+    }
+
+    .VPNavBarExtra button:has(.vpi-more-horizontal) {
+      display: none !important;
+    }
+
+    /* Also hide navigation menu on tablets */
+    .VPNavBarMenu {
+      display: none !important;
+    }
+  }
+
+  /* Hamburger menu positioning and visibility */
+  .VPNavBarHamburger {
+    margin-left: 8px !important;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .VPNavBarHamburger button {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Fix close button spacing when menu is open */
+  .VPNavScreen .VPNavBarHamburger {
+    position: fixed !important;
+    right: 16px !important;
+    top: 16px !important;
+    margin: 0 !important;
+    z-index: 100 !important; /* Ensure it stays above content */
+  }
+
+  /* Hide middle line completely when menu is open (X state) */
+  .VPNavBarHamburger[aria-expanded="true"] .top,
+  .VPNavBarHamburger[aria-expanded="true"] .bottom {
+    opacity: 1 !important;
+  }
+
+  .VPNavBarHamburger[aria-expanded="true"] .middle {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* Make X icon slightly larger to match search icon */
+  .VPNavBarHamburger[aria-expanded="true"] button {
+    transform: scale(1.08) !important;
+  }
+
+  /* Add smooth transition for the scaling */
+  .VPNavBarHamburger button {
+    transition: transform 0.25s ease !important;
+  }
+
+  /* Standard icon sizing */
   .VPSocialLink {
     width: 36px !important;
     height: 36px !important;
     min-width: 36px !important;
-    min-height: 36px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0 !important;
-    margin: 0 !important;
   }
 
-  /* Special handling for theme switch - force vertical centering */
-  .VPSwitchAppearance {
+  .VPNavBarSearch button {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    height: 36px !important;
-    margin: 0 !important;
-    padding: 0 4px !important;
+  }
+
+  .VPNavBarHamburger button {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Prevent body scroll when mobile menu is open - using a different approach */
+/* When VPNavScreen is visible, lock the body scroll */
+html:has(.VPNavScreen) {
+  overflow: hidden !important;
+}
+
+body:has(.VPNavScreen) {
+  overflow: hidden !important;
+  position: relative !important; /* Changed from fixed to relative */
+}
+
+/* Keep the nav screen in its normal position but ensure it's scrollable and visible */
+.VPNavScreen {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+  overscroll-behavior: contain !important; /* Prevent scroll chaining */
+}
+
+/* Ensure VPNavScreen is visible when open on all screen sizes */
+@media (max-width: 959px) {
+  .VPNavScreen {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Force the nav screen to show when hamburger is clicked */
+  body:has(.VPNavBarHamburger[aria-expanded="true"]) .VPNavScreen {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Mobile menu social icons - sophisticated spacing and styling */
+@media (max-width: 959px) {
+  .VPNavScreen .VPSocialLinks {
+    margin-top: 36px !important;
+    margin-bottom: 32px !important;
+    justify-content: center !important;
+    gap: 40px !important;  /* Generous, luxurious spacing */
     position: relative !important;
-    top: 0 !important;
-    transform: translateY(0) !important;
   }
 
-  /* Fix switch vertical position */
-  .VPSwitchAppearance .VPSwitch {
-    position: relative !important;
-    top: 0 !important;
-    margin: 0 !important;
-    transform: translateY(0) !important;
+  .VPNavScreen .VPSocialLink {
+    width: 52px !important;
+    height: 52px !important;
+    opacity: 0.65 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 14px !important;
+    background: transparent !important;
   }
 
-  /* Ensure switch track is centered */
-  .VPSwitchAppearance .VPSwitchTrack {
-    margin: auto !important;
+  .VPNavScreen .VPSocialLink:hover {
+    opacity: 1 !important;
+    transform: translateY(-3px) scale(1.05) !important;
+    background: rgba(201, 150, 47, 0.06) !important;
   }
 
-  /* Consistent icon sizes inside buttons */
-  .VPNavBarSearch svg,
-  .VPSwitchAppearance svg,
-  .VPSocialLink svg {
-    width: 20px !important;
-    height: 20px !important;
+  .VPNavScreen .VPSocialLink svg {
+    width: 28px !important;
+    height: 28px !important;
+    color: var(--vp-c-text-2) !important;
+    transition: color 0.4s ease !important;
   }
 
-  /* Ensure proper flex layout for nav items */
-  .VPNavBar .container {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    height: 100% !important;
+  .VPNavScreen .VPSocialLink:hover svg {
+    color: #c9962f !important;  /* Refined gold on hover */
   }
 
-  /* Logo section - removed duplicate, now handled above */
-
-  /* Right side content group - uniform spacing */
-  .VPNavBar .content {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    margin-left: auto !important;
-  }
-
-  /* Social links container with consistent spacing */
-  .VPSocialLinks {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-  }
-
-  /* Prevent any dropdown or flyout on mobile */
-  .VPNavBarAppearance .VPFlyout,
-  .VPNavBarAppearance .VPMenu,
-  .VPNavBarAppearance .VPMenuGroup,
-  .VPNavBarAppearance .text {
-    display: none !important;
-  }
-
-  /* Direct theme toggle without menu */
-  .VPNavBarAppearance .VPSwitch {
-    display: flex !important;
-    align-items: center !important;
-    height: 22px !important;
-  }
-
-  /* Center the switch appearance vertically - now handled by uniform sizing above */
-
-  /* Ensure the switch container is centered */
-  .VPNavBarAppearance {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 36px !important;
-    margin: 0 !important;
-    align-self: center !important;
-  }
-
-  /* Clean up any extra spacing */
-  .VPNavBar .divider {
-    display: none !important;
-  }
-
-  /* Ensure clean mobile layout */
-  .VPNavBar .container > .content {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  /* Elegant divider above social icons */
+  .VPNavScreen .VPSocialLinks::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -18px !important;
+    left: 15% !important;
+    right: 15% !important;
+    height: 1px !important;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 150, 47, 0.08) 15%,
+      rgba(201, 150, 47, 0.12) 50%,
+      rgba(201, 150, 47, 0.08) 85%,
+      transparent
+    ) !important;
   }
 }

@@ -64,7 +64,7 @@ const { isDark } = useData()
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1rem;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -78,7 +78,14 @@ const { isDark } = useData()
   flex-direction: column;
   align-items: center;
   gap: 0;
-  padding: 0 20px;
+  padding: 0 20px 60px;
+}
+
+/* Remove bottom padding for mobile portrait only */
+@media (orientation: portrait) and (max-width: 640px) {
+  .hero-container {
+    padding: 0 20px 0px;
+  }
 }
 
 /* Logo Styling - Mobile first (smaller) */

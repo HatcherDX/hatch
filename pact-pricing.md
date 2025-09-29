@@ -54,7 +54,7 @@ While individual Artisans forge in solitude, teams and enterprises need more:
 </div>
 
 <div style="padding: 1.5rem; border-left: 4px solid #764ba2;">
-  <h4 style="margin-top: 0; color: #764ba2;">Hatcher EGGs (Enterprise Grid Governance)</h4>
+  <h4 style="margin-top: 0; color: #764ba2;">Hatcher EGGs (Enforced Governance Guardrails)</h4>
   <p><strong>For Organizations That Need Control</strong></p>
   <ul>
     <li>On-premise deployment options</li>

@@ -1,0 +1,215 @@
+/* Optimize VPLocalNav (Menu/On this page bar) for mobile */
+
+/* Override VitePress default padding for outline dropdown - needs to be early */
+.VPLocalNavOutlineDropdown {
+  padding: 6px 0 !important;
+}
+
+@media (min-width: 960px) {
+  .VPLocalNavOutlineDropdown {
+    padding: 6px 0 !important;
+  }
+}
+
+/* MOBILE FIRST - Default styles for mobile */
+.VPLocalNav {
+  padding: 8px 16px !important;
+  min-height: auto !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+  box-sizing: border-box !important;
+}
+
+/* Container should take full width without extra padding */
+.VPLocalNav .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Make the local-nav wrapper take full width */
+.VPLocalNav .local-nav {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+}
+
+/* Center button content vertically - good practice for all screen sizes */
+.VPLocalNav button {
+  display: flex !important;
+  visibility: visible !important;
+  align-items: center !important;
+}
+
+/* Align menu button content to the left */
+.VPLocalNav .menu button {
+  justify-content: flex-start !important;
+}
+
+/* Align "On this page" button content to the right */
+.VPLocalNav .VPLocalNavOutlineDropdown button {
+  justify-content: flex-end !important;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 640px) {
+  /* Ensure full width on mobile */
+  .VPLocalNav,
+  .VPLocalNav .container {
+    width: 100% !important;
+  }
+
+  /* Fix any wrapper padding inconsistencies */
+  .wrapper {
+    padding: 0 16px !important;
+  }
+
+  /* Make buttons more compact and full width */
+  .VPLocalNav button {
+    padding: 6px 10px !important;
+    font-size: 0.875rem !important;
+    min-height: 32px !important;
+    width: 100% !important;
+  }
+
+  /* Make menu button take half width */
+  .VPLocalNav .menu {
+    flex: 1 !important;
+    width: 100% !important;
+  }
+
+  /* Make On this page button take half width */
+  .VPLocalNav .VPLocalNavOutlineDropdown {
+    flex: 1 !important;
+    width: 100% !important;
+  }
+
+  /* Ensure menu button fills its container */
+  .VPLocalNav .menu button,
+  .VPLocalNav .VPLocalNavOutlineDropdown button {
+    width: 100% !important;
+  }
+
+  /* Reduce menu text size */
+  .VPLocalNav .menu-text {
+    font-size: 0.875rem !important;
+  }
+
+  /* Hide the hamburger menu in navbar when local nav is visible on doc pages */
+  .VPDoc:not(.VPHome .VPDoc) ~ * .VPNavBarHamburger,
+  .has-sidebar .VPNavBarHamburger {
+    display: none !important;
+  }
+
+  /* Make the buttons take less vertical space */
+  .VPLocalNavOutlineDropdown button {
+    padding: 4px 8px !important;
+    height: 28px !important;
+  }
+}
+
+/* iPhone SE and very small screens */
+@media (max-width: 375px) {
+  /* Match content padding for small screens */
+  .VPLocalNav {
+    padding: 0 24px !important;
+  }
+
+  /* Remove container padding since VPLocalNav has it */
+  .VPLocalNav .container {
+    padding: 0 !important;
+  }
+
+  .VPLocalNav button {
+    padding: 4px 8px !important;
+    font-size: 0.8125rem !important;
+    min-height: 28px !important;
+  }
+
+  /* Reduce icon sizes if present */
+  .VPLocalNav .vpi-chevron-down,
+  .VPLocalNav .vpi-align-left {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}
+
+/* Ensure proper button alignment up to tablet sizes */
+@media (max-width: 959px) {
+  .VPLocalNav button {
+    display: flex !important;
+    visibility: visible !important;
+    align-items: center !important;
+  }
+}
+
+/* Alternative approach: Completely integrate menus into a single compact bar */
+@media (max-width: 640px) {
+  /* Combine both buttons into a more compact layout */
+  .VPLocalNav .local-nav {
+    display: flex !important;
+    gap: 8px !important;
+    justify-content: space-between !important;
+  }
+
+  /* Make buttons equal width and compact */
+  .VPLocalNav .menu,
+  .VPLocalNav .VPLocalNavOutlineDropdown {
+    flex: 1 !important;
+  }
+
+  .VPLocalNav .menu button,
+  .VPLocalNav .VPLocalNavOutlineDropdown button {
+    width: 100% !important;
+    padding: 5px 8px !important;
+    height: 30px !important;
+    font-size: 0.8125rem !important;
+  }
+}
+
+/* Hide hamburger in navbar when on documentation pages with local nav */
+@media (max-width: 768px) {
+  .VPDoc.has-sidebar ~ * .VPNavBarHamburger,
+  .VPContent.has-sidebar .VPNavBarHamburger,
+  body:has(.VPLocalNav .menu) .VPNavBarHamburger {
+    display: none !important;
+  }
+}
+
+/* Ensure the content starts right after the local nav without gap */
+@media (max-width: 640px) {
+  .VPLocalNav + .VPContent {
+    padding-top: 0 !important;
+  }
+
+  .VPLocalNav + * .VPDoc {
+    padding-top: 0 !important;
+  }
+}
+
+/* Hide "On this page" button when sidebar/menu is open */
+@media (max-width: 768px) {
+  /* When sidebar is visible (has the open attribute), hide the outline dropdown */
+  [open] ~ * .VPLocalNavOutlineDropdown,
+  .VPSidebar[open] ~ * .VPLocalNavOutlineDropdown,
+  body:has(.VPSidebar[open]) .VPLocalNavOutlineDropdown,
+  .VPLocalNav:has(.menu.is-active) .VPLocalNavOutlineDropdown {
+    display: none !important;
+  }
+
+  /* Alternative: When menu button has certain states */
+  .VPLocalNav .menu[aria-expanded="true"] ~ .VPLocalNavOutlineDropdown {
+    display: none !important;
+  }
+
+  /* Make menu button full width when sidebar is open */
+  .VPLocalNav:has(.menu[aria-expanded="true"]) .menu {
+    flex: 1 1 100% !important;
+  }
+
+  /* When local nav has active menu, hide the outline */
+  .local-nav-menu-open .VPLocalNavOutlineDropdown {
+    display: none !important;
+  }
+}

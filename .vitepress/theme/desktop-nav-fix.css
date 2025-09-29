@@ -1,0 +1,209 @@
+/* Fix desktop navigation alignment issues */
+
+/* Ensure proper alignment for desktop "On this page" */
+@media (min-width: 960px) {
+  /* Fix the aside container positioning */
+  .VPDoc .aside {
+    position: sticky !important;
+    top: calc(var(--vp-nav-height) + 32px) !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 256px !important;
+    margin-left: auto !important;
+    height: fit-content !important;
+    max-height: calc(100vh - var(--vp-nav-height) - 64px) !important;
+    overflow-y: auto !important;
+  }
+
+  /* Ensure the "On this page" content is right-aligned */
+  .VPDocAside {
+    padding: 0 !important;
+  }
+
+  /* Fix container alignment for documentation pages */
+  .VPDoc.has-aside .container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+  }
+
+  /* Content should take appropriate width and contain footer */
+  .VPDoc.has-aside .content {
+    flex: 1 !important;
+    max-width: 768px !important;
+    margin-right: auto !important;
+    min-width: 0 !important;
+  }
+
+  /* Ensure aside stays on the right and shows full content */
+  .VPDoc.has-aside .aside {
+    flex-shrink: 0 !important;
+    margin-left: 64px !important;
+    position: sticky !important;
+    top: calc(var(--vp-nav-height) + 32px) !important;
+    align-self: flex-start !important;
+    height: fit-content !important;
+  }
+
+  /* Fix the "On this page" dropdown button positioning */
+  .VPLocalNavOutlineDropdown {
+    position: relative !important;
+    margin-left: auto !important;
+  }
+
+  /* Ensure the dropdown content is right-aligned */
+  .VPLocalNavOutlineDropdown .items {
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+/* For tablets and medium screens */
+@media (min-width: 768px) and (max-width: 959px) {
+  /* Hide the aside on tablets */
+  .VPDoc .aside {
+    display: none !important;
+  }
+
+  /* Make the local nav "On this page" align right */
+  .VPLocalNav .local-nav {
+    justify-content: space-between !important;
+  }
+
+  .VPLocalNavOutlineDropdown {
+    margin-left: auto !important;
+  }
+}
+
+/* Fix the local nav container width */
+@media (min-width: 640px) {
+  .VPLocalNav > .container {
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  /* Ensure buttons stay properly positioned */
+  .VPLocalNav .local-nav {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  /* Menu button stays left */
+  .VPLocalNav .menu {
+    margin-right: auto !important;
+  }
+
+  /* "On this page" button stays right */
+  .VPLocalNavOutlineDropdown {
+    margin-left: auto !important;
+  }
+}
+
+/* Fix VPLocalNav on desktop */
+@media (min-width: 960px) {
+  /* Remove padding from VPLocalNav on desktop */
+  .VPLocalNav {
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Make the container full width without padding */
+  .VPLocalNav .container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Hide the local nav bar on desktop when aside is visible */
+  .VPDoc.has-aside .VPLocalNav {
+    display: none !important;
+  }
+}
+
+/* For medium screens, reduce padding but keep visible */
+@media (min-width: 768px) and (max-width: 959px) {
+  .VPLocalNav {
+    padding: 8px 24px !important;
+  }
+}
+
+/* Fix content container max-width and centering */
+.VPDoc > .container {
+  margin: 0 auto !important;
+}
+
+/* Ensure proper spacing between sidebar and aside */
+@media (min-width: 960px) {
+  .VPDoc.has-sidebar.has-aside .content-container {
+    display: flex !important;
+    gap: 48px !important;
+    flex-direction: column !important;
+  }
+
+  .VPDoc.has-sidebar.has-aside .content {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+}
+
+/* Ensure doc footer (Previous/Next navigation) stays intact */
+.VPDocFooter {
+  margin-top: 64px !important;
+  padding: 32px 0 !important;
+  width: 100% !important;
+  clear: both !important;
+}
+
+.VPDocFooter .prev-next {
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 24px !important;
+}
+
+.VPDocFooter .pager {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  flex: 1 !important;
+}
+
+/* Ensure edit link stays visible */
+.VPDocFooter .edit-info {
+  margin-bottom: 16px !important;
+}
+
+/* Fix content container to not overlap footer */
+@media (min-width: 960px) {
+  .VPDoc .content-container {
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  .VPDoc .content {
+    padding-bottom: 0 !important;
+  }
+
+  /* Allow aside to show all content with proper scrolling */
+  .VPDoc .aside {
+    max-height: calc(100vh - var(--vp-nav-height) - 64px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure VPDocAside has proper height */
+  .VPDocAside {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Make outline nav scrollable if content is too long */
+  .VPDocAsideOutline {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    padding-bottom: 32px !important;
+  }
+}

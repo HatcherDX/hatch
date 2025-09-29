@@ -5,6 +5,8 @@ description: Traditional coding reimagined. Write, refactor, test, and deploy wi
 
 # <DocIcon type="code" inline /> The Code HAT
 
+> **Pillar Connection:** The Code HAT exemplifies our [AI Under Command pillar](/pillars-ai-under-command), transforming you from a single developer into a commander of AI forces, while [Constitutional Engineering](/constitutional-engineering) ensures all generated code follows your standards.
+
 ## Your Development Command Center
 
 The Code HAT is where traditional development meets autonomous assistance. It's not a copilot suggesting snippets — it's your command center for orchestrating AI-powered development while maintaining absolute control.

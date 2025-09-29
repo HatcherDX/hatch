@@ -30,6 +30,8 @@ This document outlines our strategic priorities for bringing the **Hatcher IDE**
 
 - `[To Do]` **The Immutable Diff Panel:** The **Time Graph** must provide a clear, deterministic review process for all AI-generated code. This is the non-negotiable heart of our promise of governance.
 
+- `[To Do]` **First-Pass Playbook Validation:** Implement initial Constitutional Validation through playbooks to ensure AI actions align with project rules and human values.
+
 - `[To Do]` **A Focused Experience:** Aggressively hide or disable all other incomplete modes and features. The goal is to present a stable and awe-inspiring experience centered exclusively on the core generative loop.
 
 ## <DocIcon type="rocket" inline /> Phase 2: Igniting the Flywheel (Next)

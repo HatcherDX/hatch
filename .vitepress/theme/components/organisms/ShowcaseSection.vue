@@ -280,8 +280,11 @@ function initScrollAnimation(): void {
     const scrollAfterBuffer = Math.max(0, currentScrollY - scrollTriggerPoint)
 
     // Define the scroll range over which the animation happens
-    // Animation completes over 0.5 viewport height for smoother, more controlled growth
-    const animationScrollRange = viewportHeight * 0.5
+    // Check orientation: portrait = fast, landscape/tablet = slower (double the scroll distance)
+    const isCurrentlyPortrait = window.matchMedia('(orientation: portrait)').matches
+    const baseScrollRange = viewportHeight * 0.5
+    // Double the scroll range for landscape/tablet to slow down the animation
+    const animationScrollRange = isCurrentlyPortrait ? baseScrollRange : baseScrollRange * 2
 
     // Calculate progress (0 to 1) based on scroll position
     // Direct mapping after small buffer
@@ -453,7 +456,7 @@ onUnmounted(() => {
 @media (orientation: portrait) {
   .product-showcase-section {
     min-height: calc(100vh - 450px);
-    padding-bottom: 19rem !important; /* Force mobile portrait values */
+    padding-bottom: 19rem !important; /* Original mobile portrait values */
   }
 
   /* Tablets in portrait */

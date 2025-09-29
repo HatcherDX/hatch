@@ -89,12 +89,26 @@
 <style scoped>
 /* Features Section Styling */
 .features-section {
-  padding: 60px 0 !important;
+  padding: 100px 0 60px !important;  /* Default padding */
   background: transparent !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 0;
+}
+
+/* Adjust padding for mobile portrait only */
+@media (orientation: portrait) and (max-width: 640px) {
+  .features-section {
+    padding: 140px 0 60px !important;  /* More space on mobile portrait to avoid icon overlap */
+  }
+}
+
+/* Adjust padding for mobile landscape only */
+@media (orientation: landscape) and (max-width: 896px) and (max-height: 500px) {
+  .features-section {
+    padding: 160px 0 60px !important;  /* More space on mobile landscape */
+  }
 }
 
 .features-container {

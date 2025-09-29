@@ -46,7 +46,7 @@ In a `Generative` project, the bridge acts as a high-precision targeting system 
 
 **In an EGG: Deterministic Manipulation**
 
-In an `EGG`, the bridge becomes a direct manipulation tool where AI code generation is not used for visual changes. The workflow is 100% deterministic:
+In an EGG (Enforced Governance Guardrails), the bridge becomes a direct manipulation tool where AI code generation is not used for visual changes. The workflow is 100% deterministic:
 
 1. **You manipulate directly:** Drag, resize, or edit properties in a visual panel.
 

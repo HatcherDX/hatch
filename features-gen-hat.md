@@ -5,6 +5,8 @@ description: Transform ideas into reality. Generate content, designs, and experi
 
 # <DocIcon type="gen" inline /> The Gen HAT
 
+> **Pillar Connection:** The Gen HAT implements our [AI Under Command pillar](/pillars-ai-under-command) and [Constitutional Engineering](/constitutional-engineering), ensuring AI remains a controlled creative force that follows your rules, not random patterns.
+
 ## Your Creative Command Center
 
 The Gen HAT is where imagination meets execution. Unlike chaotic AI generators that produce random results, the Gen HAT gives you **deterministic control** over creative AI — ensuring every generation aligns with your vision.

@@ -190,6 +190,8 @@ import SectionTitle from '../atoms/SectionTitle.vue'
   margin: 0 auto !important;
   position: relative !important;
   z-index: 2 !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
 }
 
 /* Responsive metrics */
@@ -216,26 +218,62 @@ import SectionTitle from '../atoms/SectionTitle.vue'
   }
 
   .metric-label {
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
   }
 
   .metric-description {
-    font-size: 0.85rem !important;
-    max-width: 200px !important;
+    font-size: 0.9rem !important;
+    max-width: 280px !important;
   }
 }
 
 @media (max-width: 640px) {
+  .metrics-container {
+    padding: 0 1rem !important;
+  }
+
   .metrics-grid {
-    gap: 20px !important;
+    gap: 16px !important;
+    padding-top: 20px !important;
   }
 
   .metric-item {
-    padding: 32px 24px !important;
+    padding: 28px 20px !important;
+    border-radius: 16px !important;
+  }
+
+  .metric-number {
+    font-size: 3rem !important;
+    min-height: 3.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .metric-infinity {
+    font-size: 3.5rem !important;
+  }
+
+  .metric-label {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.5rem !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .metric-description {
+    font-size: 0.875rem !important;
+    max-width: 100% !important;
+    line-height: 1.4 !important;
+    padding: 0 8px !important;
   }
 
   .metrics-section {
-    padding: 60px 1rem !important;
+    padding: 60px 0 !important;
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+  }
+
+  /* Reduce hover effect on mobile */
+  .metric-item:hover {
+    transform: translateY(-4px) scale(1.01) !important;
   }
 }
 </style>

@@ -28,75 +28,30 @@ Hatcher is open source and we welcome contributions. Whether you're fixing bugs,
 
 ## Resources
 
-### Documentation
+Start your journey with these foundational resources:
 
-Comprehensive guides and API documentation to help you master Hatcher.
+- [Getting Started](/getting-started) - Begin with Hatcher
+- [The Four Pillars](/pillars) - Explore our core principles
+- [Philosophy](/philosophy) - Understand Controlled Amplification
+- [Constitutional Engineering](/constitutional-engineering) - Rules for responsible AI
+- [Roadmap](/roadmap) - See where we're heading
+- [Contributing Guide](/contributing) - Help build Hatcher
 
-- [Getting Started](/getting-started)
-- [The Four Pillars](/pillars)
-- [API Reference](#)
+*Want to contribute or request resources? Join the discussion on [Discord](https://discord.gg/cZ7PZvnMk4) or submit a PR on [GitHub](https://github.com/HatcherDX/dx-engine).*
 
-### Examples
+## Be Part of the Future
 
-Real-world examples and templates to jumpstart your projects.
+Hatcher is just beginning. As an early member of our community, you have the unique opportunity to shape not just a tool, but an entirely new paradigm for AI-assisted development.
 
-- [Example Projects](#)
-- [Playbook Templates](#)
-- [EGGs Showcase](#)
+*Be among the first. Join our [Discord](https://discord.gg/cZ7PZvnMk4) to share your story and help define the future of Controlled Amplification.*
 
-### Tutorials
+## Get Help
 
-Step-by-step tutorials for common use cases and advanced techniques.
+The best place to get help is where the community gathers:
 
-- [Creating Your First Playbook](#)
-- [Migrating Legacy Code to EGGs](#)
-- [Setting Up Multi-Model AI Fleets](#)
-
-## Showcase
-
-### Built with Hatcher
-
-Amazing projects built using Hatcher's Controlled Amplification philosophy.
-
-- **FinanceCore**: Major bank modernized 2M lines of COBOL using The Universal Fabricator
-- **MedicalAI**: Healthcare startup using Constitutional Engineering for FDA compliance
-- **GameStudio**: AAA game studio using AI Under Command for procedural content
-
-### Success Stories
-
-Read how organizations transformed their development with Hatcher.
-
-[View All Stories →](#)
-
-## Events
-
-### Upcoming
-
-- **Hatcher Summit 2024** - Annual conference for the Hatcher community
-- **Playbook Workshop** - Learn to write effective Constitutional Engineering rules
-- **EGGs Hackathon** - 48-hour challenge to modernize legacy code
-
-### Past Events
-
-Access recordings and materials from previous community events.
-
-[Event Archive →](#)
-
-## Support
-
-### Community Support
-
-Get help from the community:
-
-- [Discord Support Channel](#)
-- [Stack Overflow Tag](#)
-- [GitHub Issues](#)
-
-### Commercial Support
-
-For enterprise deployments and dedicated support:
-
-[Contact Sales →](#)
+- **[Discord](https://discord.gg/cZ7PZvnMk4)** - Real-time chat with the community
+- **[GitHub Issues](https://github.com/HatcherDX/dx-engine/issues)** - Bug reports and feature requests
+- **[@HatcherDX](https://twitter.com/HatcherDX)** - Updates and announcements
 
 ## Stay Updated
 

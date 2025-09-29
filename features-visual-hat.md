@@ -5,6 +5,8 @@ description: Transform any visual input into functional code. From mockups to sc
 
 # <DocIcon type="visual" inline /> The Visual HAT
 
+> **Pillar Connection:** The Visual HAT embodies our philosophy of ["From Textual Guesswork to Visual Intent"](/philosophy#pillar-1-from-textual-guesswork-to-visual-intent), implementing the [Visual-to-Code Bridge](/visual-to-code) to eliminate ambiguity in AI communication.
+
 ## Screenshot to System
 
 The Visual HAT is the bridge between vision and implementation. Point it at anything visual — a screenshot, a mockup, a competitor's site, even a napkin sketch — and watch it transform into functional, production-ready code.

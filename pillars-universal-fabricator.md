@@ -2,7 +2,9 @@
 
 "Making binaries for linux desktop applications is a major pain in the ass. You want to just compile one binary and have it work, preferably forever, and preferably across all the linux distributions." - Linus Torvalds, 2014
 
-## The Lie We Refuse to Accept
+## Two Lies We Refuse to Accept
+
+### The Legacy Lie: "Rewrite Everything"
 
 Linus's famous rant about the nightmare of software distribution is a symptom of a larger, more costly lie the software industry tells itself: that legacy code is technical debt, and the only way to modernize is to throw away decades of battle-tested business logic and start from scratch.
 
@@ -10,9 +12,11 @@ This is insanity. That Delphi, COBOL, or C++ code works. It encodes years of bus
 
 The Universal Fabricator is founded on a simple, powerful refusal: **we refuse to accept this is the only way**. What if you could run your legacy logic anywhere, without a rewrite? Not through translation. Through **universal, deterministic execution**.
 
-But this isn't just about the past. In the modern era, we face a new dilemma: the choice between prototyping speed (TypeScript, Python) and production performance (Rust, Go). Teams are forced into a painful choice: stay with the slow prototype, or embark on a risky, full rewrite.
+### The Modern Dilemma: "Speed or Performance"
 
-The Universal Fabricator rejects this choice, too. It provides a bridge—not just from the past to the present, but from the present to a higher-performance future.
+But this isn't just about the past. In the modern era, we face a new false choice: the dilemma between prototyping speed (TypeScript, Python) and production performance (Rust, Go). Teams are forced into a painful decision: stay with the slow prototype, or embark on a risky, full rewrite for production.
+
+The Universal Fabricator rejects this choice, too. It provides a bridge—not just from the past to the present, but from the present to a higher-performance future, without sacrificing your development velocity.
 
 > **Your business logic doesn't need a rewrite. It needs a renaissance.**
 

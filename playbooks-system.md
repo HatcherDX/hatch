@@ -5,6 +5,8 @@ description: Master Hatcher's Playbooks system - the next-generation solution fo
 
 # Playbooks System
 
+> **Note:** This page describes the technical implementation of our [Constitutional Engineering philosophy](/constitutional-engineering). If you haven't read about the philosophical foundation yet, we recommend starting there to understand the "why" behind playbooks.
+
 The Playbooks system is Hatcher's second-generation solution to the context problem in AI development. Where static files like `Claude.md` provide a starting point, Playbooks offer a dynamic, centralized, and governable system that acts as a true Corporate Constitution for your AI agents.
 
 ## What Are Playbooks?

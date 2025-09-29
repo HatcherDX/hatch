@@ -430,20 +430,43 @@ import SectionTitle from '../atoms/SectionTitle.vue'
 
 @media (max-width: 640px) {
   .cta-section {
-    padding: 80px 1rem 60px !important;
+    padding: 80px 1.5rem 60px !important;
+  }
+
+  /* Adjust headline for mobile */
+  .cta-headline {
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+    margin: -0.5rem auto 1rem !important;
+    padding: 0 0.5rem !important;
+  }
+
+  /* Adjust subheadline for mobile */
+  .cta-subheadline {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin: 0 auto 1.5rem !important;
+    padding: 0 0.5rem 1rem !important;
   }
 
   .cta-button {
     padding: 20px 16px !important;
+    min-height: 180px !important;
   }
 
   .cta-icon {
-    width: 40px !important;
-    height: 40px !important;
+    width: 36px !important;
+    height: 36px !important;
   }
 
   .cta-button-label {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .cta-button-description {
+    font-size: 0.8rem !important;
+    max-width: 100% !important;
+    padding: 0 0.5rem !important;
   }
 }
 </style>

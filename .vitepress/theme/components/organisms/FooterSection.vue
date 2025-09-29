@@ -160,32 +160,41 @@ const currentYear = computed(() => new Date().getFullYear())
   color: var(--vp-c-text-2) !important;
   text-decoration: none !important;
   font-size: 0.9rem !important;
-  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+  transition: color 0.25s !important;
   display: inline-block !important;
   position: relative !important;
-  opacity: 0.8 !important;
 }
 
 .footer-column a:hover {
-  color: #dfa927 !important;
-  opacity: 1 !important;
-  transform: translateX(2px) !important;
+  color: var(--vp-c-brand-1) !important;
+  text-decoration: none !important;
 }
 
-/* Add subtle underline on hover */
-.footer-column a::after {
+.dark .footer-column a:hover {
+  color: var(--vp-c-brand-2) !important;
+}
+
+/* Elegant underline animation - using ::before to avoid conflict with VitePress external link icon */
+.footer-column a::before {
   content: '' !important;
   position: absolute !important;
   bottom: -2px !important;
   left: 0 !important;
   width: 0 !important;
   height: 1px !important;
-  background: #dfa927 !important;
+  background: var(--vp-c-brand-1) !important;
   transition: width 0.3s ease !important;
 }
 
-.footer-column a:hover::after {
+.footer-column a:hover::before {
   width: 100% !important;
+}
+
+/* Suppress VitePress external link icon in footer */
+.footer-column a[href*='://']::after,
+.footer-column a[target='_blank']::after {
+  display: none !important;
 }
 
 /* Footer Bottom Section */
@@ -262,15 +271,39 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .footer-legal a {
-  color: #dfa927 !important;
+  color: var(--vp-c-brand-1) !important;
   text-decoration: none !important;
-  transition: all 0.3s ease !important;
-  opacity: 0.8 !important;
+  font-weight: 500 !important;
+  transition: color 0.25s !important;
+  display: inline-block !important;
+  position: relative !important;
 }
 
 .footer-legal a:hover {
-  opacity: 1 !important;
-  text-decoration: underline !important;
+  color: var(--vp-c-brand-2) !important;
+  text-decoration: none !important;
+}
+
+/* Elegant underline animation for legal links - using ::before */
+.footer-legal a::before {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 1px !important;
+  background: var(--vp-c-brand-1) !important;
+  transition: width 0.3s ease !important;
+}
+
+.footer-legal a:hover::before {
+  width: 100% !important;
+}
+
+/* Suppress VitePress external link icon in legal section */
+.footer-legal a[href*='://']::after,
+.footer-legal a[target='_blank']::after {
+  display: none !important;
 }
 
 /* Heart icon styling - elegant gold */
@@ -302,13 +335,14 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 }
 
-@media (max-width: 768px) {
+/* Tablets - Keep 2 columns */
+@media (max-width: 768px) and (min-width: 641px) {
   .landing-footer {
     padding: 60px 1.5rem 30px !important;
   }
 
   .footer-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 2rem !important;
     margin-bottom: 40px !important;
   }
@@ -326,7 +360,7 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 
   .footer-tagline {
-    font-size: 0.7rem !important;
+    font-size: 0.75rem !important;
   }
 
   .footer-legal {
@@ -334,7 +368,7 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 
   .footer-column h4 {
-    font-size: 0.8rem !important;
+    font-size: 0.85rem !important;
   }
 
   .footer-column a {
@@ -348,16 +382,53 @@ const currentYear = computed(() => new Date().getFullYear())
     padding: 50px 1rem 25px !important;
   }
 
+  /* Single column layout for mobile */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    margin-bottom: 40px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 2rem !important;
+  }
+
+  /* Stack logo and tagline vertically on mobile */
+  .footer-brand {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-align: center !important;
+  }
+
   .footer-logo {
     height: 36px !important;
+    margin-bottom: 4px !important;
   }
 
   .footer-tagline {
-    font-size: 0.8rem !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.1em !important;
+    opacity: 0.8 !important;
+  }
+
+  .footer-legal {
+    text-align: center !important;
   }
 
   .footer-legal p {
     font-size: 0.8rem !important;
+  }
+
+  .footer-column h4 {
+    font-size: 0.8rem !important;
+  }
+
+  .footer-column a {
+    font-size: 0.85rem !important;
   }
 }
 </style>

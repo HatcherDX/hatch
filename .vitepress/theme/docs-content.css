@@ -4,7 +4,7 @@
 .VPDoc:not(.VPHome .VPDoc) .container {
   max-width: 1280px !important;
   margin: 0 auto !important;
-  padding: 0 24px !important;
+  padding: 24px 24px 0 24px !important;
 }
 
 /* Content area - ONLY for actual article content, not navigation */
@@ -23,6 +23,16 @@
   padding: 32px 32px 128px !important;
   max-width: 768px !important;
   margin: 0 auto !important;
+}
+
+/* Override for mobile - more aggressive */
+@media (max-width: 640px) {
+  .VPDoc:not(.VPHome .VPDoc) > .container > main .content,
+  .VPDoc.has-sidebar:not(.VPHome .VPDoc) .content-container,
+  .VPDoc:not(.has-sidebar):not(.VPHome .VPDoc) .content-container {
+    padding: 12px !important;
+    max-width: 100% !important;
+  }
 }
 
 /* Ensure proper spacing for content elements ONLY in main doc article content */

@@ -235,6 +235,21 @@ const props = withDefaults(defineProps<Props>(), {
   font-style: italic !important;
 }
 
+/* Tablet specific styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cta-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .cta-button {
+    display: inline-flex !important;
+    width: auto !important;
+    margin: 0 auto !important;
+  }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .page-cta-section {
