@@ -44,6 +44,38 @@
             <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
 
+          <!-- Constitutional: Crosshair/Target icon -->
+          <svg v-else-if="iconType === 'constitutional'" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.5" stroke-dasharray="1 1"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            <path d="M12 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 16V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M4 12H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16 12H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+
+          <!-- Wireframe: Visual to Code icon -->
+          <svg v-else-if="iconType === 'wireframe'" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="6" width="16" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M7 9H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M7 12H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="10" cy="15" r="1" fill="currentColor"/>
+            <circle cx="14" cy="15" r="1" fill="currentColor"/>
+            <circle cx="18" cy="15" r="1" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M7 17L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="1 1"/>
+          </svg>
+
+          <!-- Fortress: Architecture icon -->
+          <svg v-else-if="iconType === 'fortress'" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M12 4L4 10V20H9V15H15V20H20V10L12 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="7" y="12" width="3" height="3" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="14" y="12" width="3" height="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="12" cy="10" r="1" fill="currentColor"/>
+          </svg>
+
           <!-- Code HAT icon -->
           <svg v-else-if="iconType === 'code'" width="16" height="16" viewBox="0 0 40 40" fill="none">
             <polyline points="26,30 36,20 26,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -69,6 +101,42 @@
             <circle cx="26" cy="28" r="6" stroke="currentColor" fill="none" stroke-width="1.5"/>
             <circle cx="14" cy="20" r="4.5" stroke="currentColor" fill="none" stroke-width="1.3"/>
             <circle cx="25" cy="12" r="3" stroke="currentColor" fill="none" stroke-width="1"/>
+          </svg>
+
+          <!-- Time Graph Timeline: Pillars Time Graph icon -->
+          <svg v-else-if="iconType === 'time-graph-timeline'" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <!-- Grid background -->
+            <path d="M4 8H20M4 12H20M4 16H20M8 4V20M12 4V20M16 4V20" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+            <!-- Timeline path -->
+            <path d="M6 18L10 14L14 16L18 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Nodes -->
+            <circle cx="6" cy="18" r="1.5" fill="currentColor"/>
+            <circle cx="10" cy="14" r="1.5" stroke="currentColor" stroke-width="1.5" fill="white"/>
+            <circle cx="14" cy="16" r="1.5" stroke="currentColor" stroke-width="1.5" fill="white"/>
+            <circle cx="18" cy="10" r="1.5" fill="currentColor"/>
+            <!-- Branch indicator -->
+            <path d="M14 16L16 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="16" cy="12" r="1" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+          </svg>
+
+          <!-- Fabricator: Universal Fabricator hexagon icon -->
+          <svg v-else-if="iconType === 'fabricator'" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <!-- Hexagon container -->
+            <path d="M12 3L19 7V15L12 19L5 15V7L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <!-- Inner components -->
+            <rect x="9" y="9" width="6" height="6" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            <!-- Connection lines -->
+            <path d="M12 3V9M12 15V19" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            <path d="M5 7L9 9M15 9L19 7" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            <path d="M5 15L9 15M15 15L19 15" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+          </svg>
+
+          <!-- Shield: Philosophy fortress/security icon -->
+          <svg v-else-if="iconType === 'shield'" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3L4 7V11C4 16 7 20.5 12 21C17 20.5 20 16 20 11V7L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12 7V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M9 14L11 16L15 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
 
           <!-- Default: Ultra-minimalist link icon -->
@@ -169,11 +237,17 @@ const iconType = computed(() => {
   if (path.includes('/autopilots')) return 'chevron'  // Chevron is for all autopilots pages
   if (path.includes('/playbooks')) return 'playbooks'  // Playbooks document icon
   if (path.includes('/actions')) return 'actions'  // Actions gavel/check icon
+  if (path.includes('/constitutional-engineering')) return 'constitutional'  // Constitutional crosshair icon
+  if (path.includes('/architecture')) return 'fortress'  // Architecture fortress icon
   if (path.includes('/core-hats')) return 'hats'  // HATs combined icon
-  if (path.includes('/philosophy') || path.includes('/pillars')) return 'link'  // Philosophy and pillars use default
+  if (path.includes('/pillars-time-graph')) return 'time-graph-timeline'  // Time graph timeline icon
+  if (path.includes('/pillars-universal-fabricator')) return 'fabricator'  // Universal fabricator hexagon icon
+  if (path.includes('/philosophy')) return 'shield'  // Philosophy shield/fortress icon
+  if (path.includes('/pillars')) return 'link'  // Other pillars use default
   if (path.includes('/code-hat') || path.includes('/features-code')) return 'code'
   if (path.includes('/gen-hat') || path.includes('/features-gen')) return 'gen'
   if (path.includes('/visual-hat') || path.includes('/features-visual')) return 'visual'
+  if (path.includes('/visual-to-code')) return 'wireframe'  // Visual to code wireframe icon
   if (path.includes('/time-graph-hat') || path.includes('/features-time-graph')) return 'time-graph'
 
   // Default to link icon
