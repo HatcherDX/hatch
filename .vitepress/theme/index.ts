@@ -2,6 +2,7 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
+import Layout from './Layout.vue'
 import HeroSection from './components/organisms/HeroSection.vue'
 import ShowcaseSection from './components/organisms/ShowcaseSection.vue'
 import FeaturesSection from './components/organisms/FeaturesSection.vue'
@@ -14,6 +15,7 @@ import FooterSection from './components/organisms/FooterSection.vue'
 import PhilosophyCTA from './components/organisms/PhilosophyCTA.vue'
 import PageCTA from './components/organisms/PageCTA.vue'
 import DocIcon from './components/atoms/DocIcon.vue'
+import PermaLink from './components/atoms/PermaLink.vue'
 import './localization-fixes.css'
 import './style.css'
 import './custom.css'
@@ -29,13 +31,7 @@ import './desktop-nav-fix.css'
 
 export default {
   extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'home-hero-before': () => h(HeroSection),
-      'home-hero-after': () => h(ShowcaseSection),
-    })
-  },
+  Layout,
   enhanceApp({ app }) {
     app.component('HeroSection', HeroSection)
     app.component('ShowcaseSection', ShowcaseSection)
@@ -49,5 +45,6 @@ export default {
     app.component('PhilosophyCTA', PhilosophyCTA)
     app.component('PageCTA', PageCTA)
     app.component('DocIcon', DocIcon)
+    app.component('PermaLink', PermaLink)
   },
 } satisfies Theme

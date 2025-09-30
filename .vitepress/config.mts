@@ -54,10 +54,16 @@ function generateNavigation(langCode) {
       ],
     },
     {
-      textKey: 'For Contributors',
+      textKey: 'Community',
+      items: [
+        { textKey: 'Join the Guild', link: '/community-vision' },
+        { textKey: 'For Contributors', link: '/contributing' },
+      ],
+    },
+    {
+      textKey: 'Technical Docs',
       items: [
         { textKey: 'Architecture', link: '/architecture' },
-        { textKey: 'Contributing Guide', link: '/contributing' },
         { textKey: 'Coding Standards', link: '/coding-standards' },
         { textKey: 'Roadmap', link: '/roadmap' },
       ],
@@ -93,7 +99,10 @@ function generateNavigation(langCode) {
       'The Autopilot System': 'The Autopilot System',
       'The Playbooks System': 'The Playbooks System',
       'The Actions System': 'The Actions System',
+      'Community': 'Community',
+      'Join the Guild': 'Join the Guild',
       'For Contributors': 'For Contributors',
+      'Technical Docs': 'Technical Docs',
       'Architecture': 'Architecture',
       'Contributing Guide': 'Contributing Guide',
       'Coding Standards': 'Coding Standards',

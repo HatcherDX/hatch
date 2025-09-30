@@ -138,7 +138,7 @@
 @media (min-width: 960px) {
   .VPDoc.has-sidebar.has-aside .content-container {
     display: flex !important;
-    gap: 48px !important;
+    gap: 8px !important;
     flex-direction: column !important;
   }
 
