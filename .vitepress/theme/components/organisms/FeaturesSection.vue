@@ -2,7 +2,7 @@
   <div class="features-section">
     <div class="features-container">
       <div class="features-grid">
-        <div class="feature-card">
+        <a href="/autopilots" class="feature-card">
           <div class="feature-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Main drone body -->
@@ -32,8 +32,8 @@
           </div>
           <h3 class="feature-title">Deploy Autonomous AI Drones</h3>
           <p class="feature-details">Launch fleets of AI agents that execute your playbooks. They code, test, and refactor while you sleep. Wake up to completed missions.</p>
-        </div>
-        <div class="feature-card">
+        </a>
+        <a href="/constitutional-engineering" class="feature-card">
           <div class="feature-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5"/>
@@ -48,8 +48,8 @@
           </div>
           <h3 class="feature-title">Constitutional Command & Control</h3>
           <p class="feature-details">Your coding standards become unbreakable laws. Every drone follows your constitution with military precision. No rogue AI.</p>
-        </div>
-        <div class="feature-card">
+        </a>
+        <a href="/visual-to-code" class="feature-card">
           <div class="feature-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="8" y="12" width="32" height="28" rx="2" stroke="currentColor" stroke-width="1.5"/>
@@ -63,8 +63,8 @@
           </div>
           <h3 class="feature-title">Visual Mission Planning</h3>
           <p class="feature-details">Point and click to define objectives. The AI fleet understands visual commands, not vague prompts. Zero miscommunication.</p>
-        </div>
-        <div class="feature-card">
+        </a>
+        <a href="/architecture" class="feature-card">
           <div class="feature-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M24 8L8 20V40H18V30H30V40H40V20L24 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
@@ -76,7 +76,7 @@
           </div>
           <h3 class="feature-title">Your Fortress, Your Rules</h3>
           <p class="feature-details">100% local execution. Rust-powered security. Your code never leaves your command center. Total operational sovereignty.</p>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -148,11 +148,14 @@
 
 /* Feature Cards */
 .feature-card {
+  display: block !important;
   background: rgba(255, 255, 255, 0.5) !important;
   border: 1px solid rgba(0, 0, 0, 0.05) !important;
   border-radius: 16px !important;
   padding: 32px !important;
   text-align: center !important;
+  text-decoration: none !important;
+  color: inherit !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   cursor: pointer !important;
 }

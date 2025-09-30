@@ -608,7 +608,14 @@ onUnmounted(() => {
 /* Larger screens */
 @media (min-width: 768px) {
   .showcase-scroll-indicator {
-    top: 0%;
+    top: -2%;
+  }
+}
+
+/* iPad Pro portrait */
+@media (min-width: 1024px) and (orientation: portrait) {
+  .showcase-scroll-indicator {
+    top: -4%;
   }
 }
 

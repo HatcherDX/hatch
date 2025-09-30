@@ -31,7 +31,7 @@ While we architect this grand vision, the real work happens in two vital spaces:
 
 <div style="display: flex; flex-direction: column; gap: 2rem; align-items: center; margin: 4rem 0;">
 
-<a href="https://discord.gg/hatcher" style="display: inline-flex; align-items: center; gap: 1rem; padding: 1.5rem 3rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 12px; font-size: 1.2rem; font-weight: 600; transition: transform 0.2s; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);">
+<a href="https://discord.gg/hatcher" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 1rem; padding: 1.5rem 3rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 12px; font-size: 1.2rem; font-weight: 600; transition: transform 0.2s; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);">
   <span style="font-size: 1.5rem;">🗣️</span>
   <span>Join the Live Conversation on Discord</span>
 </a>
@@ -40,7 +40,7 @@ While we architect this grand vision, the real work happens in two vital spaces:
   Where ideas spark, problems get solved, and the future gets debated in real-time.
 </p>
 
-<a href="https://github.com/hatcherdx/dx-engine" style="display: inline-flex; align-items: center; gap: 1rem; padding: 1.5rem 3rem; background: #24292e; color: white; text-decoration: none; border-radius: 12px; font-size: 1.2rem; font-weight: 600; transition: transform 0.2s; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+<a href="https://github.com/hatcherdx/dx-engine" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 1rem; padding: 1.5rem 3rem; background: #24292e; color: white; text-decoration: none; border-radius: 12px; font-size: 1.2rem; font-weight: 600; transition: transform 0.2s; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
   <span style="font-size: 1.5rem;">⭐</span>
   <span>Follow the Build on GitHub</span>
 </a>
@@ -100,10 +100,10 @@ Be part of the movement that transforms development from solitary coding to coll
 </p>
 
 <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-  <a href="https://discord.gg/hatcher" style="padding: 1rem 2rem; background: #667eea; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+  <a href="https://discord.gg/hatcher" target="_blank" rel="noopener noreferrer" style="padding: 1rem 2rem; background: #667eea; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
     Discord →
   </a>
-  <a href="https://github.com/hatcherdx/dx-engine" style="padding: 1rem 2rem; background: #24292e; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+  <a href="https://github.com/hatcherdx/dx-engine" target="_blank" rel="noopener noreferrer" style="padding: 1rem 2rem; background: #24292e; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
     GitHub →
   </a>
 </div>

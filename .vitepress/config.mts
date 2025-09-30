@@ -499,4 +499,26 @@ export default defineConfig({
   },
 
   cleanUrls: true,
+
+  markdown: {
+    config: (md) => {
+      // Make external links open in new tab
+      const defaultRender = md.renderer.rules.link_open || function(tokens, idx, options, env, self) {
+        return self.renderToken(tokens, idx, options);
+      };
+
+      md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+        const token = tokens[idx];
+        const href = token.attrGet('href');
+
+        // Check if it's an external link
+        if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+          token.attrSet('target', '_blank');
+          token.attrSet('rel', 'noopener noreferrer');
+        }
+
+        return defaultRender(tokens, idx, options, env, self);
+      };
+    }
+  }
 })

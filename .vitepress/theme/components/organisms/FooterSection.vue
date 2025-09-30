@@ -387,6 +387,7 @@ const currentYear = computed(() => new Date().getFullYear())
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
     margin-bottom: 40px !important;
+    padding: 0 40px !important;
   }
 
   .footer-bottom {
