@@ -10,17 +10,20 @@ import { es } from './es'
 import { fr } from './fr'
 import { de } from './de'
 import { pt } from './pt'
+import { ar } from './ar'
+import zhCn from './zh-cn'
+import hi from './hi'
 
 export const locales = {
   en,
   es,
   fr,
   de,
-  pt
+  pt,
+  ar,
+  'zh-cn': zhCn,
+  hi
   // Add more locales as they are translated:
-  // ar,     // Arabic
-  // 'zh-cn', // Chinese Simplified
-  // hi,     // Hindi
   // id,     // Indonesian
   // ja,     // Japanese
   // ko,     // Korean

@@ -1,115 +1,63 @@
 ---
-title: 架构 | Hatcher IDE 技术设计与工程原则
-description: 探索 Hatcher 为受控放大而设计的技术架构。了解确定性设计、模型无关方法和开源工程原则。
+title: 架构 | Hatcher 的四大支柱
+description: 探索 Hatcher 的技术架构，这是我们四大支柱的直接实现。了解我们如何构建确定性、模型无关且以开发者为中心的 IDE。
 ---
 
-# 架构
+# Hatcher 架构
 
-Hatcher 是一个现代的 Electron 应用程序，采用 Monorepo 架构，优先考虑可扩展性、可维护性和性能。
+Hatcher 的架构是我们**四大支柱**向代码的直接转换。每个选择都是朝着确定性、强大且让人类指挥官拥有绝对控制权的开发环境迈出的深思熟虑的一步。
 
-## 高级架构
+我们的工程由一个问题指导：**这是否服务于支柱？**
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Hatcher Desktop App                      │
-├─────────────────────────────────────────────────────────────┤
-│  Main Process (Node.js)     │  Renderer Process (Vue.js)   │
-│  ├── Window Management      │  ├── Visual-to-Code Bridge   │
-│  ├── AI Engine Integration  │  ├── Code Editor             │
-│  ├── File System Access     │  ├── Project Management      │
-│  └── Git Operations         │  └── UI Components           │
-└─────────────────────────────────────────────────────────────┘
-                              │
-┌─────────────────────────────────────────────────────────────┐
-│                External AI Services                         │
-│  ├── Claude API (Anthropic)                                │
-│  ├── Gemini CLI (Google)                                   │
-│  └── Future: GPT-4, CodeLlama                              │
-└─────────────────────────────────────────────────────────────┘
-```
+## 四大支柱：我们的架构基础
 
-## Monorepo 结构
+我们的架构不是建立在抽象原则上，而是建立在四个具体的、承重的支柱上。它们就是系统。
 
-```
-dx-engine/
-├── apps/                    # 主要应用程序
-│   ├── electron/           # Electron 主进程
-│   ├── web/               # Vue.js 渲染进程
-│   ├── preload/           # 安全预加载脚本
-│   └── docs/              # VitePress 文档
-│
-├── universal/             # 共享包
-│   ├── vite-plugin/       # 自定义 Vite 插件
-│   └── puppeteer-google-translate/  # 翻译服务
-│
-├── scripts/               # 自动化脚本
-│   ├── translation/       # TypeScript 翻译系统
-│   ├── setup-env.ts      # 环境配置
-│   ├── version-bump.ts   # 版本管理
-│   └── generate-icons.ts # 图标生成
-│
-└── Config Files           # 项目配置
-    ├── package.json       # 工作区配置
-    ├── turbo.json         # Turborepo 配置
-    └── tsconfig.json      # TypeScript 配置
-```
+### <DocIcon type="constitutional" inline /> Constitutional Engineering
 
-## Electron 进程
+这是治理层。它由 **Playbooks 系统**（动态上下文引擎）提供支持，并由 **Hatcher Actions** 执行。每个操作，尤其是来自 AI 的操作，都会根据这个用户定义的宪法进行验证。这个支柱使 **Autopilots 系统**能够在尊重您的规则的同时自信地执行。
 
-### 主进程 (apps/electron/)
+### <DocIcon type="time-graph" inline /> The Time Graph
 
-主进程管理：
+这是安全和可审计性层。它由专为 AI 开发的精细、高频率更改而构建的**自定义高性能 Git 引擎**提供支持。它提供了为 **The Time Graph HAT** 提供动力的不可变历史记录，以及每个 Autopilot 任务的可审计日志。
 
-- **窗口管理**：创建和控制应用程序窗口
-- **AI 集成**：与外部 AI 服务通信
-- **系统访问**：文件和系统操作
-- **安全性**：输入验证和清理
+### <DocIcon type="ai-command" inline /> AI Under Command
 
-### 渲染进程 (apps/web/)
+这是编排层。它充当模型无关的控制平面，管理**一组 AI 模型**（如 Claude 和 Gemini）。它将人类意图转换为精确的、受宪法约束的 AI 操作。这个支柱为 **Gen HAT** 和 **Code HAT** 提供动力，让您能够指挥多个 AI 代理。
 
-渲染进程包含 Vue.js UI：
+### <DocIcon type="universal-fabricator" inline /> The Universal Fabricator
 
-- **可视化到代码桥梁**：核心可视选择功能
-- **代码编辑器**：带语法高亮的集成编辑器
-- **项目管理**：文件浏览器和管理
-- **UI 组件**：响应式用户界面
+这是执行和现代化层。它使用 **WebAssembly** 在 Hatcher **EGG**（Enforced Governance Guardrails）的安全、确定性环境中运行多语言 **Hatcher Functions**（Delphi、C++、Rust 等）。这使得遗留代码可以在任何地方运行，同时尊重现代标准。
 
-## 技术栈
+## 技术栈与愿景
 
-### 前端 (渲染器)
+我们的技术选择既务实又前瞻，在快速创新的需求与对性能和安全的长期承诺之间取得平衡。
 
-- **Vue.js 3**：带 Composition API 的响应式框架
-- **TypeScript**：类型安全开发
-- **Vite**：快速构建工具
-- **Pinia**：现代状态管理
-- **Vue Router**：客户端路由
+| 组件              | 技术                      | 我们为什么选择它                                                                                       |
+| :---------------- | :------------------------ | :----------------------------------------------------------------------------------------------------- |
+| **桌面外壳**      | **Electron（当前）**      | 为快速的跨平台开发提供强大、久经考验的基础，使我们能够专注于我们的核心价值主张。                       |
+| **UI 框架**       | **Vue.js 3 + TypeScript** | 其组合 API 和类型安全性非常适合专业 IDE 的复杂、有状态界面。                                           |
+| **核心（愿景）**  | **Tauri + Rust**          | 我们的长期愿景是用 Rust 锻造 Hatcher 的核心，以获得其无与伦比的性能、内存安全和安全保证。             |
 
-### 后端 (主进程)
+这条"通往 Rust 之路"是我们承诺的核心。我们正在经过验证的原型上构建未来，有一个清晰的架构终局，优先考虑最高的工程卓越标准。
 
-- **Electron**：桌面应用程序框架
-- **Node.js**：JavaScript 运行时
-- **TypeScript**：类型安全开发
-- **IPC**：进程间通信
+## 设计中的安全与隐私
 
-## 安全性
+安全不是一个功能；它是一个架构先决条件。
 
-### 上下文隔离
+- **默认本地优先：** 您的源代码和历史记录保存在您的机器上。除非您明确执行操作（例如为不可变审计日志启用团队同步），否则不会将任何内容发送到云服务。
 
-- **contextIsolation: true**：隔离渲染器上下文
-- **nodeIntegration: false**：在渲染器中禁用 Node.js
-- **预加载脚本**：仅公开受控的 API
+- **零代码存储：** 我们的云服务（用于 Playbooks 等团队功能）**不存储您存储库的完整副本**。我们只存储必要的治理数据（如 Playbooks 和审计日志条目），而不是您静态的整个代码库。
 
-## 部署
+- **沙盒执行：** Hatcher Functions 在安全的 WebAssembly 沙盒中运行，默认情况下无法访问您的系统。
 
-### 构建过程
+- **透明操作：** Time Graph 和人类防火墙确保您拥有每个操作的清晰、可审计记录，以及对每次更改的最终决定权。
 
-```bash
-# 完整构建
-pnpm build
-
-# 为不同平台打包
-pnpm pack:prod  # 所有平台
-pnpm pack:mac   # 仅 macOS
-pnpm pack:win   # 仅 Windows
-pnpm pack:linux # 仅 Linux
-```
+<PageCTA
+  title="准备深入了解？"
+  subtitle="探索我们的架构如何实现下一代 AI 辅助开发"
+  buttonText="阅读理念"
+  buttonLink="/zh-cn/philosophy"
+  buttonStyle="secondary"
+  footer="以安全、隐私和开发者控制为核心构建"
+/>

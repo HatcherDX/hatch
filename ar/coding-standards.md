@@ -1,49 +1,44 @@
----
-title: معايير البرمجة | إرشادات التطوير لـ Hatcher IDE
-description: معايير البرمجة الرسمية وإرشادات التطوير لـ Hatcher IDE. أفضل الممارسات لـ TypeScript و Vue والاختبار والمحافظة على جودة الكود في المشروع.
----
-
 # معايير البرمجة
 
-تحدد هذه الوثيقة معايير البرمجة والاتفاقيات لمشروع Hatcher. اتباع هذه المعايير يضمن الاتساق وقابلية الصيانة والكود عالي الجودة عبر قاعدة الكود بأكملها.
+يحدد هذا المستند معايير وقواعد البرمجة لمشروع Hatcher. اتباع هذه المعايير يضمن الاتساق والقابلية للصيانة والكود عالي الجودة عبر قاعدة الكود بأكملها.
 
-> **📊 حالة الامتثال**: اعتباراً من ديسمبر 2024، تحقق قاعدة الكود الخاصة بنا **100% امتثال** لهذه المعايير بعد مراجعة شاملة وتحسينات الكود.
+> **📊 حالة الامتثال**: اعتباراً من ديسمبر 2024، تحقق قاعدة الكود لدينا **امتثالاً بنسبة 100%** لهذه المعايير بعد التدقيق الشامل وتحسينات الكود.
 
 ## المبادئ العامة
 
 ### جودة الكود
 
 - **الوضوح على الذكاء**: اكتب كوداً سهل القراءة والفهم
-- **الاتساق**: اتبع الأنماط المؤسسة عبر قاعدة الكود
+- **الاتساق**: اتبع الأنماط المعتمدة في جميع أنحاء قاعدة الكود
 - **قابلية الصيانة**: اكتب كوداً سهل التعديل والتوسيع
-- **الأداء**: ضع في اعتبارك تأثيرات الأداء، لكن أولوية للقابلية للقراءة أولاً
-- **التوثيق**: يجب أن يكون جميع الكود موثقاً ذاتياً مع تعليقات واضحة عند الضرورة
+- **الأداء**: ضع في اعتبارك تداعيات الأداء، لكن أعط الأولوية لسهولة القراءة أولاً
+- **التوثيق**: يجب أن يكون كل الكود موثقاً ذاتياً مع تعليقات واضحة عند الضرورة
 
 ### معايير اللغة
 
-- **الإنجليزية فقط**: يجب أن تكون جميع التعليقات والوثائق وأسماء المتغيرات باللغة الإنجليزية
-- **التسمية الواضحة**: استخدم أسماء وصفية تشير بوضوح إلى الغرض
-- **لا اختصارات**: تجنب الاختصارات إلا إذا كانت مفهومة على نطاق واسع (مثل `API`، `URL`)
+- **الإنجليزية فقط**: يجب أن تكون جميع التعليقات والوثائق وأسماء المتغيرات بالإنجليزية
+- **أسماء واضحة**: استخدم أسماء وصفية تشير بوضوح إلى الغرض
+- **لا اختصارات**: تجنب الاختصارات ما لم تكن مفهومة على نطاق واسع (مثل `API`، `URL`)
 
 ### تنظيم الملفات
 
-- **المسؤولية الواحدة**: يجب أن يكون لكل ملف غرض واحد محدد بوضوح
+- **مسؤولية واحدة**: يجب أن يكون لكل ملف غرض واحد محدد بوضوح
 - **التجميع المنطقي**: نظم الوظائف ذات الصلة معاً
-- **التسمية الواضحة**: استخدم أسماء وصفية تشير بوضوح إلى الغرض
+- **أسماء واضحة**: استخدم أسماء وصفية تشير بوضوح إلى الغرض
 
 ## معايير التنسيق
 
-### نمط الكود (مفروض بواسطة ESLint)
+### نمط الكود (مُطبّق بواسطة ESLint)
 
 ```typescript
-// ✅ جيد: علامات اقتباس مفردة، بدون فواصل منقوطة، مسافة بادئة من مسافتين
+// ✅ جيد: علامات اقتباس فردية، بدون فواصل منقوطة، مسافة بادئة بمسافتين
 const message = 'Hello World'
 const config = {
   apiUrl: 'https://api.hatche.rs',
   timeout: 5000,
 }
 
-// ❌ تجنب: علامات اقتباس مزدوجة، فواصل منقوطة، مسافات بادئة غير متسقة
+// ❌ تجنب: علامات اقتباس مزدوجة، فواصل منقوطة، مسافة بادئة غير متسقة
 const message = "Hello World";
 const config = {
     apiUrl: "https://api.hatche.rs",
@@ -73,12 +68,27 @@ try {
 }
 ```
 
+## المبادئ العامة
+
+### جودة الكود
+
+- **الوضوح على الذكاء**: اكتب كوداً سهل القراءة والفهم
+- **الاتساق**: اتبع الأنماط المعتمدة في جميع أنحاء قاعدة الكود
+- **قابلية الصيانة**: اكتب كوداً سهل التعديل والتوسيع
+- **الأداء**: ضع في اعتبارك تداعيات الأداء، لكن أعط الأولوية لسهولة القراءة أولاً
+
+### تنظيم الملفات
+
+- **مسؤولية واحدة**: يجب أن يكون لكل ملف غرض واحد محدد بوضوح
+- **التجميع المنطقي**: نظم الوظائف ذات الصلة معاً
+- **أسماء واضحة**: استخدم أسماء وصفية تشير بوضوح إلى الغرض
+
 ## معايير TypeScript
 
 ### تعريفات الأنواع
 
 ```typescript
-// ✅ جيد: استخدم interfaces لأشكال الكائنات
+// ✅ جيد: استخدم الواجهات لأشكال الكائنات
 interface UserData {
   id: string
   name: string
@@ -93,7 +103,7 @@ type UserData = {
 }
 ```
 
-### اتفاقيات التسمية
+### اصطلاحات التسمية
 
 ```typescript
 // ✅ جيد: PascalCase للأنواع والواجهات والفئات
@@ -114,29 +124,54 @@ const MAX_RETRY_ATTEMPTS = 3
 ### تصميم الدوال والطرق
 
 ```typescript
-// ✅ جيد: توقيعات دوال واضحة مع كتابة مناسبة
+// ✅ جيد: توقيعات دوال واضحة مع كتابة صحيحة
 function processUserData(user: UserData): Promise<ProcessedUser> {
-  // التنفيذ
+  // Implementation
 }
 
-// ✅ جيد: استخدم JSDoc للواجهات العامة
+// ✅ جيد: استخدم JSDoc للواجهات البرمجية العامة
 /**
- * يولد تعديلات الكود بناءً على الاختيارات المرئية
- * @param selection - عناصر DOM المختارة
- * @param context - سياق المشروع الحالي
- * @returns Promise يحل إلى الكود المولد
+ * Generates code modifications based on visual selections
+ * @param selection - The selected DOM elements
+ * @param context - The current project context
+ * @returns Promise resolving to generated code
  */
 async function generateCodeFromSelection(
   selection: DOMSelection[],
   context: ProjectContext
 ): Promise<CodeModification[]> {
-  // التنفيذ
+  // Implementation
+}
+```
+
+### معالجة الأخطاء
+
+```typescript
+// ✅ جيد: أنواع أخطاء محددة
+class ValidationError extends Error {
+  constructor(field: string, value: unknown) {
+    super(`Invalid value for field ${field}: ${value}`)
+    this.name = 'ValidationError'
+  }
+}
+
+// ✅ جيد: معالجة أخطاء صحيحة في الدوال غير المتزامنة
+async function saveUserData(user: UserData): Promise<SaveResult> {
+  try {
+    const result = await api.saveUser(user)
+    return { success: true, data: result }
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return { success: false, error: error.message }
+    }
+    throw error // Re-throw unexpected errors
+  }
 }
 ```
 
 ## معايير Vue.js
 
-### هيكل المكون
+### بنية المكون
 
 ```vue
 <!-- ✅ جيد: استخدم Composition API مع <script setup> -->
@@ -157,23 +192,23 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emits>()
 
-// Composables في الأعلى
+// Composables at the top
 const { user } = useAuth()
 const { theme } = useTheme()
 
-// بيانات تفاعلية
+// Reactive data
 const isLoading = ref(false)
 const formData = reactive({
   name: '',
   email: '',
 })
 
-// خصائص محسوبة
+// Computed properties
 const isFormValid = computed(() => {
   return formData.name.length > 0 && formData.email.includes('@')
 })
 
-// طرق
+// Methods
 function handleSubmit() {
   if (!isFormValid.value) return
 
@@ -186,21 +221,92 @@ function handleSubmit() {
   <div v-if="isVisible" class="modal">
     <h2>{{ title }}</h2>
     <form @submit.prevent="handleSubmit">
-      <!-- محتوى النموذج -->
+      <!-- Form content -->
     </form>
   </div>
 </template>
 
 <style scoped>
 .modal {
-  /* أنماط */
+  /* Styles */
 }
 </style>
 ```
 
-## معايير الأنماط
+### تسمية المكونات
 
-### معمارية CSS
+```typescript
+// ✅ جيد: PascalCase لأسماء المكونات
+export default defineComponent({
+  name: 'UserProfileCard',
+})
+
+// ✅ جيد: أسماء ملفات مكونات وصفية
+UserProfileCard.vue
+VisualSelectionPanel.vue
+CodeGenerationModal.vue
+```
+
+### الخصائص والأحداث
+
+```typescript
+// ✅ جيد: أنواع خصائص صريحة مع قيم افتراضية
+interface Props {
+  modelValue: string
+  placeholder?: string
+  isRequired?: boolean
+  maxLength?: number
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  placeholder: '',
+  isRequired: false,
+  maxLength: 100,
+})
+
+// ✅ جيد: أسماء أحداث وصفية
+interface Emits {
+  'update:modelValue': [value: string]
+  'selection-change': [selection: DOMElement[]]
+  'code-generated': [code: string]
+}
+```
+
+### Composables
+
+```typescript
+// ✅ جيد: بنية Composable
+export function useVisualSelection() {
+  const selectedElements = ref<DOMElement[]>([])
+  const isSelecting = ref(false)
+
+  function startSelection() {
+    isSelecting.value = true
+    // Implementation
+  }
+
+  function endSelection() {
+    isSelecting.value = false
+    // Implementation
+  }
+
+  function clearSelection() {
+    selectedElements.value = []
+  }
+
+  return {
+    selectedElements: readonly(selectedElements),
+    isSelecting: readonly(isSelecting),
+    startSelection,
+    endSelection,
+    clearSelection,
+  }
+}
+```
+
+## معايير التنسيق
+
+### بنية CSS
 
 ```scss
 // ✅ جيد: استخدم خصائص CSS المخصصة للسمات
@@ -235,12 +341,52 @@ function handleSubmit() {
 }
 ```
 
+### التصميم المستجيب
+
+```scss
+// ✅ جيد: نهج الهاتف المحمول أولاً
+.visual-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+
+  // Tablet
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+
+  // Desktop
+  @media (min-width: 1024px) {
+    gap: var(--spacing-lg);
+  }
+}
+```
+
+### الأنماط المحددة النطاق
+
+```vue
+<style scoped>
+/* ✅ جيد: استخدم الأنماط المحددة النطاق للتنسيق الخاص بالمكون */
+.component-specific {
+  /* This won't leak to other components */
+}
+</style>
+
+<style>
+/* ✅ جيد: الأنماط العامة فقط عند الضرورة */
+.hatcher-global-utility {
+  /* Global utility class */
+}
+</style>
+```
+
 ## معايير الاختبار
 
 ### اختبارات الوحدة
 
 ```typescript
-// ✅ جيد: هيكل اختبار وصفي
+// ✅ جيد: بنية اختبار وصفية
 describe('useVisualSelection', () => {
   describe('startSelection', () => {
     it('should set isSelecting to true', () => {
@@ -250,6 +396,49 @@ describe('useVisualSelection', () => {
 
       expect(isSelecting.value).toBe(true)
     })
+
+    it('should initialize empty selection array', () => {
+      const { selectedElements, startSelection } = useVisualSelection()
+
+      startSelection()
+
+      expect(selectedElements.value).toHaveLength(0)
+    })
+  })
+
+  describe('when elements are selected', () => {
+    it('should track selected elements', () => {
+      // Test implementation
+    })
+  })
+})
+```
+
+### اختبارات المكونات
+
+```typescript
+// ✅ جيد: اختبر سلوك المكون، وليس التنفيذ
+import { mount } from '@vue/test-utils'
+import CodeGenerationModal from './CodeGenerationModal.vue'
+
+describe('CodeGenerationModal', () => {
+  it('should emit close event when close button is clicked', async () => {
+    const wrapper = mount(CodeGenerationModal, {
+      props: { isVisible: true },
+    })
+
+    await wrapper.find('[data-testid="close-button"]').trigger('click')
+
+    expect(wrapper.emitted('close')).toHaveLength(1)
+  })
+
+  it('should display generated code when provided', () => {
+    const code = 'const example = "test"'
+    const wrapper = mount(CodeGenerationModal, {
+      props: { generatedCode: code },
+    })
+
+    expect(wrapper.text()).toContain(code)
   })
 })
 ```
@@ -259,10 +448,10 @@ describe('useVisualSelection', () => {
 ### تعليقات الكود
 
 ```typescript
-// ✅ جيد: اشرح لماذا وليس ماذا
+// ✅ جيد: اشرح لماذا، وليس ماذا
 function calculateOptimalAIPrompt(context: ProjectContext): string {
-  // نحد من حجم السياق لمنع فيض الرموز في نماذج الذكاء الاصطناعي
-  // مع ضمان معلومات كافية لتوليد كود دقيق
+  // We limit context size to prevent token overflow in AI models
+  // while ensuring enough information for accurate code generation
   const maxContextSize = 4000
 
   if (context.size > maxContextSize) {
@@ -271,40 +460,201 @@ function calculateOptimalAIPrompt(context: ProjectContext): string {
 
   return buildPrompt(context)
 }
+
+// ✅ جيد: وثق الخوارزميات المعقدة
+/**
+ * Implements the Visual-to-Code Bridge algorithm
+ *
+ * This function converts visual DOM selections into structured
+ * code modifications by:
+ * 1. Analyzing selected elements and their relationships
+ * 2. Determining the appropriate code patterns
+ * 3. Generating type-safe code modifications
+ *
+ * @complexity O(n * m) where n = selected elements, m = code patterns
+ */
+function processVisualSelection(elements: DOMElement[]): CodeModification[] {
+  // Implementation
+}
 ```
 
-## اتفاقيات Git
+### توثيق README
 
-### رسائل الالتزام
+````markdown
+# اسم المكون
 
+وصف موجز لما يفعله هذا المكون.
+
+## الاستخدام
+
+```vue
+<ComponentName :prop1="value1" :prop2="value2" @event1="handler1" />
+```
+````
+
+## الخصائص
+
+| الخاصية | النوع | الافتراضي | الوصف |
+| ----- | ------- | ------- | -------------------- |
+| prop1 | string  | ''      | وصف prop1 |
+| prop2 | boolean | false   | وصف prop2 |
+
+## الأحداث
+
+| الحدث | البيانات | الوصف |
+| ------ | ------- | --------------- |
+| event1 | string  | يُصدر عندما... |
+
+## أمثلة
+
+### الاستخدام الأساسي
+
+(مثال على الكود)
+
+### الاستخدام المتقدم
+
+(مثال على الكود)
+
+````
+
+## اصطلاحات Git
+
+### رسائل Commit
 نتبع [Conventional Commits](https://conventionalcommits.org/):
 
 ```bash
-# ✅ جيد: رسائل التزام واضحة ووصفية
+# ✅ جيد: رسائل commit واضحة ووصفية
 feat: add visual element selection to code generation
 fix: resolve memory leak in AI response processing
 docs: update installation guide for macOS
 style: improve code formatting in user service
 refactor: extract common AI prompt logic
+test: add unit tests for visual selection composable
+chore: update dependencies to latest versions
+
+# ✅ جيد: قم بتضمين النطاق عند المساعدة
+feat(visual-bridge): implement drag-to-select functionality
+fix(ai-engine): handle Claude API rate limiting
+docs(playbooks): add examples for team configurations
+````
+
+### تسمية الفروع
+
+```bash
+# ✅ جيد: أسماء فروع وصفية
+feature/visual-selection-ui
+fix/ai-response-parsing
+docs/coding-standards
+refactor/composables-structure
 ```
 
-## الإنفاذ
+## إرشادات الأداء
 
-يتم إنفاذ هذه المعايير من خلال:
+### حجم الحزمة
+
+- فضل الاستيرادات الصديقة لـ tree-shaking
+- استخدم الاستيرادات الديناميكية للتبعيات الكبيرة
+- راقب حجم الحزمة في CI/CD
+
+```typescript
+// ✅ جيد: استيرادات قابلة لـ tree-shaking
+import { ref, computed } from 'vue'
+import { debounce } from 'lodash-es'
+
+// ❌ تجنب: استيرادات المكتبة الكاملة
+import * as vue from 'vue'
+import _ from 'lodash'
+
+// ✅ جيد: استيرادات ديناميكية للميزات الكبيرة
+const AdvancedEditor = defineAsyncComponent(
+  () => import('./AdvancedEditor.vue')
+)
+```
+
+### إدارة الذاكرة
+
+```typescript
+// ✅ جيد: تنظيف الموارد
+onUnmounted(() => {
+  // Clean up event listeners
+  window.removeEventListener('resize', handleResize)
+
+  // Cancel pending requests
+  abortController.abort()
+
+  // Clear timers
+  clearInterval(intervalId)
+})
+```
+
+## معايير تكامل الذكاء الاصطناعي
+
+### هندسة المطالبات
+
+```typescript
+// ✅ جيد: بناء مطالبة منظمة
+function buildAIPrompt(context: ProjectContext): string {
+  return [
+    '# Code Generation Request',
+    '',
+    '## Context',
+    `Framework: ${context.framework}`,
+    `Component Type: ${context.componentType}`,
+    '',
+    '## Requirements',
+    context.requirements.map((req) => `- ${req}`).join('\n'),
+    '',
+    '## Code Style',
+    'Use TypeScript with strict mode',
+    'Follow Vue 3 Composition API patterns',
+    'Include proper error handling',
+  ].join('\n')
+}
+```
+
+### معالجة الأخطاء
+
+```typescript
+// ✅ جيد: انخفاض رشيق لخدمة الذكاء الاصطناعي
+async function generateCode(prompt: string): Promise<CodeResult> {
+  try {
+    return await aiService.generate(prompt)
+  } catch (error) {
+    if (error instanceof RateLimitError) {
+      // Fall back to cached patterns
+      return generateFromPatterns(prompt)
+    }
+
+    if (error instanceof NetworkError) {
+      // Offer offline mode
+      return {
+        code: '',
+        error: 'Offline mode - manual coding required',
+      }
+    }
+
+    throw error
+  }
+}
+```
+
+## التطبيق
+
+يتم تطبيق هذه المعايير من خلال:
 
 - **ESLint**: فحص نمط الكود الآلي
 - **TypeScript**: أمان الأنواع والاتساق
 - **Prettier**: تنسيق الكود
-- **Husky**: خطافات pre-commit
-- **CI/CD**: اختبار وتدقيق آلي
+- **Husky**: خطافات ما قبل الالتزام
+- **CI/CD**: الاختبار والتحقق الآلي
 
 ### التطوير المحلي
 
 ```bash
-# تشغيل التدقيق
+# تشغيل التحقق
 pnpm lint
 
-# إصلاح المشاكل القابلة للإصلاح التلقائي
+# إصلاح المشكلات القابلة للإصلاح التلقائي
 pnpm lint:fix
 
 # فحص الأنواع
@@ -314,4 +664,12 @@ pnpm typecheck
 pnpm test
 ```
 
-هذه المعايير هي وثائق حية تتطور مع المشروع وتعليقات المجتمع.
+## الأسئلة والتوضيحات
+
+للأسئلة حول هذه المعايير أو اقتراحات للتحسينات:
+
+1. افتح نقاش GitHub
+2. انضم إلى مجتمع Discord الخاص بنا
+3. أنشئ مشكلة مع تسمية `standards`
+
+هذه المعايير هي وثائق حية تتطور مع المشروع وملاحظات المجتمع.
