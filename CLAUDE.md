@@ -1,5 +1,56 @@
 # Claude Development Guidelines for Hatcher
 
+## Translation Workflow
+**QUALITY OVER SPEED - ONE FILE AT A TIME**:
+- NEVER batch translate multiple files
+- Translate ONE file completely before moving to the next
+- Review each translation for accuracy before proceeding
+- NO EXCEPTIONS, NO EXCUSES
+- This ensures quality and prevents mistakes
+
+### CRITICAL: Product Names - NEVER TRANSLATE
+The following product names MUST remain in English in ALL languages:
+- Hatcher, Hatcher Autopilots, Autopilots
+- Playbooks, Command Deck
+- HATs (Hatcher Adaptive Tools), Gen HAT, EGG HAT
+- EGGs (Enforced Governance Guardrails)
+- Time Graph, Universal Fabricator
+- Visual-to-Code Bridge, Constitutional Engineering
+- Hatcher BaaS
+
+### Technical Components - NEVER TRANSLATE
+- CLI, IDE, API, Git, GitHub, Discord
+- WebAssembly, WASM, TypeScript, JavaScript
+- Vue, React, Svelte, Docker, Kubernetes
+
+### What TO Translate
+- All descriptive text
+- Headings/subheadings (except product names)
+- UI strings and button labels
+- Frontmatter `title` and `description`
+
+### What NOT to Translate
+- Code blocks (any language)
+- HTML/CSS embedded in markdown
+- Vue components and props
+- URLs, file paths, commands
+- Variable/function/class names
+
+### Translation Process
+1. **Copy** English file to target language directory
+2. **Translate** frontmatter (title, description)
+3. **Translate** all descriptive text
+4. **Update** internal links with language prefix (e.g., `/de/philosophy`)
+5. **Preserve** all code blocks EXACTLY
+6. **Preserve** all Vue components (translate only prop text values)
+
+### Quality Checks
+- ✅ Product names in English
+- ✅ Code blocks identical to English
+- ✅ Links updated with `/[lang]/` prefix
+- ✅ Markdown structure preserved
+- ✅ Vue component props preserved
+
 ## CSS Development Approach
 **ALWAYS USE MOBILE-FIRST**: Start with mobile styles as default, then use min-width media queries for larger screens.
 

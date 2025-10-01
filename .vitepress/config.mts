@@ -467,6 +467,17 @@ export default defineConfig({
     // Canonical URL - tells Google which is your preferred URL
     ['link', { rel: 'canonical', href: 'https://hatch.rs' }],
 
+    // Google Analytics 4
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-LMJ8EF40PZ' }
+    ],
+    [
+      'script',
+      {},
+      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-LMJ8EF40PZ');"
+    ],
+
     // Open Graph and Twitter meta tags...
     // (keeping all the existing meta tags from current config)
   ],
