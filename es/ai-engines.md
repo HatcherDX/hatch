@@ -18,7 +18,7 @@ Claude de Anthropic es nuestro motor de IA principal, optimizado para:
 - **Refactorización Segura**: Enfoque conservador para modificaciones de código
 - **Conciencia de Contexto**: Maneja bases de código grandes efectivamente
 
-**Configuración:**
+** Configuración:**
 
 ```json
 {
@@ -38,7 +38,7 @@ Gemini de Google proporciona capacidades complementarias:
 - **Soporte Multi-lenguaje**: Fuerte soporte para stacks tecnológicos diversos
 - **Iteración Rápida**: Tiempos de respuesta rápidos para ediciones rápidas
 
-**Configuración:**
+** Configuración:**
 
 ```json
 {
@@ -171,7 +171,7 @@ Personaliza el comportamiento del motor para diferentes tipos de tareas:
 
 ### Problemas Comunes
 
-**Error de Autenticación:**
+** Error de Autenticación:**
 
 ```bash
 # Re-autenticar con Claude
@@ -182,13 +182,13 @@ claude auth login
 gemini config check
 ```
 
-**Respuesta Lenta:**
+** Respuesta Lenta:**
 
 - Reducir tamaño de contexto
 - Usar temperatura más baja
 - Verificar límites de rate
 
-**Calidad de Código Inconsistente:**
+** Calidad de Código Inconsistente:**
 
 - Actualizar Playbooks del proyecto
 - Ajustar configuración de temperatura
@@ -198,7 +198,7 @@ gemini config check
 
 ### Motores Planificados
 
-- **GPT-4**: Para capacidades de razonamiento avanzadas
+- ** GPT-4**: Para capacidades de razonamiento avanzadas
 - **CodeLlama**: Para especialización en código
 - **Copilot**: Para compatibilidad con flujos existentes
 

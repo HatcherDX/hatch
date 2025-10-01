@@ -1,22 +1,16 @@
 <template>
   <div class="metrics-section">
     <div class="metrics-container">
-      <SectionTitle title="By the Numbers" />
+      <SectionTitle :title="title" />
       <div class="metrics-grid">
-        <div class="metric-item">
-          <div class="metric-number">100%</div>
-          <div class="metric-label">Test Coverage</div>
-          <div class="metric-description">Automated by AI, verified by you. Ship with confidence.</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-number">0%</div>
-          <div class="metric-label">Cloud Dependency</div>
-          <div class="metric-description">Your IP stays yours. No data leaves your machine.</div>
-        </div>
-        <div class="metric-item">
-          <div class="metric-number metric-infinity">∞</div>
-          <div class="metric-label">Language Support</div>
-          <div class="metric-description">COBOL to Rust via WebAssembly. Use what works.</div>
+        <div
+          v-for="(metric, index) in metrics"
+          :key="index"
+          class="metric-item"
+        >
+          <div class="metric-number" :class="{ 'metric-infinity': metric.isInfinity }">{{ metric.number }}</div>
+          <div class="metric-label">{{ metric.label }}</div>
+          <div class="metric-description">{{ metric.description }}</div>
         </div>
       </div>
     </div>
@@ -25,6 +19,40 @@
 
 <script setup lang="ts">
 import SectionTitle from '../atoms/SectionTitle.vue'
+
+interface MetricItem {
+  number: string
+  label: string
+  description: string
+  isInfinity?: boolean
+}
+
+interface MetricsSectionProps {
+  title?: string
+  metrics?: MetricItem[]
+}
+
+const props = withDefaults(defineProps<MetricsSectionProps>(), {
+  title: 'By the Numbers',
+  metrics: () => [
+    {
+      number: '100%',
+      label: 'Test Coverage',
+      description: 'Automated by AI, verified by you. Ship with confidence.'
+    },
+    {
+      number: '0%',
+      label: 'Cloud Dependency',
+      description: 'Your IP stays yours. No data leaves your machine.'
+    },
+    {
+      number: '∞',
+      label: 'Language Support',
+      description: 'COBOL to Rust via WebAssembly. Use what works.',
+      isInfinity: true
+    }
+  ]
+})
 </script>
 
 <style scoped>

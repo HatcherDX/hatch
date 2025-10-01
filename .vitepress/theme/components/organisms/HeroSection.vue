@@ -6,32 +6,30 @@
         <img
           v-if="isDark"
           src="/logo-small-inline-dark.svg"
-          alt="Hatcher DX Engine"
+          :alt="logoAlt"
           class="hero-logo-image"
         />
         <img
           v-else
           src="/logo-small-inline-light.svg"
-          alt="Hatcher DX Engine"
+          :alt="logoAlt"
           class="hero-logo-image"
         />
       </div>
 
       <!-- Title with golden gradient -->
       <h1 class="hero-title">
-        <span class="hero-title-text">Constitutional IDE</span>
+        <span class="hero-title-text">{{ title }}</span>
       </h1>
 
       <!-- Tagline -->
       <p class="hero-tagline">
-        Command a fleet of AI drones that code while you sleep. Deploy autopilots
-        that follow your playbooks with military precision. The IDE where you are
-        the Commander, not the debugger.
+        {{ tagline }}
       </p>
 
       <!-- CTA Button -->
       <div class="hero-actions">
-        <a href="/philosophy" class="hero-cta">
+        <a :href="ctaLink" class="hero-cta">
           <svg class="hero-cta-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <!-- Military chevrons (sergeant stripes) -->
             <!-- Top chevron -->
@@ -41,7 +39,7 @@
             <!-- Bottom chevron -->
             <path d="M6 18 L12 14 L18 18" stroke="currentColor" stroke-width="1.5" fill="none" />
           </svg>
-          <span>Join the Fleet</span>
+          <span>{{ ctaText }}</span>
         </a>
       </div>
 
@@ -51,6 +49,22 @@
 
 <script setup lang="ts">
 import { useData } from 'vitepress'
+
+interface HeroSectionProps {
+  title?: string
+  tagline?: string
+  ctaText?: string
+  ctaLink?: string
+  logoAlt?: string
+}
+
+const props = withDefaults(defineProps<HeroSectionProps>(), {
+  title: 'Constitutional IDE',
+  tagline: 'Command a fleet of AI drones that code while you sleep. Deploy autopilots that follow your playbooks with military precision. The IDE where you are the Commander, not the debugger.',
+  ctaText: 'Join the Fleet',
+  ctaLink: '/philosophy',
+  logoAlt: 'Hatcher DX Engine'
+})
 
 const { isDark } = useData()
 </script>
@@ -181,7 +195,7 @@ const { isDark } = useData()
   .hero-tagline {
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     line-height: 1.7;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1rem;
     max-width: 750px !important;
   }
 }

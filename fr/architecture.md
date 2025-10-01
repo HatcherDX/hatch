@@ -1,241 +1,63 @@
 ---
-title: Architecture | Conception Technique et Principes d'Ingénierie de Hatcher IDE
-description: Explorez l'architecture technique de Hatcher conçue pour l'Amplification Contrôlée. Découvrez la conception déterministe, l'approche agnostique des modèles et les principes d'ingénierie open source.
+title: Architecture | Les Quatre Piliers de Hatcher
+description: Explorez l'architecture technique de Hatcher, une implémentation directe de nos Quatre Piliers. Découvrez comment nous avons construit un IDE déterministe, agnostique aux modèles et centré sur le développeur.
 ---
 
-# Architecture
+# Architecture Hatcher
 
-Hatcher est construit comme une application Electron moderne avec une architecture monorepo qui privilégie la scalabilité, la maintenabilité et les performances.
+L'architecture de Hatcher est une traduction directe de nos **Quatre Piliers** en code. Chaque choix est une étape délibérée vers un environnement de développement déterministe, puissant, et qui maintient le commandant humain en contrôle absolu.
 
-## Architecture de Haut Niveau
+Notre ingénierie est guidée par une question: **Est-ce que cela sert les piliers?**
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Hatcher Desktop App                      │
-├─────────────────────────────────────────────────────────────┤
-│  Main Process (Node.js)     │  Renderer Process (Vue.js)   │
-│  ├── Window Management      │  ├── Visual-to-Code Bridge   │
-│  ├── AI Engine Integration  │  ├── Code Editor             │
-│  ├── File System Access     │  ├── Project Management      │
-│  └── Git Operations         │  └── UI Components           │
-└─────────────────────────────────────────────────────────────┘
-                              │
-┌─────────────────────────────────────────────────────────────┐
-│                External AI Services                         │
-│  ├── Claude API (Anthropic)                                │
-│  ├── Gemini CLI (Google)                                   │
-│  └── Future: GPT-4, CodeLlama                              │
-└─────────────────────────────────────────────────────────────┘
-```
+## Les Quatre Piliers: Notre Fondation Architecturale
 
-## Structure du Monorepo
+Au lieu de principes abstraits, notre architecture est construite sur quatre piliers concrets et porteurs. Ils sont le système.
 
-```
-dx-engine/
-├── apps/                    # Applications principales
-│   ├── electron/           # Processus principal Electron
-│   ├── web/               # Processus renderer Vue.js
-│   ├── preload/           # Scripts preload sécurisés
-│   └── docs/              # Documentation VitePress
-│
-├── universal/             # Packages partagés
-│   ├── vite-plugin/       # Plugins Vite personnalisés
-│   └── puppeteer-google-translate/  # Service de traduction
-│
-├── scripts/               # Scripts d'automatisation
-│   ├── translation/       # Système de traduction TypeScript
-│   ├── setup-env.ts      # Configuration d'environnement
-│   ├── version-bump.ts   # Gestion des versions
-│   └── generate-icons.ts # Génération d'icônes
-│
-└── Config Files           # Configuration du projet
-    ├── package.json       # Configuration du workspace
-    ├── turbo.json         # Configuration Turborepo
-    └── tsconfig.json      # Configuration TypeScript
-```
+### <DocIcon type="constitutional" inline /> Ingénierie Constitutionnelle
 
-## Processus Electron
+C'est la couche de gouvernance. Elle est alimentée par le **Système Playbooks** (un moteur de contexte dynamique) et appliquée par **Hatcher Actions**. Chaque opération, surtout de l'IA, est validée contre cette constitution définie par l'utilisateur. Ce pilier permet au **Système Autopilots** d'exécuter avec confiance tout en respectant vos règles.
 
-### Main Process (apps/electron/)
+### <DocIcon type="time-graph" inline /> Le Time Graph
 
-Le processus principal gère :
+C'est la couche de sécurité et d'auditabilité. Elle est alimentée par un **moteur Git personnalisé et haute performance** conçu pour les changements granulaires et haute fréquence du développement IA. Elle fournit l'historique immuable qui alimente **The Time Graph HAT** et les journaux auditables pour chaque mission Autopilot.
 
-- **Gestion des Fenêtres** : Créer et contrôler les fenêtres d'application
-- **Intégration IA** : Communication avec les services IA externes
-- **Accès Système** : Opérations de fichiers et système
-- **Sécurité** : Validation et assainissement des entrées
+### <DocIcon type="ai-command" inline /> IA Sous Commandement
 
-```typescript
-// apps/electron/src/index.ts
-import { app, BrowserWindow } from 'electron'
+C'est la couche d'orchestration. Elle agit comme un plan de contrôle agnostique aux modèles, gérant une **flotte de modèles IA** (comme Claude et Gemini). Elle traduit l'intention humaine en opérations IA précises et liées constitutionnellement. Ce pilier alimente le **Gen HAT** et le **Code HAT**, vous donnant le commandement sur plusieurs agents IA.
 
-class HatcherMain {
-  private mainWindow: BrowserWindow | null = null
+### <DocIcon type="universal-fabricator" inline /> Le Fabricateur Universel
 
-  async initialize() {
-    await this.createWindow()
-    this.setupAIIntegration()
-    this.setupGitIntegration()
-  }
+C'est la couche d'exécution et de modernisation. Elle utilise **WebAssembly** pour exécuter des **Hatcher Functions** polyglottes (Delphi, C++, Rust, etc.) à l'intérieur de l'environnement sécurisé et déterministe d'un **EGG** Hatcher (Enforced Governance Guardrails). Cela permet au code legacy de s'exécuter partout tout en respectant les standards modernes.
 
-  private async createWindow() {
-    this.mainWindow = new BrowserWindow({
-      width: 1200,
-      height: 800,
-      webPreferences: {
-        nodeIntegration: false,
-        contextIsolation: true,
-        preload: path.join(__dirname, 'preload.js'),
-      },
-    })
-  }
-}
-```
+## Stack Technologique & Vision
 
-### Renderer Process (apps/web/)
+Nos choix technologiques sont pragmatiques et tournés vers l'avenir, équilibrant le besoin d'innovation rapide avec un engagement à long terme envers la performance et la sécurité.
 
-Le processus renderer contient l'UI Vue.js :
+| Composant         | Technologie               | Pourquoi Nous L'avons Choisi                                                                                                                        |
+| :---------------- | :------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Desktop Shell** | **Electron (Actuel)**     | Fournit une fondation robuste et éprouvée au combat pour le développement multiplateforme rapide, nous permettant de nous concentrer sur notre valeur ajoutée. |
+| **UI Framework**  | **Vue.js 3 + TypeScript** | Son Composition API et sa sécurité de type sont idéales pour l'interface complexe et avec état d'un IDE professionnel.                              |
+| **Core (Vision)** | **Tauri + Rust**          | Notre vision à long terme est de forger le noyau de Hatcher en Rust pour sa performance inégalée, sa sécurité mémoire et ses garanties de sécurité. |
 
-- **Pont Visuel-vers-Code** : Fonctionnalité centrale de sélection visuelle
-- **Éditeur de Code** : Éditeur intégré avec coloration syntaxique
-- **Gestion de Projets** : Explorateur de fichiers et gestion
-- **Composants UI** : Interface utilisateur réactive
+Ce "Chemin vers Rust" est central à notre promesse. Nous construisons le futur sur un prototype éprouvé, avec un plan architectural clair qui priorise les plus hauts standards d'excellence en ingénierie.
 
-### Scripts Preload (apps/preload/)
+## Sécurité & Confidentialité par Conception
 
-Scripts preload sécurisés qui exposent des APIs contrôlées :
+La sécurité n'est pas une fonctionnalité; c'est un prérequis architectural.
 
-```typescript
-// apps/preload/src/index.ts
-import { contextBridge, ipcRenderer } from 'electron'
+- **Local d'Abord par Défaut:** Votre code source et historique vivent sur votre machine. Rien n'est envoyé à un service cloud sans votre action explicite, comme l'activation de la synchronisation d'équipe pour le journal d'audit immuable.
 
-contextBridge.exposeInMainWorld('electronAPI', {
-  // Opérations de fichiers sécurisées
-  readFile: (path: string) => ipcRenderer.invoke('read-file', path),
-  writeFile: (path: string, content: string) =>
-    ipcRenderer.invoke('write-file', path, content),
+- **Zéro Stockage de Code:** Nos services cloud (pour les fonctionnalités d'équipe comme Playbooks) **ne stockent pas une copie complète de votre dépôt**. Nous stockons uniquement les données de gouvernance nécessaires (comme Playbooks et entrées de journal d'audit), jamais votre base de code entière au repos.
 
-  // Intégration IA
-  callAI: (prompt: string, context: any) =>
-    ipcRenderer.invoke('ai-request', prompt, context),
+- **Exécution Sandboxée:** Les Hatcher Functions s'exécutent dans un sandbox WebAssembly sécurisé sans accès à votre système par défaut.
 
-  // Opérations Git
-  gitStatus: () => ipcRenderer.invoke('git-status'),
-  gitDiff: () => ipcRenderer.invoke('git-diff'),
-})
-```
+- **Opérations Transparentes:** Le Time Graph et le Human Firewall garantissent que vous avez un enregistrement clair et auditable de chaque action et le dernier mot sur chaque changement.
 
-## Stack Technologique
-
-### Frontend (Renderer)
-
-- **Vue.js 3** : Framework réactif avec Composition API
-- **TypeScript** : Développement avec sûreté de types
-- **Vite** : Outils de build rapides
-- **Pinia** : Gestion d'état moderne
-- **Vue Router** : Routage côté client
-
-### Backend (Main Process)
-
-- **Electron** : Framework d'application desktop
-- **Node.js** : Runtime JavaScript
-- **TypeScript** : Développement avec sûreté de types
-- **IPC** : Communication inter-processus
-
-### Outils de Développement
-
-- **Turborepo** : Gestion monorepo et cache
-- **ESLint** : Linting de code
-- **Prettier** : Formatage de code
-- **Vitest** : Framework de test
-- **Istanbul** : Couverture de code
-
-## Intégration IA
-
-### Abstraction des Moteurs
-
-```typescript
-interface AIEngine {
-  name: string
-  generate(prompt: string, context: Context): Promise<AIResponse>
-  validateConfig(): boolean
-}
-
-class ClaudeEngine implements AIEngine {
-  async generate(prompt: string, context: Context) {
-    // Implémentation spécifique Claude
-  }
-}
-
-class GeminiEngine implements AIEngine {
-  async generate(prompt: string, context: Context) {
-    // Implémentation spécifique Gemini
-  }
-}
-```
-
-### Gestion du Contexte
-
-```typescript
-class ContextManager {
-  buildContext(element: DOMElement, project: Project): Context {
-    return {
-      element: this.serializeElement(element),
-      componentTree: this.getComponentTree(element),
-      projectRules: project.playbooks,
-      codeStyle: project.eslintConfig,
-    }
-  }
-}
-```
-
-## Sécurité
-
-### Isolation de Contexte
-
-- **contextIsolation: true** : Isoler les contextes renderer
-- **nodeIntegration: false** : Désactiver Node.js dans renderer
-- **Scripts Preload** : Exposer uniquement des APIs contrôlées
-
-### Validation d'Entrée
-
-```typescript
-// Validation dans Main Process
-ipcMain.handle('write-file', async (event, filepath, content) => {
-  // Valider le chemin
-  if (!isValidPath(filepath)) {
-    throw new Error('Invalid file path')
-  }
-
-  // Valider les permissions
-  if (!hasWritePermission(filepath)) {
-    throw new Error('Access denied')
-  }
-
-  // Assainir le contenu
-  const sanitizedContent = sanitize(content)
-
-  return await fs.writeFile(filepath, sanitizedContent)
-})
-```
-
-## Déploiement
-
-### Processus de Build
-
-```bash
-# Build complet
-pnpm build
-
-# Empaquetage pour différentes plateformes
-pnpm pack:prod  # Toutes les plateformes
-pnpm pack:mac   # macOS seulement
-pnpm pack:win   # Windows seulement
-pnpm pack:linux # Linux seulement
-```
-
-### Distribution
-
-- **GitHub Releases** : Distribution automatique
-- **Auto-updater** : Mises à jour dans l'app
-- **Code Signing** : Certificats de confiance
+<PageCTA
+  title="Prêt à Approfondir?"
+  subtitle="Explorez comment notre architecture permet la prochaine génération de développement assisté par IA"
+  buttonText="Lire la Philosophie"
+  buttonLink="/philosophy"
+  buttonStyle="secondary"
+  footer="Construit avec la sécurité, la confidentialité et le contrôle du développeur en son cœur"
+/>

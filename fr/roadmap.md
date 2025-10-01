@@ -1,259 +1,103 @@
 ---
-title: Feuille de Route | Plans de Développement Futur de Hatcher IDE
-description: Explorez la feuille de route de développement de Hatcher et les fonctionnalités à venir. Découvrez ce qui est prévu pour le développement assisté par IA, les nouvelles intégrations et les améliorations de la plateforme.
+title: Feuille de Route | L'Avenir de l'IDE Constitutionnel
+description: Explorez la feuille de route stratégique de Hatcher. De notre "échafaudage de luxe" fondateur à l'allumage de notre volant PLG et au lancement de la plateforme EGG entreprise, voyez comment nous construisons l'avenir du développement IA contrôlé.
 ---
 
-# Feuille de Route
+# Feuille de Route Hatcher
 
-Cette feuille de route décrit la vision et les plans de développement pour Hatcher. Elle représente nos intentions actuelles et peut évoluer en fonction des retours de la communauté et des besoins du marché.
+Ce document décrit nos priorités stratégiques pour mettre l'**IDE Hatcher** sur le marché. Sa mission est d'évangéliser notre vision, de construire un public dévoué et d'établir Hatcher comme le leader d'opinion définitif dans l'ère du développement IA.
 
-## 🎯 Vision à Long Terme
+## ✅ Phase 0: Les Fondations (Complété)
 
-Faire de Hatcher l'IDE de référence pour le développement assisté par IA, où les développeurs maintiennent un contrôle total tout en bénéficiant d'une amplification intelligente de leurs capacités.
+**Objectif:** Construire et valider "l'échafaudage de luxe"—les piliers architecturaux de niveau entreprise requis pour soutenir notre vision ambitieuse.
 
-## 📅 Feuille de Route par Version
+**Résultats Clés:**
 
-### Version 0.1.0 - MVP (Phase Actuelle)
+- **Statut**: Complété. Nous avons livré une fondation de classe mondiale incluant notre moteur Git personnalisé, un moteur de stockage sécurisé (avec coffre-fort AES-256) et un terminal professionnel accéléré par GPU.
+- **Résultat Clé**: Atteint ~90% de couverture de tests et un pipeline CI/CD robuste multi-plateforme. Cela prouve notre engagement envers l'excellence d'ingénierie requise pour un outil critique.
 
-**Status**: 🚧 En Développement Active
+## 🟡 Phase 1: Validation de la Valeur Centrale (En Cours)
 
-#### ✅ Fonctionnalités Complétées
+**Objectif:** Valider notre philosophie centrale d'"Amplification Contrôlée" en livrant une expérience focalisée et impressionnante au sein du **Gen HAT**.
 
-- ✅ Architecture de base Electron + Vue.js
-- ✅ Intégration Claude et Gemini
-- ✅ Pont Visual-to-Code basique
-- ✅ Système de Playbooks fondamental
-- ✅ Documentation multilingue (13 langues)
-- ✅ Interface utilisateur de base
+**Focus Stratégique:** Toute notre équipe est dédiée à perfectionner un seul workflow "magique": `Prompt -> Constitutional Validation -> Time Graph Review -> Commit`.
 
-#### 🚧 En Cours de Développement
+**Note Stratégique:** L'achèvement réussi de la Phase 1 culminera dans notre candidature à Y Combinator. Notre objectif est de présenter un MVP validé, un témoignage solide de partenaire de design, et une vision claire pour le leadership du marché.
 
-- 🚧 Amélioration du Visual-to-Code bridge
-- 🚧 Optimisation de la performance
-- 🚧 Tests et stabilisation
-- 🚧 Intégration Git avancée
+**Résultats Clés:**
 
-#### 📋 Fonctionnalités Planifiées
+- `[En Cours]` **Workflow Génératif de Bout en Bout**: Connecter l'UI à un puissant moteur IA basé dans le cloud et s'assurer que la sortie IA est correctement analysée et affichée dans l'éditeur.
 
-- Support des projets React/Next.js
-- Amélioration de l'expérience utilisateur
-- Tests automatisés complets
-- Package de distribution
+- `[À Faire]` **Le Panneau Diff Immuable:** Le **Time Graph** doit fournir un processus de révision clair et déterministe pour tout code généré par IA. C'est le cœur non-négociable de notre promesse de gouvernance.
 
-### Version 0.2.0 - Amélioration de l'Expérience Utilisateur
+- `[À Faire]` **Validation Playbook Premier Passage:** Implémenter la Validation Constitutionnelle initiale via les playbooks pour s'assurer que les actions IA s'alignent avec les règles du projet et les valeurs humaines.
 
-**Timeline**: Q2 2024
+- `[À Faire]` **Une Expérience Focalisée:** Cacher ou désactiver agressivement tous les autres modes et fonctionnalités incomplets. L'objectif est de présenter une expérience stable et impressionnante centrée exclusivement sur la boucle générative centrale.
 
-#### 🎯 Objectifs Principaux
+## <DocIcon type="rocket" inline /> Phase 2: Allumer le Volant (Suivant)
 
-- Interface utilisateur raffinée et intuitive
-- Performance optimisée pour les gros projets
-- Meilleure intégration avec les outils de développement existants
+**Objectif:** Lancer le niveau gratuit de l'**IDE Hatcher**, focalisé sur l'expérience **Gen HAT**, au public, initiant notre croissance pilotée par le produit (PLG) et notre volant communautaire.
 
-#### 📋 Fonctionnalités Prévues
+**Focus Stratégique:** Stimuler l'adoption massive, recueillir des retours utilisateurs critiques et cultiver notre cohorte initiale de champions communautaires.
 
-- **Interface Améliorée**
-  - Dark/Light mode toggle
-  - Thèmes personnalisables
-  - Raccourcis clavier avancés
-  - Panneaux redimensionnables
+**Résultats Clés:**
 
-- **Performance**
-  - Lazy loading des composants
-  - Optimisation mémoire
-  - Cache intelligent des réponses IA
-  - Traitement asynchrone amélioré
+- **Lancement:** Publier une version polie et publiquement disponible de l'**IDE Hatcher**, avec le **Gen HAT** comme expérience centrale, pour utilisation locale gratuite.
 
-- **Intégrations IDE**
-  - Plugin VS Code
-  - Support JetBrains IDEs
-  - Extension Vim/Neovim
-  - Intégration terminal
+- **Activation:** Atteindre un fort taux d'activation, mesuré par le pourcentage d'utilisateurs qui exécutent avec succès leur première génération de code alimentée par IA et la révisent dans le **Time Graph**.
 
-### Version 0.3.0 - Moteurs IA Étendus
+- **Communauté:** Favoriser la création et le partage des premiers **Playbooks** publics, les plans de vol qui alimentent nos **Autopilots**.
 
-**Timeline**: Q3 2024
+## 💰 Phase 3: Monétisation & La Plateforme EGG (v1.0.0 et Au-Delà)
 
-#### 🤖 Nouveaux Moteurs IA
+**Objectif:** Lancer nos niveaux commerciaux et exécuter notre stratégie de plateforme complète en offrant deux configurations EGG distinctes pour résoudre des défis d'entreprise spécifiques.
 
-- **GPT-4 Integration** (OpenAI)
-  - Support API officielle
-  - Modèles spécialisés pour le code
-  - Configuration flexible
+**Piste 1: Évolution du Produit Central (Niveau Gratuit)**
 
-- **Claude 3 Opus** (Anthropic)
-  - Support du modèle le plus puissant
-  - Traitement de contextes très longs
-  - Capacités de raisonnement avancées
+- **Mission:** Continuer à construire l'IDE gratuit le plus puissant pour utilisation locale, pour le développement alimenté par IA.
 
-- **CodeLlama** (Meta)
-  - Exécution locale optionnelle
-  - Modèles spécialisés par langage
-  - Intégration avec Ollama
+- **Feuille de Route:**
+  - **Support LLM Local:** Intégrer avec les modèles locaux via Ollama pour remplir notre promesse de Souveraineté IA.
+  - **Bibliothèque Playbook Étendue:** Faire croître le marketplace public de **Playbooks**, améliorant les capacités des **Hatcher Autopilots**.
+  - **Améliorations de Performance:** Améliorer continuellement la vitesse et l'efficacité de l'IDE central.
 
-#### 🔧 Fonctionnalités IA Avancées
+**Piste 2: La Plateforme EGG**
 
-- Sélection automatique du meilleur moteur
-- Ensembles de modèles (model ensembles)
-- Fine-tuning sur vos patterns de code
-- IA collaborative (multiple agents)
+- **Mission:** Fournir une plateforme unifiée pour construire des logiciels critiques, permettant aux équipes de choisir la configuration optimale pour leurs besoins.
 
-### Version 0.4.0 - Collaboration d'Équipe
+- **Feuille de Route:**
+  - **Niveau Équipes (v1.0.0):** Introduire notre première fonctionnalité payante: Marketplaces de Playbooks Privés. Cela permet aux équipes de codifier et partager les plans de vol personnalisés pour leurs **Autopilots** internes.
+  - **Niveau Entreprise (v1.1.0):** Lancer la Plateforme Hatcher EGGs (Enforced Governance Guardrails), comportant:
+    - **EGG "Compatibilité":** La solution pour le déploiement d'entreprise à grande échelle où la cohérence visuelle et fonctionnelle à 100% est la **plus haute priorité.** Cette configuration exploite **Tauri avec un moteur CEF (Chromium) embarqué.**
+    - **EGG "Performance":** La solution pour les environnements où **l'efficacité, une empreinte minimale et le plus haut niveau de sécurité sont primordiaux.** Cette configuration utilise **la WebView OS native de Tauri.**
+  - **Auditabilité & Conformité:** Livrer des fonctionnalités **Time Graph** avancées pour les responsables de conformité et introduire une journalisation d'audit robuste.
+  - **Hatcher BaaS:** Lancer notre Backend-as-a-Service intégré pour fournir une solution de déploiement de bout en bout sans friction pour les Hatcher EGGs.
 
-**Timeline**: Q4 2024
+**Piste 3: L'Avenir: Communauté & Noyau**
 
-#### 👥 Fonctionnalités Collaboratives
+- **Mission:** Remplir notre vision architecturale à long terme en responsabilisant la communauté et en forgeant notre noyau en Rust.
 
-- **Playbooks d'Équipe**
-  - Synchronisation en temps réel
-  - Versionning des standards de code
-  - Revue collaborative des règles
-  - Import/export de configurations
+- **Feuille de Route:**
+  - **Performance Alimentée par la Communauté:** Travailler activement avec la communauté open-source pour perfectionner la cohérence multi-plateforme de nos composants EGG "Performance" (Tauri Native).
+  - **Le Chemin vers Rust:** Commencer la migration stratégique de l'**IDE Hatcher** lui-même de notre prototype Electron éprouvé vers un moteur de nouvelle génération forgé en Rust.
 
-- **Partage de Projets**
-  - Espaces de travail partagés
-  - Historique des modifications IA
-  - Commentaires et révisions
-  - Permissions granulaires
+## Notre Principe Directeur
 
-- **Intégration DevOps**
-  - Hooks Git avancés
-  - Intégration CI/CD
-  - Déploiement automatisé
-  - Monitoring et métriques
+Cette feuille de route reflète notre engagement envers une approche délibérée et progressive. Nous équilibrons la stabilité fondationnelle avec l'innovation ambitieuse pour établir Hatcher comme l'IDE Constitutionnel définitif pour l'ère IA.
 
-### Version 1.0.0 - Sortie Stable
+## Restez Informé
 
-**Timeline**: Q1 2025
+- **GitHub**: Surveillez le [dépôt](https://github.com/HatcherDX/dx-engine) pour les mises à jour
+- **Discord**: Rejoignez notre [chat communautaire](https://discord.gg/hatcher)
+- **Twitter**: Suivez [@HatcherDX](https://twitter.com/HatcherDX)
 
-#### 🎉 Milestone Majeur
+Cette feuille de route est un document vivant qui évolue en fonction des retours de la communauté et des avancées technologiques. Nous construisons Hatcher en public et accueillons vos contributions sur notre direction.
 
-- Architecture stable et documentée
-- API publique complète
-- Écosystème de plugins
-- Support commercial disponible
-
-#### 🏢 Fonctionnalités Entreprise
-
-- **Gouvernance et Compliance**
-  - Audit trails complets
-  - Politiques de sécurité
-  - Conformité GDPR/SOC2
-  - Rapports de compliance
-
-- **Scalabilité**
-  - Support multi-tenant
-  - Load balancing
-  - Base de données distribuée
-  - CDN global
-
-- **Support**
-  - Documentation complète
-  - Formation et certification
-  - Support technique premium
-  - Services professionnels
-
-## 🔬 Recherche et Innovation
-
-### IA Générative Avancée
-
-- **Multimodal AI**: Images, diagrammes, vidéos
-- **Code Explanation**: IA qui explique le code existant
-- **Automated Testing**: Génération de tests automatique
-- **Security Analysis**: Détection de vulnérabilités
-
-### Nouvelles Interfaces
-
-- **Voice Coding**: Développement par commandes vocales
-- **AR/VR Integration**: Interfaces immersives
-- **Gesture Control**: Contrôle par gestes
-- **Brain-Computer Interface**: Exploration préliminaire
-
-### Technologies Émergentes
-
-- **WebAssembly**: Performance native dans le browser
-- **Edge Computing**: IA locale et privée
-- **Quantum Computing**: Exploration des algorithmes quantiques
-- **Blockchain**: Versionning décentralisé
-
-## 🎯 Métriques de Succès
-
-### Métriques Techniques
-
-- **Performance**: Temps de réponse < 2s pour 95% des interactions
-- **Fiabilité**: Uptime > 99.9%
-- **Qualité**: Taux d'acceptation des suggestions > 80%
-- **Sécurité**: Zero incidents de sécurité critiques
-
-### Métriques Utilisateur
-
-- **Adoption**: 10,000 développeurs actifs d'ici fin 2024
-- **Satisfaction**: Net Promoter Score > 50
-- **Productivité**: 40% de réduction du temps de développement
-- **Rétention**: 80% d'utilisateurs actifs mensuel
-
-### Métriques Communauté
-
-- **Contributors**: 100+ contributeurs open source
-- **Extensions**: 50+ plugins communautaires
-- **Documentation**: Support de 20+ langues
-- **Écosystème**: 500+ intégrations tierces
-
-## 🌍 Expansion Géographique
-
-### Phase 1: Marchés Anglophones
-
-- États-Unis, Canada, Royaume-Uni, Australie
-- Support complet en anglais
-- Partenariats locaux
-
-### Phase 2: Europe et Asie
-
-- France, Allemagne, Japon, Corée du Sud
-- Localisation complète
-- Conformité réglementaire locale
-
-### Phase 3: Marchés Émergents
-
-- Brésil, Inde, Russie, Moyen-Orient
-- Support multilingue étendu
-- Pricing adapté aux marchés locaux
-
-## 🤝 Partenariats Stratégiques
-
-### Intégrations Planifiées
-
-- **GitHub**: Intégration native Copilot
-- **GitLab**: Support GitLab AI
-- **Azure**: Services cloud Microsoft
-- **AWS**: Infrastructure et services IA
-- **Google Cloud**: Vertex AI integration
-
-### Écosystème
-
-- **Framework Partners**: Vue, React, Angular
-- **Cloud Providers**: Multi-cloud support
-- **CI/CD**: Jenkins, GitHub Actions, GitLab CI
-- **Monitoring**: DataDog, New Relic, Sentry
-
-## 📢 Communication
-
-### Comment Suivre les Progrès
-
-- **GitHub**: Issues et milestones publics
-- **Blog**: Mises à jour mensuelles sur le développement
-- **Newsletter**: Inscrivez-vous pour les annonces importantes
-- **Discord**: Discussions en temps réel avec l'équipe
-
-### Retours de la Communauté
-
-- **Feature Requests**: GitHub Discussions
-- **Beta Testing**: Programme de beta testeurs
-- **Surveys**: Enquêtes trimestrielles utilisateurs
-- **User Interviews**: Sessions 1-on-1 avec utilisateurs
-
----
-
-**Note**: Cette feuille de route est vivante et évoluera avec les retours de la communauté. Nous nous engageons à la transparence et à la communication régulière sur nos progrès.
-
-Pour les dernières mises à jour, visitez notre [page de statut](https://status.hatche.rs) ou rejoignez notre [Discord](https://discord.gg/hatcher).
+<PageCTA
+  title="Façonnez l'Avenir Avec Nous"
+  subtitle="Vos retours et contributions font avancer notre feuille de route"
+  buttonText="Rejoignez la Discussion"
+  buttonLink="https://discord.gg/hatcher"
+  buttonStyle="secondary"
+  footer="Construire l'avenir du développement, ensemble"
+/>

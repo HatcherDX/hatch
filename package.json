@@ -12,25 +12,19 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vitepress dev",
     "build": "vitepress build",
     "build:pages": "NODE_ENV=production vitepress build",
     "preview": "vitepress preview",
-    "lint": "echo \"No linting configured\"",
-    "lint:fix": "echo \"No linting configured\"",
-    "translate": "node scripts/translate-docs.js",
-    "translate:test": "node scripts/translate-docs.js --test",
-    "fix:frontmatter": "node scripts/fix-frontmatter.js",
-    "fix:yaml": "node scripts/fix-yaml.js"
+    "validate:translations": "tsx scripts/validate-translations.ts"
   },
   "dependencies": {
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "chrome-launcher": "^1.2.1",
-    "glob": "^11.0.3",
-    "puppeteer": "^24.22.3",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
     "vitepress": "^1.6.3"
   }
 }

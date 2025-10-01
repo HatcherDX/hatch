@@ -1,6 +1,6 @@
 <template>
   <div class="admiral-section">
-    <SectionTitle title="About the Admiral" />
+    <SectionTitle :title="title" />
 
     <div class="admiral-container">
       <div class="admiral-card">
@@ -8,7 +8,7 @@
         <div class="admiral-visual">
           <div class="admiral-photo-wrapper">
             <div class="photo-border">
-              <img src="/chriss.jpg" alt="Chriss Mejía" class="admiral-photo" />
+              <img :src="photoUrl" :alt="photoAlt" class="admiral-photo" />
             </div>
             <div class="admiral-rank-badge">
               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -20,31 +20,24 @@
 
         <!-- Right side with info -->
         <div class="admiral-content">
-          <h3 class="admiral-name">Chriss Mejía</h3>
-          <p class="admiral-title">Founder & Principal Systems Architect</p>
+          <h3 class="admiral-name">{{ name }}</h3>
+          <p class="admiral-title">{{ jobTitle }}</p>
 
           <!-- Stats badges -->
           <div class="admiral-stats">
-            <div class="stat-badge">
-              <span class="stat-number">22</span>
-              <span class="stat-label">Years Engineering Systems</span>
-            </div>
-            <div class="stat-badge">
-              <span class="stat-number">300+</span>
-              <span class="stat-label">Engineers Led</span>
-            </div>
-            <div class="stat-badge primary">
-              <span class="stat-number">YC</span>
-              <span class="stat-label">MVP Builder</span>
+            <div
+              v-for="(stat, index) in stats"
+              :key="index"
+              class="stat-badge"
+              :class="{ primary: stat.primary }"
+            >
+              <span class="stat-number">{{ stat.number }}</span>
+              <span class="stat-label">{{ stat.label }}</span>
             </div>
           </div>
 
           <!-- Mission statement -->
-          <p class="admiral-mission">
-            My journey in engineering spans over two decades, from serving as VP at a pioneering Silicon Valley
-            AI startup to building the MVP for a YC-backed venture, and leading 300-person enterprise divisions.
-            Now building the tools that will define the next decade of development.
-          </p>
+          <p class="admiral-mission">{{ mission }}</p>
 
           <!-- Quote -->
           <blockquote class="admiral-quote">
@@ -52,10 +45,7 @@
               <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="currentColor" opacity="0.3"/>
               <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="currentColor" opacity="0.3"/>
             </svg>
-            <p class="quote-text">
-              The future of software isn't replacing developers.<br>
-              <span class="quote-emphasis">It's giving them command.</span>
-            </p>
+            <p class="quote-text" v-html="quote"></p>
           </blockquote>
         </div>
       </div>
@@ -65,6 +55,48 @@
 
 <script setup lang="ts">
 import SectionTitle from '../atoms/SectionTitle.vue'
+
+interface StatBadge {
+  number: string
+  label: string
+  primary?: boolean
+}
+
+interface AdmiralSectionProps {
+  title?: string
+  name?: string
+  jobTitle?: string
+  photoUrl?: string
+  photoAlt?: string
+  stats?: StatBadge[]
+  mission?: string
+  quote?: string
+}
+
+const props = withDefaults(defineProps<AdmiralSectionProps>(), {
+  title: 'About the Admiral',
+  name: 'Chriss Mejía',
+  jobTitle: 'Founder & Principal Systems Architect',
+  photoUrl: '/chriss.jpg',
+  photoAlt: 'Chriss Mejía',
+  mission: 'My journey in engineering spans over two decades, from serving as VP at a pioneering Silicon Valley AI startup to building the MVP for a YC-backed venture, and leading 300-person enterprise divisions. Now building the tools that will define the next decade of development.',
+  quote: 'The future of software isn\'t replacing developers.<br><span class="quote-emphasis">It\'s giving them command.</span>',
+  stats: () => [
+    {
+      number: '22',
+      label: 'Years Engineering Systems'
+    },
+    {
+      number: '300+',
+      label: 'Engineers Led'
+    },
+    {
+      number: 'YC',
+      label: 'MVP Builder',
+      primary: true
+    }
+  ]
+})
 </script>
 
 <style scoped>

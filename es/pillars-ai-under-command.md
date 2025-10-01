@@ -1,10 +1,10 @@
 # Ai bajo el comando
 
-> ** El humano es el comandante.La IA es el multiplicador de fuerza.Nunca al revés. **
+> **El humano es el comandante. La IA es el multiplicador de fuerza. Nunca al revés.**
 
 ## El principio
 
-AI es poderosa pero no sabia.Puede generar código a velocidad sobrehumana pero carece del contexto, el juicio y la responsabilidad que definen el desarrollo de software profesional.La solución no es restringir las capacidades de la IA, es ponerlas en estructuras de comando adecuadas.
+AI es poderosa pero no sabia. Puede generar código a velocidad sobrehumana pero carece del contexto, el juicio y la responsabilidad que definen el desarrollo de software profesional. La solución no es restringir las capacidades de la IA, es ponerlas en estructuras de comando adecuadas.
 
 AI bajo el mando significa que el desarrollador humano hace las transiciones de codificador a comandante, dirigiendo las fuerzas de IA con precisión mientras mantiene la autoridad absoluta sobre lo que ingresa a la base de código.
 
@@ -12,7 +12,7 @@ AI bajo el mando significa que el desarrollador humano hace las transiciones de 
 
 ### La cadena de mando
 
-`` `` ``
+```
 Comandante humano (usted)
 ↓ emita órdenes
 Fuerzas de IA (múltiples modelos de IA)
@@ -22,21 +22,21 @@ Validación constitucional
 Aprobación final humana
 ↓ ejecutar
 Base de código
-`` `` ``
+```
 
 Cada enlace de esta cadena está diseñado para amplificar la intención humana al tiempo que evita que la IA actúe de manera autónoma.
 
 ## El puente visual a código
 
-La implementación insignia de AI bajo el comando es nuestro puente visual a código.Funciona en dos niveles de comando:
+La implementación insignia de AI bajo el comando es nuestro puente visual a código. Funciona en dos niveles de comando:
 
-- ** Comando directo (micro): ** Para cambios quirúrgicos, puede señalar un elemento existente en su interfaz de usuario en vivo para anclar el contexto de la IA, asegurando que sus comandos basados ​​en texto se ejecuten con una precisión perfecta.
+- **Comando directo (micro):** Para cambios quirúrgicos, puede señalar un elemento existente en su interfaz de usuario en vivo para anclar el contexto de la IA, asegurando que sus comandos basados ​​en texto se ejecuten con una precisión perfecta.
 
-- ** Implementación estratégica (macro): ** Para tareas más grandes, el puente puede analizar un archivo de diseño completo, boceto o maqueta.La flota de IA luego propone múltiples estrategias de implementación de alto nivel, completas con el análisis de rendimiento y accesibilidad, alquilar su visión estática en un código interactivo listo para la producción.
+- **Implementación estratégica (macro):** Para tareas más grandes, el puente puede analizar un archivo de diseño completo, boceto o maqueta. La flota de IA luego propone múltiples estrategias de implementación de alto nivel, completas con el análisis de rendimiento y accesibilidad, alquilar su visión estática en un código interactivo listo para la producción.
 
 ### El panel de control
 
-`` `mecanografiado
+```typescript
 interfaz Commanderview {
 // Lo que está analizando la IA
 contexto: {
@@ -64,7 +64,7 @@ Seguridad: Security Audit
 Compatibilidad: Browsermatrix
 }
 }
-`` `` ``
+```
 
 ## La flota multimodelo
 
@@ -72,7 +72,7 @@ Compatibilidad: Browsermatrix
 
 Así como un comandante despliega diferentes unidades para diferentes objetivos, Hatcher orquesta múltiples modelos de IA:
 
-`` `Yaml
+```Yaml
 Fleet_composition:
 Scouts:
 -Modelo: modelo de inferencia rápida
@@ -93,13 +93,13 @@ Revisores:
 -Modelo: modelo centrado en la seguridad
 - Misión: detección de vulnerabilidad
 - Fuerza: análisis de amenazas
-`` `` ``
+```
 
 ### Operaciones coordinadas
 
 Los modelos trabajan juntos bajo su comando:
 
-`` `Bash
+```Bash
 # Emite un objetivo de alto nivel
 Hatcher Generate --Objective = "Agregar procesamiento de pagos"
 
@@ -117,7 +117,7 @@ Hatcher Generate --Objective = "Agregar procesamiento de pagos"
 
 # Tú toma la decisión estratégica
 Hatcher apre --option = 2 --add-condalinth = "pci-compating"
-`` `` ``
+```
 
 ## Interfaces de comando
 
@@ -125,7 +125,7 @@ Hatcher apre --option = 2 --add-condalinth = "pci-compating"
 
 Habla como un comandante, no como un codificador:
 
-`` `Bash
+```Bash
 # Codificación tradicional
 [Escribir 200 líneas de código de autenticación]
 
@@ -139,13 +139,13 @@ Hatcher: "Implementar OAuth2 con tokens de actualización, siguiendo nuestra con
 > Cobertura de prueba: 94%
 >
 > ¿Cambios de revisión?[Y/n]
-`` `` ``
+```
 
 ### Centro de comando visual
 
 Vea todo a la vez:
 
-`` `` ``
+```
 "
 │ Centro de comando │
 "
@@ -163,7 +163,7 @@ Vea todo a la vez:
 │ │
 │ [aprobar] [modificar] [abortar] [detalles] │
 "
-`` `` ``
+```
 
 ## El firewall humano
 
@@ -171,7 +171,7 @@ Vea todo a la vez:
 
 Ningún código generado por IA toca su base de código sin pasar por el firewall humano:
 
-`` `mecanografiado
+```typescript
 clase HumanFirewall {
 Async Review (AIOutput: Aigeneration): Promise <ecision> {
 // cheques automáticos
@@ -180,7 +180,7 @@ const SecurityScan = espera this.scansecurity (aioutput)
 const testResults = espera esto.
 
 // Presente a humano
-Const Decision = espera this.PresentToCommander ({
+Const Decision = espera this. PresentToCommander ({
 Código: AIOutput,
 Checks: {ConstitutionCheck, SecurityScan, TestResults},
 Riesgos: this.
@@ -188,16 +188,16 @@ Alternativas: this.
 })
 
 // ejecutar la decisión
-Devuelve esto.Execute (decisión)
+Devuelve esto. Execute (decisión)
 }
 }
-`` `` ``
+```
 
 ### Autoridad de anulación
 
 Siempre tienes autoridad de anulación:
 
-`` `Bash
+```Bash
 # AI se niega basado en la constitución
 > No puede generar: viola la regla de seguridad #3
 
@@ -208,7 +208,7 @@ Hatcher Anule ---lule = "Security#3" - -Roonter = "Temporal para la depuración"
 > Anular otorgado hasta las 15:30
 > Registro de auditoría actualizado
 > Notificación enviada al equipo de seguridad
-`` `` ``
+```
 
 ## Puertas de calidad
 
@@ -216,7 +216,7 @@ Hatcher Anule ---lule = "Security#3" - -Roonter = "Temporal para la depuración"
 
 Las sugerencias de IA deben pasar por puertas de calidad antes de llegar a usted:
 
-`` `` ``
+```
 Salida de ai
 ↓
 Validación de sintaxis ──✗── Rechazada
@@ -230,13 +230,13 @@ Análisis de rendimiento ──✗── Advertencia
 Escaneo de seguridad ──✗ especialmente advertencia
 ↓
 Revisión humana ← Estás aquí
-`` `` ``
+```
 
 ### Delegación progresiva
 
 Como AI resulta confiable, puede delegar más:
 
-`` `mecanografiado
+```typescript
 // Nivel 1: Revisa todo
 delegación = {
 autoapprove: [],
@@ -257,13 +257,13 @@ AutoApprove: ['Cambios con 100%-Conta de Cervina'],
 Autoreject: ['Violaciones constitucionales'],
 RequireReview: ['Changes-Changes'],
 }
-`` `` ``
+```
 
 ## Escenarios del mundo real
 
 ### Escenario: la solicitud de función
 
-`` `Bash
+```Bash
 # El gerente de producto solicita una función
 "Necesitamos avatares de usuarios con cultivos y redimensional"
 
@@ -281,11 +281,11 @@ Hatcher: "Implementar el sistema de avatar con cultivo/cambio de tamaño. Use nu
 
 # Aprobar con modificación
 Hatcher apre --add-test = "borde-case-heic-formato"
-`` `` ``
+```
 
 ### Escenario: la caza de errores
 
-`` `Bash
+```Bash
 # Informe de usuarios: "La aplicación se bloquea en el móvil"
 
 # Implementar la flota
@@ -299,31 +299,31 @@ Hatcher Investigate --Isse = "Mobile-Crash" --severity = "High"
 
 # Tu decisión
 Hatcher Fix --Approach = "Iterative" --Add-Monitoring = "Memory-Usage"
-`` `` ``
+```
 
 ## La filosofía del mando
 
-La IA bajo el mando no se trata de limitar la IA, se trata de amplificar el juicio humano.Usted hace la transición del código de escritura a la toma de decisiones, desde la implementación de detalles hasta la definición de la estrategia.
+La IA bajo el mando no se trata de limitar la IA, se trata de amplificar el juicio humano. Usted hace la transición del código de escritura a la toma de decisiones, desde la implementación de detalles hasta la definición de la estrategia.
 
-Este es el futuro del desarrollo: los humanos definen el "qué" y "por qué", la IA maneja el "cómo", pero los humanos siempre verifican el resultado.Te conviertes en un multiplicador de fuerza, al mando de los ejércitos de IA mientras mantiene la responsabilidad y la autoridad que define el desarrollo de software profesional.
+Este es el futuro del desarrollo: los humanos definen el "qué" y "por qué", la IA maneja el "cómo", pero los humanos siempre verifican el resultado. Te conviertes en un multiplicador de fuerza, al mando de los ejércitos de IA mientras mantiene la responsabilidad y la autoridad que define el desarrollo de software profesional.
 
 ## Empezando
 
-1. ** Defina el estilo de su comando **: ¿Cuánto control quieres?
-2. ** Configure su flota **: ¿Qué modelos AI para qué tareas?
-3. ** Establezca su nivel de delegación **: ¿Qué puede hacer AI sin preguntar?
-4. ** Práctica Comando **: Comience con tareas de bajo riesgo
+1. **Defina el estilo de su comando**: ¿Cuánto control quieres?
+2. **Configure su flota**: ¿Qué modelos AI para qué tareas?
+3. **Establezca su nivel de delegación**: ¿Qué puede hacer AI sin preguntar?
+4. **Práctica Comando**: Comience con tareas de bajo riesgo
 
-Recuerde: no estás siendo reemplazado, te promueven.De codificador a comandante.Del implementador a estratega.Del contribuyente individual al multiplicador de fuerza.
+Recuerde: no estás siendo reemplazado, te promueven. De codificador a comandante. Del implementador a estratega. Del contribuyente individual al multiplicador de fuerza.
 
 ---
 
-_Ai bajo el comando lo transforma de un solo desarrollador en un comandante de fuerzas de IA.Mantiene la autoridad, la responsabilidad y el control al alcanzar la velocidad previamente imposible solo para un humano.
+_Ai bajo el comando lo transforma de un solo desarrollador en un comandante de fuerzas de IA. Mantiene la autoridad, la responsabilidad y el control al alcanzar la velocidad previamente imposible solo para un humano.
 
-<Pagecta
-title = "Tome el mando de AI"
-subtitle = "transformar de codificador a comandante con fuerzas de IA bajo su control"
-Buttontext = "Aprender estrategias de comando"
-buttonlink = "/started"
-buttonstyle = "secundario"
+<PageCTA
+  title="Tome el mando de AI"
+  subtitle="transformar de codificador a comandante con fuerzas de IA bajo su control"
+  buttonText="Aprender estrategias de comando"
+  buttonLink="/started"
+  buttonStyle="secundario"
 />

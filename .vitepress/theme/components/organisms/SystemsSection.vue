@@ -1,77 +1,19 @@
 <template>
   <div class="systems-section">
     <SectionTitle
-      title="The Command Deck Systems"
-      subtitle="Four battle-tested systems that turn you from debugger to commander:"
+      :title="title"
+      :subtitle="subtitle"
     />
     <div class="systems-grid">
-      <a href="/playbooks-system" class="system-card">
-        <div class="system-icon">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="8" width="28" height="36" rx="2" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M10 14H38" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M16 22H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M16 28H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M16 34H26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="34" cy="10" r="2" fill="currentColor"/>
-            <path d="M34 8V40" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.3"/>
-          </svg>
-        </div>
-        <h3 class="system-title">Constitutional Playbooks</h3>
-        <p class="system-description">Write your battle plans once. Your coding standards and architecture patterns become immutable laws that every AI drone must follow. No deviation. No interpretation. Pure execution.</p>
-      </a>
-      <a href="/pillars-time-graph" class="system-card">
-        <div class="system-icon">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Grid background -->
-            <path d="M8 16H40M8 24H40M8 32H40M16 8V40M24 8V40M32 8V40" stroke="currentColor" stroke-width="1" opacity="0.2"/>
-            <!-- Timeline path -->
-            <path d="M12 36L20 28L28 32L36 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <!-- Nodes -->
-            <circle cx="12" cy="36" r="3" fill="currentColor"/>
-            <circle cx="20" cy="28" r="3" stroke="currentColor" stroke-width="1.5" fill="white"/>
-            <circle cx="28" cy="32" r="3" stroke="currentColor" stroke-width="1.5" fill="white"/>
-            <circle cx="36" cy="20" r="3" fill="currentColor"/>
-            <!-- Branch indicator -->
-            <path d="M28 32L32 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-            <circle cx="32" cy="24" r="2" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-          </svg>
-        </div>
-        <h3 class="system-title">Time Graph Engine</h3>
-        <p class="system-description">Mission control for every operation. Track every drone's action, rewind failed missions, explore alternate timelines. Your command history preserved forever.</p>
-      </a>
-      <a href="/pillars-universal-fabricator" class="system-card">
-        <div class="system-icon">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Hexagon container -->
-            <path d="M24 6L38 14V30L24 38L10 30V14L24 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <!-- Inner components -->
-            <rect x="18" y="18" width="12" height="12" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="24" cy="24" r="3" fill="currentColor"/>
-            <!-- Connection lines -->
-            <path d="M24 6V18M24 30V38" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-            <path d="M10 14L18 18M30 18L38 14" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-            <path d="M10 30L18 30M30 30L38 30" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-          </svg>
-        </div>
-        <h3 class="system-title">Universal Fabricator</h3>
-        <p class="system-description">Deploy any weapon from your arsenal. That battle-tested C++ module from 2003? The COBOL logic that runs your empire? All assets ready for deployment via WebAssembly.</p>
-      </a>
-      <a href="/philosophy" class="system-card">
-        <div class="system-icon">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Shield outline -->
-            <path d="M24 4L8 12V22C8 31.2 15.2 39.6 24 42C32.8 39.6 40 31.2 40 22V12L24 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <!-- Lock icon -->
-            <rect x="20" y="22" width="8" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M22 22V19C22 17.9 22.9 17 24 17C25.1 17 26 17.9 26 19V22" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="24" cy="27" r="1" fill="currentColor"/>
-            <!-- Security layers -->
-            <path d="M24 8L12 14V22C12 28 17 34 24 36" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-          </svg>
-        </div>
-        <h3 class="system-title">Fortress-Grade Security</h3>
-        <p class="system-description">Your command center is impenetrable. Rust-forged walls. Zero cloud exposure. Every operation local. Your strategies, your code, your sovereignty. No breaches possible.</p>
+      <a
+        v-for="(system, index) in systems"
+        :key="index"
+        :href="system.link"
+        class="system-card"
+      >
+        <div class="system-icon" v-html="system.icon"></div>
+        <h3 class="system-title">{{ system.title }}</h3>
+        <p class="system-description">{{ system.description }}</p>
       </a>
     </div>
   </div>
@@ -79,6 +21,80 @@
 
 <script setup lang="ts">
 import SectionTitle from '../atoms/SectionTitle.vue'
+
+interface SystemCard {
+  title: string
+  description: string
+  icon: string
+  link: string
+}
+
+interface SystemsSectionProps {
+  title?: string
+  subtitle?: string
+  systems?: SystemCard[]
+}
+
+const props = withDefaults(defineProps<SystemsSectionProps>(), {
+  title: 'The Command Deck Systems',
+  subtitle: 'Four battle-tested systems that turn you from debugger to commander:',
+  systems: () => [
+    {
+      title: 'Constitutional Playbooks',
+      description: 'Write your battle plans once. Your coding standards and architecture patterns become immutable laws that every AI drone must follow. No deviation. No interpretation. Pure execution.',
+      link: '/playbooks-system',
+      icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="8" width="28" height="36" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 14H38" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 22H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M16 28H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M16 34H26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="34" cy="10" r="2" fill="currentColor"/>
+              <path d="M34 8V40" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.3"/>
+            </svg>`
+    },
+    {
+      title: 'Time Graph Engine',
+      description: 'Mission control for every operation. Track every drone\'s action, rewind failed missions, explore alternate timelines. Your command history preserved forever.',
+      link: '/pillars-time-graph',
+      icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 16H40M8 24H40M8 32H40M16 8V40M24 8V40M32 8V40" stroke="currentColor" stroke-width="1" opacity="0.2"/>
+              <path d="M12 36L20 28L28 32L36 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="36" r="3" fill="currentColor"/>
+              <circle cx="20" cy="28" r="3" stroke="currentColor" stroke-width="1.5" fill="white"/>
+              <circle cx="28" cy="32" r="3" stroke="currentColor" stroke-width="1.5" fill="white"/>
+              <circle cx="36" cy="20" r="3" fill="currentColor"/>
+              <path d="M28 32L32 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <circle cx="32" cy="24" r="2" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            </svg>`
+    },
+    {
+      title: 'Universal Fabricator',
+      description: 'Deploy any weapon from your arsenal. That battle-tested C++ module from 2003? The COBOL logic that runs your empire? All assets ready for deployment via WebAssembly.',
+      link: '/pillars-universal-fabricator',
+      icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 6L38 14V30L24 38L10 30V14L24 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <rect x="18" y="18" width="12" height="12" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="24" cy="24" r="3" fill="currentColor"/>
+              <path d="M24 6V18M24 30V38" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+              <path d="M10 14L18 18M30 18L38 14" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+              <path d="M10 30L18 30M30 30L38 30" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+            </svg>`
+    },
+    {
+      title: 'Fortress-Grade Security',
+      description: 'Your command center is impenetrable. Rust-forged walls. Zero cloud exposure. Every operation local. Your strategies, your code, your sovereignty. No breaches possible.',
+      link: '/philosophy',
+      icon: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 4L8 12V22C8 31.2 15.2 39.6 24 42C32.8 39.6 40 31.2 40 22V12L24 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <rect x="20" y="22" width="8" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M22 22V19C22 17.9 22.9 17 24 17C25.1 17 26 17.9 26 19V22" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="24" cy="27" r="1" fill="currentColor"/>
+              <path d="M24 8L12 14V22C12 28 17 34 24 36" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+            </svg>`
+    }
+  ]
+})
 </script>
 
 <style scoped>

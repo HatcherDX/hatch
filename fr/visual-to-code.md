@@ -1,200 +1,385 @@
 ---
-title: Pont Visuel-vers-Code | Manipulation Directe d'Interface pour Génération de Code
-description: Découvrez le pont Visuel-vers-Code révolutionnaire de Hatcher qui transforme la manipulation directe d'interface en modifications de code précises. Pointez au lieu de décrire pour un meilleur développement IA.
+title: Pont Visuel-vers-Code | Innovation de Développement IA de Hatcher
+description: Découvrez le Pont Visuel-vers-Code de Hatcher qui révolutionne le développement assisté par IA. Cliquez, glissez et manipulez votre UI directement pour générer des changements de code précis avec contrôle déterministe.
 ---
 
 # Pont Visuel-vers-Code
 
-Le **Pont Visuel-vers-Code** est la fonctionnalité phare de Hatcher - la technologie révolutionnaire qui vous permet de sélectionner des éléments directement dans votre application en direct et de les transformer en code précis et contextuel.
+Le Pont Visuel-vers-Code est la fonctionnalité signature de Hatcher qui révolutionne la façon dont les développeurs interagissent avec les assistants de codage IA. Au lieu de décrire les changements en texte, vous manipulez directement l'interface visuelle de votre application, et Hatcher traduit vos actions en modifications de code précises.
 
-## Comment Ça Marche
+## Comment Ça Fonctionne
 
-### 1. Sélection Visuelle Directe
+### Le Problème Traditionnel
 
-Au lieu de décrire ce que vous voulez changer, **sélectionnez-le** simplement :
-
-- Cliquez sur n'importe quel élément de votre application
-- Glissez pour créer des régions de sélection
-- Sélection multiple avec Cmd/Ctrl maintenu
-- Utilisez les outils d'inspection pour une sélection précise
-
-### 2. Capture de Contexte Intelligente
-
-Hatcher capture automatiquement :
-
-- **Structure du Composant** : Hiérarchie DOM et composants Vue/React
-- **États Actuels** : Props, état et valeurs de données
-- **Règles de Style** : CSS appliqués et classes
-- **Contexte du Projet** : Modèles de votre base de code existante
-
-### 3. Génération de Code Consciente du Contexte
-
-L'IA génère du code qui :
-
-- Suit vos conventions de nommage existantes
-- Utilise vos bibliothèques et modèles préférés
-- Maintient la cohérence avec votre architecture
-- Respecte les règles de vos Playbooks
-
-## Capacités Principales
-
-### Modification de Composants
-
-```javascript
-// Avant : Sélectionner un bouton visuellement
-// Après : Code généré automatiquement
-<button
-  className="btn btn-primary hover:bg-blue-700 transition-colors"
-  onClick={handleSubmit}
-  disabled={isLoading}
->
-  {isLoading ? 'Envoi...' : 'Envoyer'}
-</button>
+```mermaid
+graph LR
+    A[Developer Intent] --> B[Text Description]
+    B --> C[AI Interpretation]
+    C --> D[Code Generation]
+    D --> E[Often Wrong Result]
+    E --> F[Manual Correction]
+    F --> B
 ```
 
-### Manipulation de Layout
+**Exemple du cycle frustrant:**
 
-- Redimensionner les éléments en tirant les bords
-- Repositionner les éléments par glisser-déposer
-- Ajuster l'espacement et l'alignement visuellement
-- Modifier les breakpoints responsives en temps réel
+- Développeur: "Make the header blue and center it"
+- IA: Génère du CSS qui rend le mauvais élément bleu
+- Développeur: "No, the main header, not the sidebar header"
+- IA: Le rend de la mauvaise nuance de bleu
+- Développeur: "Make it #3B82F6 and also increase the font size"
+- ... et ainsi de suite
 
-### Gestion d'État
+### Approche Visuel-vers-Code de Hatcher: Les Modes Duaux du Pont
 
-- Connecter les éléments aux sources de données
-- Configurer les gestionnaires d'événements
-- Établir la validation de formulaires
-- Implémenter la logique conditionnelle
+Le Pont Visuel-vers-Code opère différemment selon la mission de votre projet, fournissant le bon équilibre entre liberté et contrôle.
 
-### Application de Styles
+**En Mode Génératif: Création Assistée par IA**
 
-- Modifier couleurs, polices et espacement
-- Appliquer animations et transitions
-- Implémenter thèmes et variantes
-- Maintenir la cohérence du système de design
+Dans un projet `Generative`, le pont agit comme un système de ciblage de haute précision pour l'IA. Le workflow est:
 
-## Workflow Typique
+1. **Vous ancrez le contexte:** Cliquez pour sélectionner un élément.
 
-### Étape 1 : Préparer l'Environnement
+2. **Vous fournissez la commande:** Utilisez le langage naturel pour décrire le changement désiré.
 
-```bash
-# S'assurer que votre application fonctionne
-npm run dev
-```
+3. **L'IA exécute:** Elle génère le code nécessaire, contraint à la portée que vous avez définie.
 
-### Étape 2 : Activer le Mode Visuel
+**Dans un EGG: Manipulation Déterministe**
 
-1. Ouvrir Hatcher
-2. Se connecter à votre application locale
-3. Activer l'overlay de sélection visuelle
+Dans un EGG (Enforced Governance Guardrails), le pont devient un outil de manipulation directe où la génération de code IA n'est pas utilisée pour les changements visuels. Le workflow est 100% déterministe:
 
-### Étape 3 : Faire une Sélection
+1. **Vous manipulez directement:** Glissez, redimensionnez ou éditez les propriétés dans un panneau visuel.
 
-1. Naviguer vers la page à modifier
-2. Cliquer sur l'élément cible
-3. Voir les informations de contexte capturées
+2. **Le moteur capture l'événement:** Hatcher enregistre le changement comme une mise à jour structurée.
 
-### Étape 4 : Décrire les Changements
+3- **La configuration est mise à jour:** Le changement est écrit dans un fichier de configuration de projet, pas généré comme nouveau code source.
 
-```
-"Rendez ce bouton plus grand et changez la couleur au survol en vert"
-```
+## Fonctionnalités Principales
 
-### Étape 5 : Réviser le Code Généré
+### 1. Sélection d'Éléments
 
-```diff
-<button
-- className="btn btn-primary"
-+ className="btn btn-primary btn-lg hover:bg-green-500"
-  onClick={handleSubmit}
-```
+**Système de Sélection Intelligent**
 
-### Étape 6 : Appliquer ou Affiner
-
-- **Appliquer** : Le changement est appliqué immédiatement
-- **Affiner** : Fournir des commentaires supplémentaires pour l'amélioration
-- **Rejeter** : Abandonner et essayer une approche différente
-
-## Techniques Avancées
-
-### Sélection Multi-Éléments
-
-```javascript
-// Sélectionner plusieurs boutons
-// L'IA comprend les modèles et applique des changements cohérents
-const buttons = document.querySelectorAll('.action-button')
-// Génère du code affectant tous les éléments similaires
-```
-
-### Sélection Basée sur le Contexte
-
-- **Sélection de Composant** : Sélectionner des composants Vue/React entiers
-- **Sélection d'État** : Inclure les données et logique associées
-- **Sélection de Style** : Capturer les règles CSS et variables
-
-### Intégration avec Playbooks
+- Cliquez sur n'importe quel élément pour le sélectionner
+- Survolez pour prévisualiser les limites de sélection
+- Sélectionnez plusieurs éléments pour des opérations par lot
+- Sélection hiérarchique (enfant, parent, frères et sœurs)
 
 ```typescript
-// Les Playbooks guident la génération de code
-{
-  "component_patterns": {
-    "button": {
-      "base_classes": ["btn", "transition-colors"],
-      "variants": {
-        "primary": "bg-blue-500 hover:bg-blue-700",
-        "secondary": "bg-gray-500 hover:bg-gray-700"
-      }
-    }
+// Example: Selecting a button
+const selection = {
+  element: 'button.submit-btn',
+  properties: {
+    position: { x: 120, y: 45 },
+    dimensions: { width: 100, height: 36 },
+    styles: {
+      backgroundColor: '#3B82F6',
+      borderRadius: '6px',
+      fontSize: '14px',
+    },
+  },
+  context: {
+    parent: 'form.checkout-form',
+    siblings: ['input.email', 'input.password'],
+    framework: 'Vue 3',
+    component: 'SubmitButton.vue',
+  },
+}
+```
+
+### 2. Manipulation Visuelle
+
+**Édition Directe de Propriétés**
+
+- Glissez les éléments vers de nouvelles positions
+- Redimensionnez en glissant les coins
+- Sélecteur de couleur pour arrière-plans et texte
+- Contrôles typographiques (police, taille, poids)
+- Contrôles d'espacement (marge, padding)
+
+**Prévisualisation en Direct**
+
+- Voyez les changements instantanément dans votre application
+- Pas besoin de rafraîchir ou reconstruire
+- Intégration de remplacement de module à chaud
+- Mises à jour CSS en temps réel
+
+### 3. Reconnaissance d'Intention
+
+Hatcher analyse vos changements visuels et comprend:
+
+**Changements de Mise en Page**
+
+- Modifications de position (absolue, relative, flex)
+- Ajustements de taille (largeur, hauteur, responsive)
+- Changements d'alignement (centre, flex, grid)
+
+**Changements de Style**
+
+- Modifications de couleur (hex, RGB, HSL, variables CSS)
+- Mises à jour typographiques (famille de police, taille, poids, hauteur de ligne)
+- Effets visuels (ombres, bordures, dégradés)
+
+**Changements de Composant**
+
+- Modifications de props
+- Mises à jour d'état
+- Ajouts de gestionnaires d'événements
+
+### 4. Génération de Code
+
+Basé sur votre intention visuelle, Hatcher génère:
+
+**Code Spécifique au Framework**
+
+```vue
+<!-- Vue 3 Example -->
+<template>
+  <button
+    class="submit-btn"
+    :style="{
+      transform: `translate(${position.x}px, ${position.y}px)`,
+      backgroundColor: '#3B82F6',
+    }"
+    @click="handleSubmit"
+  >
+    Submit
+  </button>
+</template>
+```
+
+**Mises à Jour CSS**
+
+```css
+.submit-btn {
+  position: absolute;
+  left: 120px;
+  top: 45px;
+  background-color: #3b82f6;
+  width: 100px;
+  height: 36px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+```
+
+**Intégration TypeScript**
+
+```typescript
+interface ButtonProps {
+  position: { x: number; y: number }
+  variant: 'primary' | 'secondary'
+  size: 'sm' | 'md' | 'lg'
+}
+```
+
+## Capacités Avancées
+
+### 1. Design Responsive
+
+**Édition Multi-Points de Rupture**
+
+- Éditez différentes tailles d'écran simultanément
+- Générez du CSS responsive automatiquement
+- Maintenez la cohérence du design sur tous les appareils
+
+```css
+/* Generated responsive code */
+.submit-btn {
+  /* Mobile */
+  width: 100%;
+  margin: 0 16px;
+}
+
+@media (min-width: 768px) {
+  /* Tablet */
+  .submit-btn {
+    width: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop */
+  .submit-btn {
+    width: 150px;
+    position: absolute;
+    left: 120px;
   }
 }
 ```
 
-## Cas d'Usage Courants
+### 2. Changements Conscients des Composants
 
-### Développement d'UI Rapide
+**Détection Intelligente de Composants**
 
-- Créer de nouveaux composants en sélectionnant des éléments similaires
-- Ajuster les layouts responsifs visuellement
-- Implémenter des variantes de composants
-- Affiner les détails d'interaction
+- Reconnaît les composants Vue, React, Svelte
+- Comprend les props et l'état des composants
+- Maintient les limites des composants
 
-### Refactorisation Assistée
+**Exemple: Modification d'un Composant Vue**
 
-- Mettre à jour les modèles obsolètes dans toute l'application
-- Migrer vers de nouveaux systèmes de design
-- Consolider les composants dupliqués
-- Améliorer l'accessibilité systématiquement
+```vue
+<!-- Before -->
+<UserCard :user="currentUser" size="medium" />
 
-### Prototypage et Expérimentation
+<!-- After visual modification -->
+<UserCard
+  :user="currentUser"
+  size="large"
+  :style="{ marginTop: '24px' }"
+  show-avatar
+/>
+```
 
-- Tester rapidement les idées de design
-- Implémenter instantanément les retours utilisateurs
-- Explorer les variations de composants
-- Valider les concepts avant l'implémentation complète
+### 3. Intégration Système de Design
+
+**Utilisation Automatique de Tokens**
+
+- Reconnaît les tokens du système de design
+- Suggère les valeurs appropriées
+- Maintient la cohérence
+
+```css
+/* Instead of arbitrary values */
+color: #3b82f6;
+padding: 12px;
+
+/* Uses design tokens */
+color: var(--color-primary-500);
+padding: var(--spacing-3);
+```
+
+## Exemples de Workflow
+
+### Exemple 1: Ajustement de Mise en Page
+
+**Objectif**: Déplacer une barre latérale du côté gauche au côté droit
+
+1. **Sélectionner**: Cliquer sur le composant de la barre latérale
+2. **Glisser**: Le glisser vers le côté droit de l'écran
+3. **Réviser**: Voir les changements flex/grid générés
+4. **Appliquer**: Accepter les modifications CSS
+
+**Code Généré**:
+
+```css
+.layout-container {
+  display: flex;
+  flex-direction: row; /* Changed from row-reverse */
+}
+
+.sidebar {
+  order: 2; /* Changed from 1 */
+  margin-left: auto; /* Added */
+}
+```
+
+### Exemple 2: Stylisation de Composant
+
+**Objectif**: Changer l'apparence du bouton pour correspondre au design
+
+1. **Sélectionner**: Cliquer sur le bouton
+2. **Styliser**: Utiliser le sélecteur de couleur, ajuster la taille, modifier la bordure
+3. **Prévisualiser**: Voir les changements en direct dans l'application
+4. **Générer**: Obtenir les mises à jour de props du composant
+
+**Code Généré**:
+
+```vue
+<script setup>
+const buttonStyle = {
+  variant: 'primary',
+  size: 'lg',
+  rounded: true,
+}
+</script>
+
+<template>
+  <AppButton v-bind="buttonStyle"> Submit Order </AppButton>
+</template>
+```
+
+### Exemple 3: Ajustement Responsive
+
+**Objectif**: Rendre une grille responsive
+
+1. **Sélectionner**: Choisir le conteneur de grille
+2. **Redimensionner**: Ajuster les colonnes pour différents points de rupture
+3. **Tester**: Prévisualiser sur mobile/tablette/desktop
+4. **Appliquer**: Générer du CSS Grid responsive
+
+**Code Généré**:
+
+```css
+.product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* Mobile */
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr); /* Desktop */
+  }
+}
+```
+
+## Intégration avec les Moteurs IA
+
+Le Pont Visuel-vers-Code fonctionne de manière transparente avec les moteurs IA supportés:
+
+### Intégration Claude Code
+
+```typescript
+const visualIntent = captureVisualChange(selection, modification)
+const codeChange = await claudeCode.generateChange({
+  intent: visualIntent,
+  context: projectContext,
+  playbook: teamPlaybook,
+})
+```
+
+### Intégration Gemini CLI
+
+```typescript
+const prompt = buildVisualPrompt(visualIntent, codeContext)
+const suggestion = await geminiCLI.complete(prompt)
+const refinedCode = refineWithPlaybook(suggestion)
+```
 
 ## Meilleures Pratiques
 
-### Préparation Efficace
+### 1. Commencez Petit
 
-1. **Gardez votre application à jour** en mode développement
-2. **Structurez vos composants clairement** pour une meilleure détection
-3. **Utilisez des noms cohérents** dans les classes et IDs
-4. **Documentez les modèles complexes** dans les Playbooks
+- Faites des changements visuels incrémentaux
+- Testez chaque modification avant de passer à la suivante
+- Construisez des changements complexes à travers des étapes plus petites
 
-### Sélection Précise
+### 2. Utilisez les Playbooks
 
-1. **Soyez spécifique** dans vos sélections
-2. **Utilisez l'inspecteur** pour les éléments imbriqués
-3. **Considérez le contexte** du composant parent
-4. **Vérifiez l'état** avant de faire des changements
+- Définissez les patterns de composants dans vos playbooks
+- Établissez des règles de stylisation cohérentes
+- Documentez les patterns de design communs
 
-### Optimisation des Résultats
+### 3. Révisez le Code Généré
 
-1. **Fournissez des retours itératifs** pour améliorer la précision
-2. **Utilisez les Playbooks** pour capturer les modèles réussis
-3. **Gardez les sélections simples** pour de meilleurs résultats
-4. **Validez les changements** avant d'appliquer en production
+- Révisez toujours le diff de code avant d'appliquer
+- Assurez-vous que le code généré suit vos standards
+- Raffinez les prompts si nécessaire pour de meilleurs résultats
+
+### 4. Testez Thoroughement
+
+- Utilisez des tests automatisés pour valider les changements
+- Vérifiez le comportement responsive
+- Vérifiez la conformité d'accessibilité
 
 ---
 
-Le Pont Visuel-vers-Code représente un changement fondamental dans la façon dont nous interagissons avec notre code - convertissant l'intention visuelle directement en implémentation précise, tout en maintenant toujours le contrôle total du développeur.
+Le Pont Visuel-vers-Code représente un changement fondamental dans la façon dont nous interagissons avec l'IA pour le développement. En éliminant la couche de traduction entre intention et implémentation, il crée une expérience de développement plus intuitive, précise et efficace.

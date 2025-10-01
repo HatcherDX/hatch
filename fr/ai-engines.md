@@ -1,347 +1,156 @@
 ---
-title: Moteurs IA | Intégrez Claude Code, Gemini CLI et plus avec Hatcher
-description: Configurez et intégrez plusieurs assistants de codage IA avec Hatcher IDE. Support pour Claude Code, Gemini CLI et d'autres moteurs IA pour des workflows de développement flexibles et puissants.
+title: Moteurs IA | Intégrez Claude Code, Gemini CLI et Plus avec Hatcher
+description: Configurez et intégrez plusieurs assistants de codage IA avec Hatcher IDE. Support pour Claude Code, Gemini CLI et autres moteurs IA pour des workflows de développement flexibles et puissants.
 ---
 
-# Intégration des Moteurs IA
+# Moteurs IA
 
-Hatcher est conçu avec une architecture de moteurs IA flexible qui vous permet de choisir et de basculer entre différents fournisseurs d'IA selon vos besoins, préférences et exigences de projet.
+Hatcher s'intègre avec plusieurs assistants de codage IA pour offrir flexibilité et exploiter les forces uniques de différents modèles.
 
-## Moteurs IA Supportés
+## Moteurs Supportés
 
-### Claude (Anthropic)
+### Claude Code
 
-**Status**: ✅ Pleinement Supporté
+Claude d'Anthropic est notre moteur IA principal, optimisé pour:
 
-Claude excelle dans la compréhension du code et la génération de réponses nuancées et contextuelles.
+- **Compréhension du Code**: Excellente compréhension des bases de code existantes
+- **Reconnaissance de Patterns**: Maintient la cohérence avec les conventions du projet
+- **Refactoring Sûr**: Approche conservatrice des modifications de code
+- **Conscience du Contexte**: Gère efficacement les grandes bases de code
 
-#### Configuration
+**Configuration:**
 
-```typescript
-// .hatcher/config/ai-engines.yml
-claude:
-  enabled: true
-  api_key: ${ANTHROPIC_API_KEY}
-  model: "claude-3-sonnet-20240229"
-  max_tokens: 4096
-  temperature: 0.3
-
-preferences:
-  code_generation: "precise"
-  documentation_style: "comprehensive"
-  error_handling: "detailed"
+```json
+{
+  "engine": "claude",
+  "model": "claude-3-sonnet",
+  "maxTokens": 4096,
+  "temperature": 0.1
+}
 ```
 
-#### Forces
+### Gemini CLI
 
-- **Compréhension du Code**: Excellente analyse des bases de code complexes
-- **Raisonnement Contextuel**: Comprend les nuances architecturales
-- **Sécurité**: Pratiques de codage sécurisées par défaut
-- **Longues Conversations**: Maintient le contexte sur des interactions étendues
+Gemini de Google fournit des capacités complémentaires:
 
-#### Cas d'Usage Idéaux
+- **Solutions Créatives**: Approches alternatives aux problèmes complexes
+- **Optimisation de Performance**: Focus sur la génération de code efficace
+- **Support Multi-langage**: Support solide pour diverses piles technologiques
+- **Itération Rapide**: Temps de réponse rapides pour les modifications rapides
 
-- Refactorisation de code complexe
-- Révision d'architecture
-- Débuggage de problèmes nuancés
-- Génération de documentation
+**Configuration:**
 
-### Gemini (Google)
-
-**Status**: ✅ Pleinement Supporté
-
-Gemini apporte de fortes capacités multimodales et excelle dans la génération de code rapide.
-
-#### Configuration
-
-```typescript
-// .hatcher/config/ai-engines.yml
-gemini:
-  enabled: true
-  api_key: ${GOOGLE_AI_API_KEY}
-  model: "gemini-1.5-pro"
-  max_tokens: 2048
-  temperature: 0.2
-
-preferences:
-  code_generation: "fast"
-  optimization_focus: "performance"
-  style_preference: "concise"
+```json
+{
+  "engine": "gemini",
+  "model": "gemini-pro",
+  "maxTokens": 2048,
+  "temperature": 0.2
+}
 ```
 
-#### Forces
+## Stratégie de Sélection de Moteur
 
-- **Génération Rapide**: Réponses de code ultra-rapides
-- **Optimisation Performance**: Focus sur l'efficacité du code
-- **Capacités Multimodales**: Peut traiter images et diagrammes
-- **Intégration Google**: Fonctionne bien avec l'écosystème Google
+Hatcher sélectionne automatiquement le meilleur moteur en fonction de la tâche:
 
-#### Cas d'Usage Idéaux
+### Tâches de Génération de Code
 
-- Prototypage rapide
-- Optimisation de performance
-- Génération de composants simples
-- Traitement d'images/diagrammes
+- **Nouveaux Composants**: Claude pour la structure, Gemini pour la créativité
+- **Corrections de Bugs**: Claude pour une analyse minutieuse
+- **Performance**: Gemini pour les suggestions d'optimisation
+
+### Considérations de Contexte
+
+- **Grandes Bases de Code**: Gestion de contexte supérieure de Claude
+- **Prototypage Rapide**: Avantage de vitesse de Gemini
+- **Refactoring Complexe**: Approche conservatrice de Claude
+
+## Configuration
+
+### Paramètres Globaux
+
+Définissez votre moteur par défaut préféré:
+
+```json
+{
+  "defaultEngine": "claude",
+  "fallbackEngine": "gemini",
+  "autoSwitch": true
+}
+```
+
+### Remplacements Spécifiques au Projet
+
+Remplacez les moteurs pour des projets spécifiques:
+
+```json
+{
+  "engines": {
+    "vue": "claude",
+    "optimization": "gemini",
+    "testing": "claude"
+  }
+}
+```
+
+## Configuration des Clés API
+
+### Clé API Claude
+
+1. Visitez [Anthropic Console](https://console.anthropic.com)
+2. Générez une nouvelle clé API
+3. Ajoutez aux paramètres Hatcher ou variable d'environnement:
+   ```bash
+   export ANTHROPIC_API_KEY="your-key-here"
+   ```
+
+### Clé API Gemini
+
+1. Visitez [Google AI Studio](https://aistudio.google.com)
+2. Créez une nouvelle clé API
+3. Configurez dans Hatcher:
+   ```bash
+   export GOOGLE_AI_API_KEY="your-key-here"
+   ```
+
+## Comparaison des Moteurs
+
+| Fonctionnalité | Claude     | Gemini     |
+| -------------- | ---------- | ---------- |
+| Qualité Code   | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐   |
+| Vitesse        | ⭐⭐⭐     | ⭐⭐⭐⭐⭐ |
+| Taille Contexte| ⭐⭐⭐⭐⭐ | ⭐⭐⭐     |
+| Créativité     | ⭐⭐⭐     | ⭐⭐⭐⭐⭐ |
+| Sécurité       | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐   |
 
 ## Moteurs Futurs
 
-### GPT-4 (OpenAI)
+Nous travaillons activement sur le support pour:
 
-**Status**: 🚧 En Développement
-
-```typescript
-// Configuration future
-gpt4:
-  enabled: false  # Bientôt disponible
-  model: "gpt-4-turbo-preview"
-  strengths: ["creative_solutions", "broad_knowledge"]
-```
-
-### CodeLlama (Meta)
-
-**Status**: 📅 Planifié
-
-```typescript
-// Configuration future
-codellama:
-  enabled: false  # Planifié pour v2.0
-  model: "codellama-34b-instruct"
-  strengths: ["code_completion", "local_execution"]
-```
-
-## Sélection de Moteur
-
-### Sélection Automatique
-
-Hatcher peut automatiquement choisir le meilleur moteur basé sur le contexte :
-
-```typescript
-// .hatcher/config/engine-selection.yml
-auto_selection:
-  enabled: true
-  rules:
-    - condition: "task_type === 'refactoring'"
-      engine: "claude"
-      reason: "Meilleure compréhension du code complexe"
-
-    - condition: "task_type === 'quick_generation'"
-      engine: "gemini"
-      reason: "Génération de code plus rapide"
-
-    - condition: "file_size > 1000 && complexity === 'high'"
-      engine: "claude"
-      reason: "Meilleure gestion des contextes larges"
-
-    - condition: "performance_critical === true"
-      engine: "gemini"
-      reason: "Focus sur l'optimisation"
-```
-
-### Sélection Manuelle
-
-Vous pouvez également choisir manuellement :
-
-```typescript
-// Dans l'interface Hatcher
-const engines = [
-  {
-    name: 'Claude',
-    status: 'active',
-    bestFor: ['Refactorisation', 'Architecture', 'Code Complexe'],
-  },
-  {
-    name: 'Gemini',
-    status: 'active',
-    bestFor: ['Prototypage', 'Performance', 'Génération Rapide'],
-  },
-]
-```
-
-## Configuration Avancée
-
-### Profils de Moteur
-
-Créez des profils personnalisés pour différents cas d'usage :
-
-```yaml
-# .hatcher/profiles/ai-profiles.yml
-profiles:
-  development:
-    claude:
-      temperature: 0.1 # Plus déterministe
-      max_tokens: 2048
-    gemini:
-      temperature: 0.2
-      max_tokens: 1024
-
-  experimentation:
-    claude:
-      temperature: 0.7 # Plus créatif
-      max_tokens: 4096
-    gemini:
-      temperature: 0.5
-      max_tokens: 2048
-```
-
-### Moteurs par Type de Projet
-
-Configurez des moteurs préférés par framework :
-
-```yaml
-project_preferences:
-  vue_projects:
-    primary: 'claude'
-    secondary: 'gemini'
-    reason: 'Claude comprend mieux la Composition API'
-
-  react_projects:
-    primary: 'gemini'
-    secondary: 'claude'
-    reason: 'Gemini excelle avec les hooks React'
-
-  node_projects:
-    primary: 'claude'
-    secondary: 'gemini'
-    reason: "Claude meilleur pour l'architecture backend"
-```
-
-## Fallback et Fiabilité
-
-### Stratégie de Fallback
-
-```typescript
-// Configuration de fallback automatique
-fallback_strategy:
-  enabled: true
-  max_retries: 3
-  retry_delay: 1000ms
-
-  fallback_chain:
-    - primary: "claude"
-      fallback: "gemini"
-      triggers: ["timeout", "rate_limit", "api_error"]
-
-    - primary: "gemini"
-      fallback: "claude"
-      triggers: ["timeout", "rate_limit", "api_error"]
-```
-
-### Monitoring et Métriques
-
-```typescript
-// Métriques automatiques
-metrics:
-  track_performance: true
-  track_accuracy: true
-  track_user_satisfaction: true
-
-  export_formats: ["json", "csv", "prometheus"]
-
-  alerts:
-    - condition: "response_time > 10s"
-      action: "switch_engine"
-    - condition: "error_rate > 5%"
-      action: "notify_admin"
-```
+- **GitHub Copilot**: Intégration directe avec les workflows VS Code
+- **OpenAI GPT-4**: Assistance de codage généraliste
+- **Modèles Locaux**: Options auto-hébergées pour les équipes soucieuses de la confidentialité
+- **Moteurs Personnalisés**: Système de plugins pour outils IA propriétaires
 
 ## Meilleures Pratiques
 
-### Choix de Moteur par Tâche
+### Ingénierie de Prompts
 
-| Tâche                    | Moteur Recommandé | Raison                                |
-| ------------------------ | ----------------- | ------------------------------------- |
-| Refactorisation Complexe | Claude            | Meilleure compréhension contextuelle  |
-| Génération Rapide        | Gemini            | Vitesse de réponse supérieure         |
-| Révision d'Architecture  | Claude            | Raisonnement architectural approfondi |
-| Optimisation Performance | Gemini            | Focus spécialisé sur la performance   |
-| Débuggage                | Claude            | Analyse d'erreur plus nuancée         |
-| Prototypage              | Gemini            | Génération rapide d'idées             |
+Hatcher optimise automatiquement les prompts pour chaque moteur:
 
-### Configuration de Sécurité
+- **Claude**: Contexte détaillé et instructions explicites
+- **Gemini**: Prompts concis avec objectifs clairs
 
-```yaml
-security:
-  api_keys:
-    storage: 'encrypted'
-    rotation: 'monthly'
-    validation: 'startup'
+### Gestion des Erreurs
 
-  request_filtering:
-    enabled: true
-    block_sensitive_data: true
-    sanitize_prompts: true
+Systèmes de repli robustes garantissant la continuité:
 
-  rate_limiting:
-    enabled: true
-    max_requests_per_minute: 60
-    burst_allowance: 10
-```
+- **Moteur Principal Hors Service**: Basculement automatique vers le repli
+- **Limitation de Débit**: Mise en file d'attente intelligente des requêtes
+- **Problèmes Réseau**: Mise en cache locale des patterns courants
 
 ### Optimisation des Coûts
 
-```yaml
-cost_optimization:
-  enabled: true
-
-  strategies:
-    - name: 'cache_responses'
-      description: 'Cache des réponses similaires'
-      savings_estimate: '30-40%'
-
-    - name: 'compress_context'
-      description: 'Compresser le contexte non-critique'
-      savings_estimate: '15-25%'
-
-    - name: 'smart_model_selection'
-      description: 'Utiliser des modèles moins chers pour des tâches simples'
-      savings_estimate: '20-35%'
-```
-
-## Dépannage
-
-### Problèmes Courants
-
-#### Latence Élevée
-
-```bash
-# Vérifier la connectivité
-hatcher diagnose network
-
-# Changer de moteur temporairement
-hatcher engine switch --to gemini --reason "latency"
-
-# Optimiser la configuration
-hatcher config optimize --focus speed
-```
-
-#### Erreurs d'API
-
-```bash
-# Vérifier les clés API
-hatcher auth validate --all-engines
-
-# Tester la connectivité
-hatcher engine test --engine claude
-hatcher engine test --engine gemini
-
-# Consulter les logs
-hatcher logs --level error --engine claude
-```
-
-#### Réponses de Qualité Médiocre
-
-```bash
-# Ajuster les paramètres
-hatcher config set claude.temperature 0.1
-hatcher config set claude.max_tokens 4096
-
-# Mettre à jour les Playbooks
-hatcher playbooks update --auto-improve
-
-# Analyser les métriques de qualité
-hatcher metrics quality --timeframe 7d
-```
-
----
-
-L'intégration flexible des moteurs IA de Hatcher vous assure d'avoir toujours accès aux meilleures capacités IA pour chaque tâche, avec la fiabilité et la performance dont vous avez besoin.
+- **Gestion des Tokens**: Compression efficace du contexte
+- **Regroupement de Requêtes**: Combinez plusieurs petits changements
+- **Mise en Cache**: Réutilisez les résultats de génération de code similaires

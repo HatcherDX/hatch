@@ -7,7 +7,7 @@
 
     <!-- Pass through home hero slots for landing page -->
     <template #home-hero-before>
-      <HeroSection />
+      <HeroSection v-bind="locale.hero" />
     </template>
     <template #home-hero-after>
       <ShowcaseSection />
@@ -22,11 +22,13 @@ import DefaultTheme from 'vitepress/theme'
 import PermaLink from './components/atoms/PermaLink.vue'
 import HeroSection from './components/organisms/HeroSection.vue'
 import ShowcaseSection from './components/organisms/ShowcaseSection.vue'
+import { useLocale } from './composables/useLocale'
 
 const { Layout } = DefaultTheme
 const route = useRoute()
 const { page } = useData()
 const mounted = ref(false)
+const { locale } = useLocale()
 
 // Check if we're on the home page
 const isHome = computed(() => {

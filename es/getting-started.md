@@ -23,7 +23,7 @@ Antes de instalar Hatcher, asegúrate de tener:
 2. Descarga la última versión para tu plataforma:
    - macOS: `Hatcher-v0.1.0-mac.dmg`
    - Windows: `Hatcher-v0.1.0-win.exe`
-   - Linux: `Hatcher-v0.1.0-linux.AppImage`
+   - Linux: `Hatcher-v0.1.0-linux. AppImage`
 
 ### Opción 2: Construir desde el Código Fuente
 

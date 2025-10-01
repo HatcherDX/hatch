@@ -1,23 +1,36 @@
 ---
-layout: Inicio
-title: Hatcher |Comandan las flotas de AI que código mientras duerme
-description: El IDE constitucional donde comete flotas de drones AI.Desganza los pilotos automáticos que siguen tus libros de jugadas con precisión militar.Código mientras duerme.Despertar a misiones completadas.100% local, con óxido.
+layout: home
+title: Hatcher | Comanda Flotas IA que Codifican Mientras Duermes
+description: El IDE Constitucional donde comandas flotas de drones IA. Despliega autopilotos que siguen tus playbooks con precisión militar. Codifica mientras duermes. Despierta con misiones completadas. 100% local, potenciado por Rust.
 ---
 
-<
+<script setup>
+import { useLocale } from '../.vitepress/theme/composables/useLocale'
+import FeaturesSection from '../.vitepress/theme/components/organisms/FeaturesSection.vue'
+import SystemsSection from '../.vitepress/theme/components/organisms/SystemsSection.vue'
+import HatsSection from '../.vitepress/theme/components/organisms/HatsSection.vue'
+import MetricsSection from '../.vitepress/theme/components/organisms/MetricsSection.vue'
+import CTASection from '../.vitepress/theme/components/organisms/CTASection.vue'
+import AdmiralSection from '../.vitepress/theme/components/organisms/AdmiralSection.vue'
+import FooterSection from '../.vitepress/theme/components/organisms/FooterSection.vue'
 
-<!-El componente de exhibición se inyectará a través de la ranura de héroe de hogar->
+const { locale } = useLocale()
+</script>
 
-<FeatureSection />
+<!-- Hero component is injected via home-hero-before slot -->
 
-<Systemssection />
+<!-- Showcase component will be injected via home-hero-after slot -->
 
-<Hatssection />
+<FeaturesSection :features="locale.features" />
 
-<Metricssection />
+<SystemsSection v-bind="locale.systems" />
 
-<Ctasection />
+<HatsSection v-bind="locale.hats" />
 
-<Admiralsection />
+<MetricsSection v-bind="locale.metrics" />
 
-<Pootersection />
+<CTASection v-bind="locale.cta" />
+
+<AdmiralSection v-bind="locale.admiral" />
+
+<FooterSection v-bind="locale.footer" />

@@ -1,60 +1,19 @@
 <template>
   <div class="hats-section">
     <SectionTitle
-      title="The Core HATs"
-      subtitle="A developer &quot;wears different hats&quot; throughout the day. Hatcher gives you a dedicated HAT, or workspace, for every job:"
+      :title="title"
+      :subtitle="subtitle"
     />
     <div class="hats-grid">
-      <a href="/features-code-hat" class="hat-card">
-        <div class="hat-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Code icon from IDE -->
-            <polyline points="26,30 36,20 26,10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="14,10 4,20 14,30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3 class="hat-title">The Code HAT</h3>
-        <p class="hat-description">A world-class code editor, powered by Monaco, for when you are in the flow of pure creation.</p>
-      </a>
-      <a href="/features-gen-hat" class="hat-card">
-        <div class="hat-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Terminal icon from IDE -->
-            <polyline points="10,28 18,20 10,12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="22" x2="30" y1="28" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3 class="hat-title">The Gen HAT</h3>
-        <p class="hat-description">The prompt engineering interface. Your direct line of communication to the AI fleet.</p>
-      </a>
-      <a href="/features-visual-hat" class="hat-card">
-        <div class="hat-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Eye icon from IDE -->
-            <path d="M4 20s5-12 16-12 16 12 16 12-5 12-16 12-16-12-16-12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="20" cy="20" r="5" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
-        </div>
-        <h3 class="hat-title">The Visual HAT</h3>
-        <p class="hat-description">A workspace for designing and interacting with UI components, bridging design and code.</p>
-      </a>
-      <a href="/features-time-graph-hat" class="hat-card">
-        <div class="hat-icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Timeline icon from IDE -->
-            <!-- Connecting lines -->
-            <path d="M23 26 L17 22" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M18 18 L24 14" stroke="currentColor" stroke-width="1"/>
-            <!-- Bottom circle (largest) -->
-            <circle cx="26" cy="28" r="6" stroke="currentColor" fill="none" stroke-width="1.5"/>
-            <!-- Middle circle -->
-            <circle cx="14" cy="20" r="4.5" stroke="currentColor" fill="none" stroke-width="1.3"/>
-            <!-- Top circle (smallest) -->
-            <circle cx="25" cy="12" r="3" stroke="currentColor" fill="none" stroke-width="1"/>
-          </svg>
-        </div>
-        <h3 class="hat-title">The Time Graph HAT</h3>
-        <p class="hat-description">The ultimate audit tool. A quantum graph of your project's history to visualize every change.</p>
+      <a
+        v-for="(hat, index) in hats"
+        :key="index"
+        :href="hat.link"
+        class="hat-card"
+      >
+        <div class="hat-icon" v-html="hat.icon"></div>
+        <h3 class="hat-title">{{ hat.title }}</h3>
+        <p class="hat-description">{{ hat.description }}</p>
       </a>
     </div>
   </div>
@@ -62,6 +21,65 @@
 
 <script setup lang="ts">
 import SectionTitle from '../atoms/SectionTitle.vue'
+
+interface HatCard {
+  title: string
+  description: string
+  icon: string
+  link: string
+}
+
+interface HatsSectionProps {
+  title?: string
+  subtitle?: string
+  hats?: HatCard[]
+}
+
+const props = withDefaults(defineProps<HatsSectionProps>(), {
+  title: 'The Core HATs',
+  subtitle: 'A developer "wears different hats" throughout the day. Hatcher gives you a dedicated HAT, or workspace, for every job:',
+  hats: () => [
+    {
+      title: 'The Code HAT',
+      description: 'A world-class code editor, powered by Monaco, for when you are in the flow of pure creation.',
+      link: '/features-code-hat',
+      icon: `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="26,30 36,20 26,10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="14,10 4,20 14,30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>`
+    },
+    {
+      title: 'The Gen HAT',
+      description: 'The prompt engineering interface. Your direct line of communication to the AI fleet.',
+      link: '/features-gen-hat',
+      icon: `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="10,28 18,20 10,12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="22" x2="30" y1="28" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>`
+    },
+    {
+      title: 'The Visual HAT',
+      description: 'A workspace for designing and interacting with UI components, bridging design and code.',
+      link: '/features-visual-hat',
+      icon: `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 20s5-12 16-12 16 12 16 12-5 12-16 12-16-12-16-12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="20" cy="20" r="5" stroke="currentColor" stroke-width="1.5"/>
+            </svg>`
+    },
+    {
+      title: 'The Time Graph HAT',
+      description: 'The ultimate audit tool. A quantum graph of your project\'s history to visualize every change.',
+      link: '/features-time-graph-hat',
+      icon: `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23 26 L17 22" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M18 18 L24 14" stroke="currentColor" stroke-width="1"/>
+              <circle cx="26" cy="28" r="6" stroke="currentColor" fill="none" stroke-width="1.5"/>
+              <circle cx="14" cy="20" r="4.5" stroke="currentColor" fill="none" stroke-width="1.3"/>
+              <circle cx="25" cy="12" r="3" stroke="currentColor" fill="none" stroke-width="1"/>
+            </svg>`
+    }
+  ]
+})
 </script>
 
 <style scoped>

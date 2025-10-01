@@ -2,7 +2,7 @@
   <div class="product-showcase-section" data-scroll-animation="true">
     <!-- Scroll Indicator -->
     <div class="showcase-scroll-indicator">
-      <span class="scroll-text">Scroll to explore</span>
+      <span class="scroll-text">{{ locale.showcase.scrollText }}</span>
       <svg class="scroll-arrow" viewBox="0 0 24 24">
         <path
           d="M12 5 L12 19 M6 13 L12 19 L18 13"
@@ -44,6 +44,9 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
+import { useLocale } from '../../composables/useLocale'
+
+const { locale } = useLocale()
 
 /**
  * Advanced scroll-controlled animation system with luxury transitions.

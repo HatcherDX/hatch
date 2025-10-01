@@ -2,59 +2,29 @@
   <footer class="landing-footer">
     <div class="footer-container">
       <div class="footer-grid">
-        <div class="footer-column">
-          <h4>Product</h4>
+        <div
+          v-for="(column, index) in columns"
+          :key="index"
+          class="footer-column"
+        >
+          <h4>{{ column.title }}</h4>
           <ul>
-            <li><a href="/getting-started">Getting Started</a></li>
-            <li><a href="/features-code-hat">Code HAT</a></li>
-            <li><a href="/features-gen-hat">Gen HAT</a></li>
-            <li><a href="/features-visual-hat">Visual HAT</a></li>
-            <li><a href="/features-time-graph-hat">Time Graph HAT</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Concepts</h4>
-          <ul>
-            <li><a href="/philosophy">Philosophy</a></li>
-            <li><a href="/playbooks-system">Playbooks</a></li>
-            <li><a href="/autopilots-system">Autopilots</a></li>
-            <li><a href="/pillars-time-graph">Time Graph</a></li>
-            <li><a href="/pillars-universal-fabricator">Universal Fabricator</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Community</h4>
-          <ul>
-            <li><a href="https://github.com/HatcherDX/dx-engine">GitHub</a></li>
-            <li><a href="https://discord.gg/cZ7PZvnMk4">Discord</a></li>
-            <li><a href="https://twitter.com/HatcherDX">Twitter/X</a></li>
-            <li><a href="/contributing">Contributing</a></li>
-            <li><a href="/community">Community Guidelines</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/architecture">Architecture</a></li>
-            <li><a href="/roadmap">Roadmap</a></li>
-            <li><a href="https://github.com/HatcherDX/dx-engine/releases">Releases</a></li>
-            <li><a href="https://github.com/HatcherDX/dx-engine/issues">Report Issues</a></li>
-            <li><a href="/pact-pricing">Open Core Pact</a></li>
+            <li v-for="(link, linkIndex) in column.links" :key="linkIndex">
+              <a :href="link.href">{{ link.text }}</a>
+            </li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <div class="footer-brand">
-          <img src="/logo-inline-dark.svg" alt="Hatcher" class="footer-logo dark-only" />
-          <img src="/logo-inline-light.svg" alt="Hatcher" class="footer-logo light-only" />
-          <p class="footer-tagline">The Constitutional IDE</p>
+          <img :src="logoDark" :alt="logoAlt" class="footer-logo dark-only" />
+          <img :src="logoLight" :alt="logoAlt" class="footer-logo light-only" />
+          <p class="footer-tagline">{{ tagline }}</p>
         </div>
         <div class="footer-legal">
-          <p>Released under the <a href="https://github.com/HatcherDX/dx-engine/blob/main/LICENSE">MIT License</a>.</p>
-          <p>Built with <svg class="heart-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg> by <a href="https://github.com/chrissmejia">Chriss Mejía</a> and the <a href="/community">Hatcher community</a>.</p>
-          <p>© {{ currentYear }} Hatcher DX. All rights reserved.</p>
+          <p v-html="legalText"></p>
+          <p v-html="attributionText"></p>
+          <p>{{ copyrightText.replace('{year}', currentYear.toString()) }}</p>
         </div>
       </div>
     </div>
@@ -63,6 +33,79 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+
+interface FooterLink {
+  text: string
+  href: string
+}
+
+interface FooterColumn {
+  title: string
+  links: FooterLink[]
+}
+
+interface FooterSectionProps {
+  columns?: FooterColumn[]
+  tagline?: string
+  legalText?: string
+  attributionText?: string
+  copyrightText?: string
+  logoDark?: string
+  logoLight?: string
+  logoAlt?: string
+}
+
+const props = withDefaults(defineProps<FooterSectionProps>(), {
+  tagline: 'The Constitutional IDE',
+  legalText: 'Released under the <a href="https://github.com/HatcherDX/dx-engine/blob/main/LICENSE">MIT License</a>.',
+  attributionText: 'Built with&nbsp;<svg class="heart-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>&nbsp;by <a href="https://github.com/chrissmejia">Chriss Mejía</a> and the <a href="/community">Hatcher community</a>.',
+  copyrightText: '© {year} Hatcher DX. All rights reserved.',
+  logoDark: '/logo-inline-dark.svg',
+  logoLight: '/logo-inline-light.svg',
+  logoAlt: 'Hatcher',
+  columns: () => [
+    {
+      title: 'Product',
+      links: [
+        { text: 'Getting Started', href: '/getting-started' },
+        { text: 'Code HAT', href: '/features-code-hat' },
+        { text: 'Gen HAT', href: '/features-gen-hat' },
+        { text: 'Visual HAT', href: '/features-visual-hat' },
+        { text: 'Time Graph HAT', href: '/features-time-graph-hat' }
+      ]
+    },
+    {
+      title: 'Concepts',
+      links: [
+        { text: 'Philosophy', href: '/philosophy' },
+        { text: 'Playbooks', href: '/playbooks-system' },
+        { text: 'Autopilots', href: '/autopilots-system' },
+        { text: 'Time Graph', href: '/pillars-time-graph' },
+        { text: 'Universal Fabricator', href: '/pillars-universal-fabricator' }
+      ]
+    },
+    {
+      title: 'Community',
+      links: [
+        { text: 'GitHub', href: 'https://github.com/HatcherDX/dx-engine' },
+        { text: 'Discord', href: 'https://discord.gg/cZ7PZvnMk4' },
+        { text: 'Twitter/X', href: 'https://twitter.com/HatcherDX' },
+        { text: 'Contributing', href: '/contributing' },
+        { text: 'Community Guidelines', href: '/community' }
+      ]
+    },
+    {
+      title: 'Resources',
+      links: [
+        { text: 'Architecture', href: '/architecture' },
+        { text: 'Roadmap', href: '/roadmap' },
+        { text: 'Releases', href: 'https://github.com/HatcherDX/dx-engine/releases' },
+        { text: 'Report Issues', href: 'https://github.com/HatcherDX/dx-engine/issues' },
+        { text: 'Open Core Pact', href: '/pact-pricing' }
+      ]
+    }
+  ]
+})
 
 const currentYear = computed(() => new Date().getFullYear())
 </script>
@@ -261,6 +304,7 @@ const currentYear = computed(() => new Date().getFullYear())
   display: flex !important;
   flex-direction: column !important;
   gap: 0.4rem !important;
+  align-items: flex-end !important;
 }
 
 .footer-legal p {
@@ -268,6 +312,10 @@ const currentYear = computed(() => new Date().getFullYear())
   font-size: 0.875rem !important;
   color: var(--vp-c-text-3) !important;
   opacity: 0.7 !important;
+  line-height: 1.6 !important;
+  word-wrap: break-word !important;
+  display: inline-block !important;
+  max-width: 100% !important;
 }
 
 .footer-legal a {
@@ -313,7 +361,12 @@ const currentYear = computed(() => new Date().getFullYear())
   color: #c9962f !important;  /* Refined gold color */
   opacity: 0.7 !important;
   transition: all 0.3s ease !important;
-  margin: 0 2px !important;
+  margin: 0 4px !important;
+  width: 14px !important;
+  height: 14px !important;
+  flex-shrink: 0 !important;
+  /* Prevent orphaning by treating as word */
+  word-break: keep-all !important;
 }
 
 /* Subtle hover effect on the entire line */

@@ -1,54 +1,54 @@
 ---
-title: Filosofía |El ide constitucional para la era de Ai
-description: "Descubra la filosofía central de Hatcher: amplificación controlada.Aprenda cómo nuestro IDE constitucional proporciona un sistema inmune para la era de la IA, amplificando la experiencia del desarrollador sin sacrificar el control."
+title: Filosofía | El IDE Constitucional para la Era de la IA
+description: Descubre la filosofía central de Hatcher—Amplificación Controlada. Aprende cómo nuestro IDE Constitucional proporciona un sistema inmune para la era de la IA, amplificando la experiencia del desarrollador sin sacrificar el control.
 ---
 
-# La filosofía: amplificación controlada
+# La Filosofía: Amplificación Controlada
 
-En el corazón de Hatcher se encuentra una sola filosofía guía: ** Amplificación controlada **.
+En el corazón de Hatcher yace una única filosofía guía: **Amplificación Controlada**.
 
-Esta es nuestra respuesta al desafío central de la era de la IA.Si bien la IA puede generar código con una velocidad increíble, a menudo funciona como un desarrollador junior caótico, poderoso pero impredecible, sin contexto y creando una "última milla" de soluciones frustrantes.
+Esta es nuestra respuesta al desafío central de la era de la IA. Mientras que la IA puede generar código con una velocidad increíble, a menudo opera como un desarrollador junior caótico—poderoso pero impredecible, sin contexto, y creando una "última milla" de correcciones frustrantes.
 
-La industria persigue la automatización completa.Creemos que este es un error profundo.La solución no es reemplazar la experiencia humana, sino para amplificarla con precisión y control.
+La industria persigue la automatización completa. Creemos que esto es un error profundo. La solución no es reemplazar la experiencia humana, sino amplificarla con precisión y control.
 
-** El desarrollador sigue siendo el cirujano, usando Hatcher para ejercer la IA como un bisturí inteligente e alta precisión. **
+**El desarrollador sigue siendo el cirujano, usando Hatcher para empuñar la IA como un bisturí inteligente de alta precisión.**
 
-## Los cuatro pilares de amplificación controlada
+## Los Cuatro Pilares de la Amplificación Controlada
 
-Esta filosofía transforma la IA de un asistente caótico en una pareja determinista a través de cuatro pilares fundamentales:
+Esta filosofía transforma la IA de un asistente caótico en un socio determinista a través de cuatro pilares fundamentales:
 
-### Pilar 1: Desde conjeturas textuales hasta intención visual
+### Pilar 1: De Conjeturas Textuales a Intención Visual
 
-** En lugar de describir lo que quiere cambiar, lo muestra. ** El puente visual de código de escotero elimina la ambigüedad al anclar las acciones de AI directamente a los elementos visuales.Haga clic en el botón que desea modificar, arrastre a donde debe ir.La IA entiende exactamente lo que quiere decir porque lo ha demostrado, no lo ha descrito.No más modificaciones de componentes incorrectos, no más confusión de contexto.
+**En lugar de describir lo que quieres cambiar, lo muestras.** El [Puente Visual-a-Código](/visual-to-code) de Hatcher elimina la ambigüedad al anclar las acciones de la IA directamente a elementos visuales. Haz clic en el botón que quieres modificar, arrastra a donde debería ir. La IA entiende exactamente lo que quieres decir porque se lo has mostrado, no descrito. No más modificaciones de componentes incorrectos, no más confusión de contexto.
 
-### Pilar 2: del contexto nulo a la IA constitucional
+### Pilar 2: De Vacío de Contexto a IA Constitucional
 
-** Su IA sigue sus reglas, no patrones genéricos. ** A través de los libros de jugadas de equipo, crea una "constitución" para su IA, que codifica su arquitectura, patrones y estándares.La IA se convierte en un contribuyente experto que comprende su base de código específica, no un generador de código genérico que hace suposiciones.Es la diferencia entre un contratista aleatorio y un miembro de equipo capacitado que conoce su sistema por dentro y por fuera.
+**Tu IA sigue tus reglas, no patrones genéricos.** A través de Playbooks de Equipo, creas una "constitución" para tu IA—codificando tu arquitectura, patrones y estándares. La IA se convierte en un colaborador experto que comprende tu base de código específica, no un generador de código genérico haciendo suposiciones. Es la diferencia entre un contratista aleatorio y un miembro del equipo capacitado que conoce tu sistema por dentro y por fuera.
 
-### Pilar 3: Desde cajas negras opacas hasta control determinista
+### Pilar 3: De Cajas Negras Opacas a Control Determinista
 
-** Cada cambio es auditable, comprobable y reversible. ** Hatcher proporciona una transparencia completa: Vista previa de cada modificación antes de que suceda, valida con puertas de calidad automatizadas y mantenga una pista de auditoría perfecta a través de la máquina del tiempo.Nunca te sorprende lo que hace la IA porque ves, prueba y controlas todo.Confía a través de la verificación, no la fe.
+**Cada cambio es auditable, testeable y reversible.** Hatcher proporciona transparencia completa: previsualiza cada modificación antes de que suceda, valida con compuertas de calidad automatizadas, y mantén un registro de auditoría perfecto a través del [Time Graph](/pillars-time-graph). Nunca te sorprende lo que hace la IA porque ves, pruebas y controlas todo. Confianza a través de verificación, no fe.
 
-### Pilar 4: De la magia de 'un disparo' al refinamiento iterativo
+### Pilar 4: De Magia de 'Un Solo Disparo' a Refinamiento Iterativo
 
-** El gran software se construye de forma incremental, no mágicamente. ** En lugar de intentar características complejas en un salto imposible, Hatcher permite la colaboración de fluidos a través de pequeños pasos validados.Los bucles de corrección automatizada de prueba permiten que la IA se autocorrecta hasta que el código esté funcional y cumpla con sus estándares.Cuando un simple `formato PNPM` solucione un problema, use eso: reserve el poder de la IA para los problemas que solo puede resolver.
+**El gran software se construye incrementalmente, no mágicamente.** En lugar de intentar características complejas en un salto imposible, Hatcher permite colaboración fluida a través de pasos pequeños y validados. Los bucles automatizados de Auto-Corrección de Pruebas permiten a la IA auto-corregirse hasta que el código sea funcional y cumpla con tus estándares. Cuando un simple `pnpm format` arreglará un problema, úsalo—reserva el poder de la IA para problemas que solo ella puede resolver.
 
-## del poder individual a la inteligencia organizacional
+## De Poder Individual a Inteligencia Organizacional
 
-Escalas de amplificación controladas con usted, convirtiendo el conocimiento individual en un activo organizacional:
+La Amplificación Controlada escala contigo, convirtiendo el conocimiento individual en un activo organizacional:
 
-- ** Libros de jugadas de equipo ** Asegurar la consistencia y acelerar la incorporación
-- ** Inteligencia organizacional ** Aprender de patrones exitosos en todos los proyectos
-- ** El conocimiento institucional ** se conserva y se aplica automáticamente
+- **[Playbooks de Equipo](/playbooks-system)** aseguran consistencia y aceleran la incorporación a través de nuestro marco de [Ingeniería Constitucional](/constitutional-engineering)
+- **Inteligencia Organizacional** aprende de patrones exitosos a través de todos los proyectos
+- **Conocimiento Institucional** se preserva y aplica automáticamente
 
-## Su ancla de productividad
+## Tu Ancla de Productividad
 
-Esta filosofía se extiende más allá de las características técnicas.Se trata de proteger el activo más valioso de un desarrollador: ** El estado de flujo. **
+Esta filosofía se extiende más allá de características técnicas. Se trata de proteger el activo más valioso de un desarrollador: **el estado de flujo.**
 
-En una era de distracción digital constante, Hatcher está diseñado para ser una baliza visual y cognitiva.Su interfaz enfocada y poderosa actúa como un ancla de productividad, lo que lo mantiene atado a su trabajo más importante.Creemos que la verdadera productividad no proviene de administrar más tareas, sino de proteger el trabajo profundo que crea un valor duradero.
+En una era de distracción digital constante, Hatcher está diseñado para ser un faro visual y cognitivo. Su interfaz enfocada y poderosa actúa como un ancla de productividad, manteniéndote atado a tu trabajo más importante. Creemos que la verdadera productividad no viene de manejar más tareas, sino de proteger el trabajo profundo que crea valor duradero.
 
-** La amplificación controlada no es solo un conjunto de características: es un nuevo paradigma para la colaboración de la computadora humana. **
+**La Amplificación Controlada no es solo un conjunto de características—es un nuevo paradigma para la colaboración humano-computadora.**
 
 ---
 
-<Philosophycta />
+<PhilosophyCTA />
