@@ -17,6 +17,8 @@ import id from './id'
 import ja from './ja'
 import ko from './ko'
 import fa from './fa'
+import ru from './ru'
+import tr from './tr'
 
 export const locales = {
   en,
@@ -30,10 +32,9 @@ export const locales = {
   id,
   ja,
   ko,
-  fa
-  // Add more locales as they are translated:
-  // ru,     // Russian
-  // tr,     // Turkish
+  fa,
+  ru,
+  tr
 }
 
 export type SupportedLocale = keyof typeof locales

@@ -1,11 +1,11 @@
 ---
-title: Görsel-Kod Köprüsü | Kod Üretimi için Doğrudan UI Manipülasyonu
-description: Doğrudan UI manipülasyonunu hassas kod değişikliklerine dönüştüren Hatcher'ın devrimci Görsel-Kod Köprüsü hakkında öğrenin. Daha iyi AI geliştirme için tanımlamak yerine işaret edin.
+title: "Visual-to-Code Köprüsü | Hatcher'ın AI Geliştirme İnovasyonu"
+description: "AI destekli geliştirmeyi devrimleştiren Hatcher'ın Visual-to-Code Köprüsünü deneyimleyin. Deterministik kontrolle hassas kod değişiklikleri oluşturmak için UI'nızı doğrudan tıklayın, sürükleyin ve manipüle edin."
 ---
 
 # Visual-to-Code Köprüsü
 
-Visual-to-Code köprüsü, geliştiricilerin AI kodlama asistanları ile etkileşim şeklini devrimleştiren Hatcher'ın imza özelliğidir. Değişiklikleri metinle tanımlamak yerine, uygulamanızın görsel arayüzünü doğrudan manipüle edersiniz ve Hatcher eylemlerinizi hassas kod değişikliklerine çevirir.
+Visual-to-Code Köprüsü, geliştiricilerin AI kodlama asistanlarıyla nasıl etkileşime girdiğini devrimleştiren Hatcher'ın imza özelliğidir. Değişiklikleri metinde tanımlamak yerine, uygulamanızın görsel arayüzünü doğrudan manipüle ediyorsunuz ve Hatcher eylemlerinizi hassas kod değişikliklerine çeviriyor.
 
 ## Nasıl Çalışır
 
@@ -13,10 +13,10 @@ Visual-to-Code köprüsü, geliştiricilerin AI kodlama asistanları ile etkile�
 
 ```mermaid
 graph LR
-    A[Geliştirici Niyeti] --> B[Metin Tanımı]
+    A[Geliştirici Niyeti] --> B[Metin Açıklaması]
     B --> C[AI Yorumu]
     C --> D[Kod Üretimi]
-    D --> E[Çoğunlukla Yanlış Sonuç]
+    D --> E[Genellikle Yanlış Sonuç]
     E --> F[Manuel Düzeltme]
     F --> B
 ```
@@ -25,28 +25,34 @@ graph LR
 
 - Geliştirici: "Başlığı mavi yap ve ortala"
 - AI: Yanlış öğeyi mavi yapan CSS üretir
-- Geliştirici: "Hayır, kenar çubuğu başlığı değil, ana başlık"
+- Geliştirici: "Hayır, yan çubuk başlığı değil ana başlık"
 - AI: Yanlış mavi tonunu yapar
-- Geliştirici: "#3B82F6 yap ve yazı boyutunu da artır"
-- ... böyle devam eder
+- Geliştirici: "#3B82F6 yap ve ayrıca yazı boyutunu artır"
+- ... ve devam eder
 
-### Hatcher'ın Visual-to-Code Yaklaşımı
+### Hatcher'ın Visual-to-Code Yaklaşımı: Köprünün İkili Modları
 
-```mermaid
-graph LR
-    A[Görsel Seçim] --> B[Doğrudan Manipülasyon]
-    B --> C[Hassas Niyet Yakalama]
-    C --> D[Bağlamsal Kod Üretimi]
-    D --> E[Tam Sonuç]
-```
+Visual-to-Code Köprüsü, projenizin görevine bağlı olarak farklı çalışır, özgürlük ve kontrolün doğru dengesini sağlar.
 
-**Gerçekte nasıl çalışır:**
+**Generative Modda: AI Destekli Oluşturma**
 
-1. **Tıkla ve Seç**: Değiştirmek istediğin öğeyi işaret et
-2. **Görsel Manipülasyon**: Görsel olarak sürükle, yeniden boyutlandır veya özellikleri değiştir
-3. **Niyet Tanıma**: Hatcher neyin değiştiğini tam olarak anlar
-4. **Kod Üretimi**: AI gereken hassas kodu üretir
-5. **Mükemmel Sonuç**: Değişiklik görsel niyetinle tam olarak eşleşir
+`Generative` projesinde köprü, AI için yüksek hassasiyetli bir hedefleme sistemi görevi görür. İş akışı:
+
+1. **Bağlamı sabitlediğiniz**: Bir öğe seçmek için tıklayın.
+
+2. **Komutu sağladığınız**: İstenen değişikliği tanımlamak için doğal dil kullanın.
+
+3. **AI'nın yürüttüğü**: Tanımladığınız kapsama kısıtlanmış gerekli kodu üretir.
+
+**Bir EGG'de: Deterministik Manipülasyon**
+
+Bir EGG'de (Enforced Governance Guardrails), köprü görsel değişiklikler için AI kod üretiminin kullanılmadığı doğrudan bir manipülasyon aracı haline gelir. İş akışı %100 deterministiktir:
+
+1. **Doğrudan manipüle edersiniz**: Sürükleyin, yeniden boyutlandırın veya görsel bir panelde özellikleri düzenleyin.
+
+2. **Motor olayı yakalar**: Hatcher değişikliği yapılandırılmış bir güncelleme olarak kaydeder.
+
+3- **Konfigürasyon güncellenir**: Değişiklik, yeni kaynak kod olarak değil, proje konfigürasyon dosyasına yazılır.
 
 ## Temel Özellikler
 
@@ -54,10 +60,10 @@ graph LR
 
 **Akıllı Seçim Sistemi**
 
-- Herhangi bir öğeyi seçmek için tıklayın
+- Seçmek için herhangi bir öğeye tıklayın
 - Seçim sınırlarını önizlemek için üzerine gelin
 - Toplu işlemler için birden fazla öğe seçin
-- Hiyerarşik seçim (çocuk, ebeveyn, kardeş)
+- Hiyerarşik seçim (alt, üst, kardeşler)
 
 ```typescript
 // Örnek: Bir buton seçmek
@@ -87,15 +93,15 @@ const selection = {
 
 - Öğeleri yeni konumlara sürükleyin
 - Köşeleri sürükleyerek yeniden boyutlandırın
-- Arka planlar ve metin için renk seçici
-- Tipografi kontrolleri (yazı tipi, boyut, ağırlık)
+- Arka plan ve metin için renk seçici
+- Tipografi kontrolleri (font, boyut, ağırlık)
 - Boşluk kontrolleri (margin, padding)
 
 **Canlı Önizleme**
 
-- Uygulamanızda değişiklikleri anında görün
-- Yenileme veya yeniden derleme gerekmez
-- Sıcak modül değiştirme entegrasyonu
+- Değişiklikleri uygulamanızda anında görün
+- Yenilemek veya yeniden oluşturmak gerekmez
+- Hot module replacement entegrasyonu
 - Gerçek zamanlı CSS güncellemeleri
 
 ### 3. Niyet Tanıma
@@ -111,20 +117,20 @@ Hatcher görsel değişikliklerinizi analiz eder ve şunları anlar:
 **Stil Değişiklikleri**
 
 - Renk değişiklikleri (hex, RGB, HSL, CSS değişkenleri)
-- Tipografi güncellemeleri (font family, size, weight, line height)
+- Tipografi güncellemeleri (font ailesi, boyutu, ağırlık, satır yüksekliği)
 - Görsel efektler (gölgeler, kenarlıklar, gradyanlar)
 
 **Bileşen Değişiklikleri**
 
 - Props değişiklikleri
 - State güncellemeleri
-- Event handler eklemeleri
+- Olay işleyici eklemeleri
 
 ### 4. Kod Üretimi
 
-Görsel niyetinize dayanarak Hatcher şunları üretir:
+Görsel niyetinize dayalı olarak, Hatcher şunları üretir:
 
-**Framework-Özel Kod**
+**Framework'e Özgü Kod**
 
 ```vue
 <!-- Vue 3 Örneği -->
@@ -137,7 +143,7 @@ Görsel niyetinize dayanarak Hatcher şunları üretir:
     }"
     @click="handleSubmit"
   >
-    Gönder
+    Submit
   </button>
 </template>
 ```
@@ -169,16 +175,16 @@ interface ButtonProps {
 
 ## Gelişmiş Yetenekler
 
-### 1. Duyarlı Tasarım
+### 1. Responsive Tasarım
 
-**Çoklu Kırılma Noktası Düzenleme**
+**Çoklu Breakpoint Düzenleme**
 
-- Farklı ekran boyutlarını aynı anda düzenleyin
-- Duyarlı CSS'yi otomatik olarak üretin
-- Cihazlar arası tasarım tutarlılığını koruyun
+- Aynı anda farklı ekran boyutlarını düzenleyin
+- Responsive CSS'yi otomatik olarak oluşturun
+- Cihazlar arasında tasarım tutarlılığını koruyun
 
 ```css
-/* Üretilen duyarlı kod */
+/* Oluşturulan responsive kod */
 .submit-btn {
   /* Mobil */
   width: 100%;
@@ -203,7 +209,7 @@ interface ButtonProps {
 }
 ```
 
-### 2. Bileşen-Farkında Değişiklikler
+### 2. Bileşen Farkında Değişiklikler
 
 **Akıllı Bileşen Algılama**
 
@@ -211,13 +217,13 @@ interface ButtonProps {
 - Bileşen props ve state'ini anlar
 - Bileşen sınırlarını korur
 
-**Örnek: Vue Bileşenini Değiştirme**
+**Örnek: Bir Vue Bileşenini Değiştirme**
 
 ```vue
-<!-- Öncesi -->
+<!-- Önce -->
 <UserCard :user="currentUser" size="medium" />
 
-<!-- Görsel değişiklik sonrası -->
+<!-- Görsel değişiklikten sonra -->
 <UserCard
   :user="currentUser"
   size="large"
@@ -230,16 +236,16 @@ interface ButtonProps {
 
 **Otomatik Token Kullanımı**
 
-- Tasarım sistemi tokenlarını tanır
+- Tasarım sistemi token'larını tanır
 - Uygun değerler önerir
 - Tutarlılığı korur
 
 ```css
-/* Rastgele değerler yerine */
+/* Keyfi değerler yerine */
 color: #3b82f6;
 padding: 12px;
 
-/* Tasarım tokenları kullanır */
+/* Tasarım token'ları kullanır */
 color: var(--color-primary-500);
 padding: var(--spacing-3);
 ```
@@ -248,37 +254,37 @@ padding: var(--spacing-3);
 
 ### Örnek 1: Düzen Ayarlaması
 
-**Hedef**: Kenar çubuğunu soldan sağa taşımak
+**Hedef**: Bir kenar çubuğunu sol taraftan sağ tarafa taşıyın
 
-1. **Seç**: Kenar çubuğu bileşenini tıklayın
-2. **Sürükle**: Ekranın sağ tarafına sürükleyin
-3. **İncele**: Üretilen flex/grid değişikliklerini görün
-4. **Uygula**: CSS değişikliklerini kabul edin
+1. **Seçin**: Kenar çubuğu bileşenine tıklayın
+2. **Sürükleyin**: Ekranın sağ tarafına sürükleyin
+3. **İnceleyin**: Oluşturulan flex/grid değişikliklerini görün
+4. **Uygulayın**: CSS değişikliklerini kabul edin
 
-**Üretilen Kod**:
+**Oluşturulan Kod**:
 
 ```css
 .layout-container {
   display: flex;
-  flex-direction: row; /* row-reverse'den değişti */
+  flex-direction: row; /* row-reverse'den değiştirildi */
 }
 
 .sidebar {
-  order: 2; /* 1'den değişti */
+  order: 2; /* 1'den değiştirildi */
   margin-left: auto; /* Eklendi */
 }
 ```
 
 ### Örnek 2: Bileşen Stillendirme
 
-**Hedef**: Buton görünümünü tasarıma uygun şekilde değiştirmek
+**Hedef**: Buton görünümünü tasarımla eşleşecek şekilde değiştirin
 
-1. **Seç**: Butonu tıklayın
-2. **Stil**: Renk seçiciyi kullanın, boyutu ayarlayın, kenarlığı değiştirin
-3. **Önizle**: Uygulamada değişiklikleri canlı görün
-4. **Üret**: Bileşen prop güncellemelerini alın
+1. **Seçin**: Butona tıklayın
+2. **Stil**: Renk seçici kullanın, boyutu ayarlayın, kenarlığı değiştirin
+3. **Önizleme**: Değişiklikleri uygulamada canlı görün
+4. **Oluştur**: Bileşen prop güncellemelerini alın
 
-**Üretilen Kod**:
+**Oluşturulan Kod**:
 
 ```vue
 <script setup>
@@ -290,20 +296,20 @@ const buttonStyle = {
 </script>
 
 <template>
-  <AppButton v-bind="buttonStyle"> Siparişi Gönder </AppButton>
+  <AppButton v-bind="buttonStyle"> Submit Order </AppButton>
 </template>
 ```
 
-### Örnek 3: Duyarlı Ayarlama
+### Örnek 3: Responsive Ayarlama
 
-**Hedef**: Bir ızgarayı duyarlı yapmak
+**Hedef**: Bir grid'i responsive yapın
 
-1. **Seç**: Izgara konteynerini seçin
-2. **Yeniden Boyutlandır**: Farklı kırılma noktaları için sütunları ayarlayın
-3. **Test**: Mobil/tablet/masaüstünde önizleyin
-4. **Uygula**: Duyarlı CSS Grid üretin
+1. **Seçin**: Grid konteynerini seçin
+2. **Yeniden Boyutlandır**: Farklı breakpoint'ler için sütunları ayarlayın
+3. **Test**: Mobil/tablet/masaüstünde önizleme yapın
+4. **Uygula**: Responsive CSS Grid oluşturun
 
-**Üretilen Kod**:
+**Oluşturulan Kod**:
 
 ```css
 .product-grid {
@@ -327,7 +333,7 @@ const buttonStyle = {
 
 ## AI Motorları ile Entegrasyon
 
-Visual-to-Code köprüsü desteklenen AI motorları ile sorunsuz çalışır:
+Visual-to-Code Köprüsü, desteklenen AI motorlarıyla sorunsuz çalışır:
 
 ### Claude Code Entegrasyonu
 
@@ -352,28 +358,28 @@ const refinedCode = refineWithPlaybook(suggestion)
 
 ### 1. Küçük Başlayın
 
-- Artırımlı görsel değişiklikler yapın
+- Kademeli görsel değişiklikler yapın
 - Bir sonrakine geçmeden önce her değişikliği test edin
-- Karmaşık değişiklikleri küçük adımlarla oluşturun
+- Karmaşık değişiklikleri daha küçük adımlarla oluşturun
 
-### 2. Playbooks Kullanın
+### 2. Playbook'ları Kullanın
 
 - Playbook'larınızda bileşen kalıplarını tanımlayın
 - Tutarlı stillendirme kuralları oluşturun
 - Yaygın tasarım kalıplarını belgeleyin
 
-### 3. Üretilen Kodu İnceleyin
+### 3. Oluşturulan Kodu İnceleyin
 
 - Uygulamadan önce her zaman kod farkını inceleyin
-- Üretilen kodun standartlarınızı takip ettiğinden emin olun
-- Daha iyi sonuçlar için gerekirse komutları iyileştirin
+- Oluşturulan kodun standartlarınızı takip ettiğinden emin olun
+- Daha iyi sonuçlar için gerekirse promptları rafine edin
 
-### 4. Kapsamlı Test Edin
+### 4. İyice Test Edin
 
 - Değişiklikleri doğrulamak için otomatik testler kullanın
-- Duyarlı davranışı kontrol edin
+- Responsive davranışı kontrol edin
 - Erişilebilirlik uyumluluğunu doğrulayın
 
 ---
 
-Visual-to-Code köprüsü, geliştirme için AI ile etkileşimimizde temel bir değişimi temsil eder. Niyet ve uygulama arasındaki çeviri katmanını ortadan kaldırarak, daha sezgisel, hassas ve verimli bir geliştirme deneyimi yaratır.
+Visual-to-Code Köprüsü, geliştirme için AI ile nasıl etkileşime girdiğimizde temel bir değişimi temsil eder. Niyet ve uygulama arasındaki çeviri katmanını ortadan kaldırarak, daha sezgisel, hassas ve verimli bir geliştirme deneyimi yaratır.

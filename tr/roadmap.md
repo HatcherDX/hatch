@@ -1,139 +1,103 @@
 ---
-title: Yol Haritası | Hatcher IDE Gelecek Geliştirme Planları
-description: Hatcher'ın geliştirme yol haritasını ve gelecek özelliklerini keşfedin. AI destekli geliştirme, yeni entegrasyonlar ve platform iyileştirmeleri için neler planlandığını görün.
+title: "Yol Haritası | Constitutional IDE'nin Geleceği"
+description: "Hatcher'ın stratejik yol haritasını keşfedin. Temel 'lüks iskele'mizden PLG volan'ımızı ateşlemeye ve EGG kurumsal platformunu başlatmaya kadar, kontrollü AI geliştirmenin geleceğini nasıl inşa ettiğimizi görün."
 ---
 
-# Yol Haritası
+# Hatcher Yol Haritası
 
-Hatcher'ın yol haritası, mevcut kavram kanıtından kapsamlı bir AI destekli geliştirme platformuna olan yolculuğumuzu özetliyor.
+Bu belge, **Hatcher IDE**'yi pazara getirmek için stratejik önceliklerimizi özetler. Misyonu vizyonumuzu yaymak, kendini adamış bir takipçi kitlesi oluşturmak ve Hatcher'ı AI geliştirme çağında kesin düşünce lideri olarak kurmaktır.
 
-## Mevcut Durum: Alpha (v0.1)
+## ✅ Faz 0: Temel (Tamamlandı)
 
-Hatcher'ın temel özelliklerini inşa etmenin erken aşamalarındayız. Temel Visual-to-Code teknolojisi özel testlerde doğrulandı ve şimdi MVP'yi geliştiriyoruz.
+**Hedef:** "Lüks iskelemizi" inşa edin ve doğrulayın—iddialı vizyonumuzu desteklemek için gereken kurumsal sınıf mimari sütunlar.
 
-### Bugün Çalışan Özellikler
+**Temel Sonuçlar:**
 
-- ✅ Temel Electron uygulama çerçevesi
-- ✅ TypeScript ile Vue.js renderleyici
-- ✅ Dokümantasyon sistemi
-- ✅ Build ve geliştirme araçları
+- **Durum**: Tamamlandı. Özel Git Motorumuz, Güvenli Depolama Motoru (AES-256 kasası ile) ve GPU hızlandırmalı Profesyonel Terminal'i içeren dünya standartlarında bir temel gönderdik.
+- **Temel Sonuç**: ~%90 test kapsamı ve sağlam, çok platformlu bir CI/CD hattı elde ettik. Bu, görev kritik bir araç için gereken mühendislik mükemmelliğine olan bağlılığımızı kanıtlıyor.
 
-### Aktif Geliştirme (2025 Q1)
+## 🟡 Faz 1: Temel Değeri Doğrulama (Devam Ediyor)
 
-- 🔄 **Visual-to-Code Köprüsü**: Temel element seçimi ve kod üretimi
-- 🔄 **Claude Entegrasyonu**: Anthropic'in Claude API'sine bağlantı
-- 🔄 **Git Entegrasyonu**: Görsel diff ve değişiklik inceleme sistemi
-- 🔄 **Temel Playbook'lar**: İlk bağlam yönetim sistemi
+**Hedef:** **Gen HAT** içinde odaklanmış ve etkileyici bir deneyim sunarak temel "Kontrollü Güçlendirme" felsefemizi doğrulayın.
 
-## Faz 1: MVP Yayını (2025 Q2)
+**Stratejik Odak:** Tüm ekibimiz tek, "sihirli" bir iş akışını mükemmelleştirmeye adanmıştır: `Prompt -> Constitutional Validation -> Time Graph Review -> Commit`.
 
-İlk büyük sürümümüz Hatcher'ı işlevsel bir AI destekli IDE olarak kuracak.
+**Stratejik Not:** Faz 1'in başarılı tamamlanması Y Combinator'a başvurumuzla sonuçlanacaktır. Hedefimiz doğrulanmış bir MVP, güçlü bir tasarım ortağı referansı ve pazar liderliği için net bir vizyon sunmaktır.
 
-### Temel Özellikler
+**Temel Sonuçlar:**
 
-- **Görsel Element Seçimi**: Tıklayarak seçme arayüz elementleri
-- **AI Kod Üretimi**: Hassas kod değişiklikleri üretme
-- **Diff İnceleme Sistemi**: Görsel kod değişiklik incelemesi
-- **Temel AI Entegrasyonu**: Claude Code CLI desteği
+- `[Devam Ediyor]` **Uçtan Uca Generative İş Akışı**: UI'yi güçlü bulut tabanlı bir AI motoruna bağlayın ve AI çıktısının düzenleyicide doğru şekilde ayrıştırıldığından ve görüntülendiğinden emin olun.
 
-### Başarı Metrikleri
+- `[Yapılacak]` **Değişmez Diff Paneli:** **Time Graph**, tüm AI tarafından üretilen kod için net, deterministik bir inceleme süreci sağlamalıdır. Bu, yönetim vaadimizin tartışılmaz kalbidir.
 
-- İşlevsel Visual-to-Code iş akışı
-- Tasarımdan koda yineleme süresinde %50 azalma
-- Erken benimseyen aktif topluluk
+- `[Yapılacak]` **İlk Geçiş Playbook Doğrulaması:** AI eylemlerinin proje kuralları ve insan değerleriyle uyumlu olmasını sağlamak için playbook'lar aracılığıyla ilk Constitutional Validation'ı uygulayın.
 
-## Faz 2: Gelişmiş AI Entegrasyonu (2025 Q3)
+- `[Yapılacak]` **Odaklanmış Bir Deneyim:** Diğer tüm eksik modları ve özellikleri agresif bir şekilde gizleyin veya devre dışı bırakın. Hedef, yalnızca temel generative döngüye odaklanan istikrarlı ve hayranlık uyandıran bir deneyim sunmaktır.
 
-AI yeteneklerini genişletme ve geliştirici deneyimini iyileştirme.
+## <DocIcon type="rocket" inline /> Faz 2: Volanı Ateşleme (Sonraki)
 
-### Planlanan Özellikler
+**Hedef:** **Gen HAT** deneyimine odaklanan **Hatcher IDE**'nin ücretsiz katmanını halka açın, Ürün Odaklı Büyüme (PLG) ve topluluk volanımızı başlatın.
 
-- **Multi-Engine Desteği**: Gemini CLI entegrasyonu
-- **Bağlam Zekası**: Gelişmiş Playbook sistemi
-- **Otomatik Düzeltme Döngüleri**: Otomatik test ve düzeltme
-- **Performans Optimizasyonu**: Daha hızlı kod üretimi
+**Stratejik Odak:** Toplu benimsemeyi yönlendirin, kritik kullanıcı geri bildirimleri toplayın ve ilk topluluk şampiyonlarımız kohortunu besleyin.
 
-## Faz 3: Güven ve Tutarlılığı Ölçeklendirme
+**Temel Sonuçlar:**
 
-Hatcher'ı takım odaklı bir geliştirme platformuna dönüştürme.
+- **Başlatma:** Ücretsiz, yerel kullanım için **Gen HAT**'in temel deneyim olduğu **Hatcher IDE**'nin cilalı, herkese açık bir sürümünü yayınlayın.
 
-### Takım Özellikleri
+- **Aktivasyon:** İlk AI destekli kod oluşturmalarını başarıyla yürüten ve **Time Graph**'da inceleyen kullanıcıların yüzdesiyle ölçülen güçlü bir aktivasyon oranı elde edin.
 
-- **Paylaşılan Playbook'lar**: Takım çapında kodlama standartları
-- **İş Birlikçi İnceleme**: Çoklu geliştirici kod incelemesi
-- **İzin Sistemi**: Rol tabanlı erişim kontrolü
-- **Takım Analitiği**: Geliştirme hızı içgörüleri
+- **Topluluk:** **Autopilot'larımızı** güçlendiren uçuş planları olan ilk public **Playbook'ların** oluşturulmasını ve paylaşılmasını teşvik edin.
 
-## Faz 4: Pazar Yeri ve Ekosistem (2026)
+## 💰 Faz 3: Monetizasyon ve EGG Platformu (v1.0.0 ve Ötesi)
 
-Paylaşılan bilgi ve iş akışlarının gelişen bir ekosistemini inşa etme.
+**Hedef:** Ticari katmanlarımızı başlatın ve belirli kurumsal zorlukları çözmek için iki farklı EGG konfigürasyonu sunarak tam platform stratejimizi yürütün.
 
-### Pazar Yeri Özellikleri
+**Track 1: Çekirdek Ürün Evrimi (Ücretsiz Katman)**
 
-- **Playbook Paylaşımı**: Topluluk odaklı standartlar
-- **İş Akışı Şablonları**: Yeniden kullanılabilir geliştirme kalıpları
-- **AI Model Pazarı**: Özel eğitilmiş modeller
-- **Bileşen Kütüphaneleri**: Paylaşılabilir UI bileşenleri
+- **Misyon:** AI destekli geliştirme için en güçlü ücretsiz, yerel kullanım IDE'sini inşa etmeye devam edin.
 
-## Uzun Vadeli Vizyon (2026+)
+- **Yol Haritası:**
+  - **Yerel LLM Desteği:** AI Egemenliği vaadimizi yerine getirmek için Ollama aracılığıyla yerel modellerle entegre olun.
+  - **Genişletilmiş Playbook Kütüphanesi:** **Hatcher Autopilot'larının** yeteneklerini artıran **Playbook'ların** public pazarını büyütün.
+  - **Performans İyileştirmeleri:** Çekirdek IDE'nin hızını ve verimliliğini sürekli iyileştirin.
 
-Yazılım geliştirmeyi insanlar ve AI arasında işbirlikçi bir sürece dönüştürme.
+**Track 2: EGG Platformu**
 
-### Devrimci Özellikler
+- **Misyon:** Görev kritik yazılım oluşturmak için birleşik bir platform sağlayın, ekiplerin ihtiyaçlarına göre optimal konfigürasyonu seçmelerine izin verin.
 
-- **Full-Stack Üretimi**: Tam uygulama iskeletleri
-- **Doğal Dil Programlama**: Özellikleri sade Türkçe ile tanımlama
-- **Otomatik Test**: Kapsamlı test üretimi
-- **Dağıtım Otomasyonu**: CI/CD pipeline üretimi
+- **Yol Haritası:**
+  - **Teams Tier (v1.0.0):** İlk ücretli özelliğimizi tanıtın: Private Playbook Marketplaces. Bu, ekiplerin dahili **Autopilot'ları** için özel uçuş planlarını kodlamasına ve paylaşmasına olanak tanır.
+  - **Enterprise Tier (v1.1.0):** Hatcher EGGs (Enforced Governance Guardrails) Platformunu başlatın, içeriği:
+    - **EGG "Compatibility":** %100 görsel ve işlevsel tutarlılığın **en yüksek öncelik** olduğu büyük ölçekli kurumsal dağıtım çözümü. Bu konfigürasyon, **gömülü CEF (Chromium) motoruna sahip Tauri**'yi kullanır.
+    - **EGG "Performance":** **Verimlilik, minimum ayak izi ve en yüksek güvenlik seviyesinin hayati** olduğu ortamlar için çözüm. Bu konfigürasyon **Tauri'nin native OS WebView**'ını kullanır.
+  - **Denetlenebilirlik ve Uyumluluk:** Uyumluluk görevlileri için gelişmiş **Time Graph** özellikleri gönderin ve sağlam denetim günlüğü tanıtın.
+  - **Hatcher BaaS:** Hatcher EGG'leri için sıfır sürtünme, uçtan uca dağıtım çözümü sağlamak üzere entegre Backend-as-a-Service'imizi başlatın.
 
-## Topluluk ve Açık Kaynak
+**Track 3: Gelecek: Topluluk ve Çekirdek**
 
-### Topluluk Kilometre Taşları
+- **Misyon:** Topluluğu güçlendirerek ve çekirdeğimizi Rust'ta dövmek için uzun vadeli mimari vizyonumuzu gerçekleştirin.
 
-- **2025 Q1**: 100 GitHub yıldızı
-- **2025 Q2**: 500 GitHub yıldızı, 50 katkıda bulunan
-- **2025 Q3**: 1.000 GitHub yıldızı, 100 katkıda bulunan
-- **2025 Q4**: 2.500 GitHub yıldızı, 200 katkıda bulunan
+- **Yol Haritası:**
+  - **Topluluk Destekli Performans** EGG "Performance" (Tauri Native) bileşenlerimizin çapraz platform tutarlılığını mükemmelleştirmek için açık kaynak topluluğuyla aktif olarak çalışın.
+  - **Rust'a Giden Yol:** **Hatcher IDE**'nin kendisini kanıtlanmış Electron prototipimizden Rust'ta dövülmüş yeni nesil bir motora stratejik geçişe başlayın.
 
-### Açık Kaynak Taahhüdü
+## Yönlendirici İlkemiz
 
-- **MIT Lisansı**: Her zaman ücretsiz ve açık
-- **Şeffaf Geliştirme**: Halka açık yol haritası ve geliştirme
-- **Topluluk Yönetişimi**: Demokratik karar alma süreci
-- **Dokümantasyon İlkesi**: Kapsamlı rehberler ve örnekler
-
-## Teknoloji Evrimi
-
-### Mevcut Stack
-
-- **Frontend**: Vue.js 3, TypeScript, Vite
-- **Desktop**: Electron, Node.js
-- **AI**: Claude API, Gemini CLI
-- **Build**: Turborepo, ESLint, Prettier
-
-## Başarı Metrikleri
-
-### Geliştirici Deneyimi
-
-- **Değer Süresi**: Kurulumdan ilk kod üretimine kadar <5 dakika
-- **Öğrenme Eğrisi**: Üretken olmak için <1 saat
-- **Hata Oranı**: Kod üretiminde <%5 yanlış pozitif
-- **Memnuniyet**: >%90 pozitif geliştirici geri bildirimi
-
-## Nasıl Katkıda Bulunulur
-
-### Geliştiriciler İçin
-
-- **Temel Özellikler**: Visual-to-Code teknolojisini inşa etmeye yardım
-- **AI Entegrasyonu**: AI motor bağlantılarını iyileştirme
-- **Dokümantasyon**: Rehberler ve örnekler yazma
-- **Test**: Kapsamlı test paketleri oluşturma
+Bu yol haritası, kademeli, aşamalı bir yaklaşıma olan bağlılığımızı yansıtır. AI çağı için kesin Constitutional IDE olarak Hatcher'ı kurmak için temel istikrarı iddialı inovasyonla dengeliyoruz.
 
 ## Güncel Kalın
 
-- **GitHub**: Güncellemeler için [depoyu](https://github.com/HatcherDX/dx-engine) takip edin
+- **GitHub**: Güncellemeler için [depoya](https://github.com/HatcherDX/dx-engine) göz kulak olun
 - **Discord**: [Topluluk sohbetimize](https://discord.gg/hatcher) katılın
 - **Twitter**: [@HatcherDX](https://twitter.com/HatcherDX)'i takip edin
-- **Bülten**: Aylık güncellemeler için abone olun
 
-Bu yol haritası, topluluk geri bildirimleri ve teknolojik ilerlemelere dayalı olarak gelişen yaşayan bir belgedir. Hatcher'ı halka açık inşa ediyoruz ve yönümüz hakkındaki görüşlerinizi memnuniyetle karşılıyoruz.
+Bu yol haritası, topluluk geri bildirimleri ve teknolojik ilerlemelere dayalı olarak gelişen yaşayan bir belgedir. Hatcher'ı herkese açık inşa ediyoruz ve yönümüz hakkındaki girdilerinizi memnuniyetle karşılıyoruz.
+
+<PageCTA
+  title="Bizimle Geleceği Şekillendirin"
+  subtitle="Geri bildiriminiz ve katkılarınız yol haritamızı ileri götürür"
+  buttonText="Tartışmaya Katılın"
+  buttonLink="https://discord.gg/hatcher"
+  buttonStyle="secondary"
+  footer="Geliştirmenin geleceğini birlikte inşa ediyoruz"
+/>
