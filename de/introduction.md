@@ -44,7 +44,7 @@ Hatcher ist eine moderne IDE, die speziell für das KI-Zeitalter entwickelt wurd
 
 1. [Hatcher installieren](/de/getting-started)
 2. [Die Philosophie verstehen](/de/philosophy)
-3. [Playbooks konfigurieren](/de/playbooks)
+3. [Playbooks konfigurieren](/de/playbooks-system)
 4. [Die Visuell-zu-Code-Brücke erkunden](/de/visual-to-code)
 
 ## Projektstatus

@@ -37,12 +37,19 @@ The following product names MUST remain in English in ALL languages:
 - Variable/function/class names
 
 ### Translation Process
-1. **Copy** English file to target language directory
-2. **Translate** frontmatter (title, description)
-3. **Translate** all descriptive text
-4. **Update** internal links with language prefix (e.g., `/de/philosophy`)
-5. **Preserve** all code blocks EXACTLY
-6. **Preserve** all Vue components (translate only prop text values)
+**CRITICAL FIRST STEP - Clean Slate:**
+1. **DELETE ALL .md FILES** in the target language directory at the start of each language translation
+   - This ensures no obsolete, renamed, or deleted files remain
+   - Guarantees 1:1 consistency between English and translated versions
+   - Command: `rm [lang]/*.md`
+
+**Then for each file:**
+2. **Copy** English file to target language directory
+3. **Translate** frontmatter (title, description)
+4. **Translate** all descriptive text
+5. **Update** internal links with language prefix (e.g., `/de/philosophy`)
+6. **Preserve** all code blocks EXACTLY
+7. **Preserve** all Vue components (translate only prop text values)
 
 ### Quality Checks
 - ✅ Product names in English
