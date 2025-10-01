@@ -1,226 +1,63 @@
 ---
-title: アーキテクチャ | Hatcher IDE技術設計とエンジニアリング原則
-description: 制御された増幅のために設計されたHatcherの技術アーキテクチャを探索します。決定論的設計、モデル非依存アプローチ、オープンソースエンジニアリング原則について学びます。
+title: "Architecture | Hatcherの四つの柱"
+description: "Hatcherの技術アーキテクチャを探索します。四つの柱を直接実装した、決定論的でモデルに依存しない、開発者中心のIDEです。"
 ---
 
-# アーキテクチャ
+# Hatcher Architecture
 
-Hatcherは、スケーラビリティ、保守性、パフォーマンスを優先するモノレポアーキテクチャを持つ現代的なElectronアプリケーションとして構築されています。
+Hatcher のアーキテクチャは、**四つの柱**をコードに直接翻訳したものです。すべての選択は、決定論的で、強力で、人間の指揮官が絶対的な制御を維持する開発環境への意図的なステップです。
 
-## ハイレベルアーキテクチャ
+私たちのエンジニアリングは、一つの質問によって導かれます: **これは柱に役立つか?**
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Hatcher Desktop App                      │
-├─────────────────────────────────────────────────────────────┤
-│  Main Process (Node.js)     │  Renderer Process (Vue.js)   │
-│  ├── Window Management      │  ├── Visual-to-Code Bridge   │
-│  ├── AI Engine Integration  │  ├── Code Editor             │
-│  ├── File System Access     │  ├── Project Management      │
-│  └── Git Operations         │  └── UI Components           │
-└─────────────────────────────────────────────────────────────┘
-                              │
-┌─────────────────────────────────────────────────────────────┐
-│                External AI Services                         │
-│  ├── Claude API (Anthropic)                                │
-│  ├── Gemini CLI (Google)                                   │
-│  └── Future: GPT-4, CodeLlama                              │
-└─────────────────────────────────────────────────────────────┘
-```
+## 四つの柱: 私たちのアーキテクチャ基盤
 
-## モノレポ構造
+抽象的な原則の代わりに、私たちのアーキテクチャは四つの具体的な、荷重を支える柱の上に構築されています。それらはシステムです。
 
-```
-dx-engine/
-├── apps/                    # メインアプリケーション
-│   ├── electron/           # Electronメインプロセス
-│   ├── web/               # Vue.jsレンダラープロセス
-│   ├── preload/           # セキュアなプリロードスクリプト
-│   └── docs/              # VitePressドキュメント
-│
-├── universal/             # 共有パッケージ
-│   ├── vite-plugin/       # カスタムViteプラグイン
-│   └── puppeteer-google-translate/  # 翻訳サービス
-│
-├── scripts/               # 自動化スクリプト
-│   ├── translation/       # TypeScript翻訳システム
-│   ├── setup-env.ts      # 環境設定
-│   ├── version-bump.ts   # バージョン管理
-│   └── generate-icons.ts # アイコン生成
-│
-└── Config Files           # プロジェクト設定
-    ├── package.json       # ワークスペース設定
-    ├── turbo.json         # Turborepo設定
-    └── tsconfig.json      # TypeScript設定
-```
+### <DocIcon type="constitutional" inline /> Constitutional Engineering
 
-## Electronプロセス
+これはガバナンス層です。**Playbooks System**(動的コンテキストエンジン)によって駆動され、**Hatcher Actions** によって強制されます。すべての操作、特に AI からのものは、このユーザー定義の憲法に対して検証されます。この柱は、**Autopilots System** がルールを尊重しながら自信を持って実行することを可能にします。
 
-### メインプロセス (apps/electron/)
+### <DocIcon type="time-graph" inline /> The Time Graph
 
-メインプロセスが管理するもの：
+これは安全性と監査可能性の層です。AI 開発の粒度の高い、高頻度の変更のために構築された**カスタム高性能 Git エンジン**によって駆動されます。すべての Autopilot ミッションのための監査可能なログと **The Time Graph HAT** を駆動する不変の履歴を提供します。
 
-- **ウィンドウ管理**: アプリケーションウィンドウの作成と制御
-- **AI統合**: 外部AIサービスとの通信
-- **システムアクセス**: ファイルとシステム操作
-- **セキュリティ**: 入力の検証とサニタイゼーション
+### <DocIcon type="ai-command" inline /> AI Under Command
 
-```typescript
-// apps/electron/src/index.ts
-import { app, BrowserWindow } from 'electron'
+これはオーケストレーション層です。**AI モデルの艦隊**(Claude や Gemini など)を管理する、モデルに依存しない制御プレーンとして機能します。人間の意図を、憲法に拘束された正確な AI 操作に変換します。この柱は、**Gen HAT** と **Code HAT** を駆動し、複数の AI エージェントを指揮できるようにします。
 
-class HatcherMain {
-  private mainWindow: BrowserWindow | null = null
+### <DocIcon type="universal-fabricator" inline /> The Universal Fabricator
 
-  async initialize() {
-    await this.createWindow()
-    this.setupAIIntegration()
-    this.setupGitIntegration()
-  }
+これは実行とモダナイゼーション層です。**WebAssembly** を使用して、Hatcher **EGG**(Enforced Governance Guardrails)の安全で決定論的な環境内でポリグロット **Hatcher Functions**(Delphi、C++、Rust など)を実行します。これにより、レガシーコードは、モダンな標準を尊重しながら、どこでも実行できるようになります。
 
-  private async createWindow() {
-    this.mainWindow = new BrowserWindow({
-      width: 1200,
-      height: 800,
-      webPreferences: {
-        nodeIntegration: false,
-        contextIsolation: true,
-        preload: path.join(__dirname, 'preload.js'),
-      },
-    })
-  }
-}
-```
+## テクノロジースタックとビジョン
 
-### レンダラープロセス (apps/web/)
+私たちのテクノロジー選択は、実用的で将来を見据えており、迅速なイノベーションの必要性と、パフォーマンスとセキュリティへの長期的なコミットメントのバランスを取っています。
 
-レンダラープロセスにはVue.js UIが含まれます：
+| コンポーネント         | テクノロジー                | 選んだ理由                                                                                                                        |
+| :---------------- | :------------------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **Desktop Shell** | **Electron (現在)**    | 迅速なクロスプラットフォーム開発のための堅牢で実績のある基盤を提供し、コア価値提案に集中できるようにします。 |
+| **UI Framework**  | **Vue.js 3 + TypeScript** | Composition API と型安全性は、プロフェッショナル IDE の複雑でステートフルなインターフェースに理想的です。                               |
+| **Core (ビジョン)** | **Tauri + Rust**          | 長期的なビジョンは、Hatcher のコアを Rust で鍛造し、比類のないパフォーマンス、メモリ安全性、セキュリティ保証を実現することです。      |
 
-- **ビジュアル-to-コードブリッジ**: 中核的な視覚的選択機能
-- **コードエディター**: シンタックスハイライト付きの統合エディター
-- **プロジェクト管理**: ファイルエクスプローラーと管理
-- **UIコンポーネント**: レスポンシブなユーザーインターフェース
+この「Path to Rust」は、私たちの約束の中心です。私たちは、実証済みのプロトタイプ上に未来を構築しており、エンジニアリングの卓越性の最高基準を優先する明確なアーキテクチャのエンドゲームを持っています。
 
-### プリロードスクリプト (apps/preload/)
+## 設計によるセキュリティとプライバシー
 
-制御されたAPIを公開するセキュアなプリロードスクリプト：
+セキュリティは機能ではありません。それはアーキテクチャの前提条件です。
 
-```typescript
-// apps/preload/src/index.ts
-import { contextBridge, ipcRenderer } from 'electron'
+- **デフォルトでローカル優先:** ソースコードと履歴はマシン上にあります。不変の監査ログのチーム同期を有効にするなど、明示的なアクションなしに、クラウドサービスに何も送信されません。
 
-contextBridge.exposeInMainWorld('electronAPI', {
-  // セキュアなファイル操作
-  readFile: (path: string) => ipcRenderer.invoke('read-file', path),
-  writeFile: (path: string, content: string) =>
-    ipcRenderer.invoke('write-file', path, content),
+- **コードストレージなし:** チーム機能(Playbooks など)のためのクラウドサービスは、**リポジトリの完全なコピーを保存しません**。必要なガバナンスデータ(Playbooks や監査ログエントリなど)のみを保存し、静止状態のコードベース全体は保存しません。
 
-  // AI統合
-  callAI: (prompt: string, context: any) =>
-    ipcRenderer.invoke('ai-request', prompt, context),
+- **サンドボックス化された実行:** Hatcher Functions は、デフォルトでシステムにアクセスできない安全な WebAssembly サンドボックスで実行されます。
 
-  // Git操作
-  gitStatus: () => ipcRenderer.invoke('git-status'),
-  gitDiff: () => ipcRenderer.invoke('git-diff'),
-})
-```
+- **透明な操作:** Time Graph と Human Firewall は、すべてのアクションの明確で監査可能な記録と、すべての変更に対する最終的な発言権を保証します。
 
-## 技術スタック
-
-### フロントエンド (レンダラー)
-
-- **Vue.js 3**: Composition APIを使用したリアクティブフレームワーク
-- **TypeScript**: タイプセーフな開発
-- **Vite**: 高速ビルドツール
-- **Pinia**: モダンな状態管理
-- **Vue Router**: クライアントサイドルーティング
-
-### バックエンド (メインプロセス)
-
-- **Electron**: デスクトップアプリケーションフレームワーク
-- **Node.js**: JavaScriptランタイム
-- **TypeScript**: タイプセーフな開発
-- **IPC**: プロセス間通信
-
-### 開発ツール
-
-- **Turborepo**: モノレポ管理とキャッシュ
-- **ESLint**: コードリンティング
-- **Prettier**: コードフォーマット
-- **Vitest**: テストフレームワーク
-- **Istanbul**: コードカバレッジ
-
-## AI統合
-
-### エンジン抽象化
-
-```typescript
-interface AIEngine {
-  name: string
-  generate(prompt: string, context: Context): Promise<AIResponse>
-  validateConfig(): boolean
-}
-
-class ClaudeEngine implements AIEngine {
-  async generate(prompt: string, context: Context) {
-    // Claude固有の実装
-  }
-}
-
-class GeminiEngine implements AIEngine {
-  async generate(prompt: string, context: Context) {
-    // Gemini固有の実装
-  }
-}
-```
-
-## セキュリティ
-
-### コンテキスト分離
-
-- **contextIsolation: true**: レンダラーコンテキストを分離
-- **nodeIntegration: false**: レンダラーでNode.jsを無効化
-- **プリロードスクリプト**: 制御されたAPIのみを公開
-
-### 入力検証
-
-```typescript
-// メインプロセスでの検証
-ipcMain.handle('write-file', async (event, filepath, content) => {
-  // パスの検証
-  if (!isValidPath(filepath)) {
-    throw new Error('Invalid file path')
-  }
-
-  // 権限の検証
-  if (!hasWritePermission(filepath)) {
-    throw new Error('Access denied')
-  }
-
-  // コンテンツのサニタイゼーション
-  const sanitizedContent = sanitize(content)
-
-  return await fs.writeFile(filepath, sanitizedContent)
-})
-```
-
-## デプロイメント
-
-### ビルドプロセス
-
-```bash
-# 完全ビルド
-pnpm build
-
-# 異なるプラットフォーム向けパッケージング
-pnpm pack:prod  # 全プラットフォーム
-pnpm pack:mac   # macOSのみ
-pnpm pack:win   # Windowsのみ
-pnpm pack:linux # Linuxのみ
-```
-
-### 配布
-
-- **GitHub Releases**: 自動配布
-- **自動アップデーター**: アプリ内更新
-- **コード署名**: 信頼証明書
+<PageCTA
+  title="さらに深く掘り下げる準備はできましたか?"
+  subtitle="私たちのアーキテクチャが次世代の AI 支援開発を可能にする方法を探索します"
+  buttonText="哲学を読む"
+  buttonLink="/ja/philosophy"
+  buttonStyle="secondary"
+  footer="セキュリティ、プライバシー、開発者制御をコアに構築"
+/>

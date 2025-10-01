@@ -1,255 +1,385 @@
 ---
-title: پل بصری-به-کد | دستکاری مستقیم UI برای تولید کد
-description: درباره پل انقلابی بصری-به-کد Hatcher که دستکاری مستقیم UI را به تغییرات دقیق کد تبدیل می‌کند، بیاموزید. برای توسعه بهتر هوش مصنوعی، به جای توصیف، اشاره کنید.
+title: "پل Visual-to-Code | نوآوری توسعه هوش مصنوعی Hatcher"
+description: "پل Visual-to-Code Hatcher را تجربه کنید که توسعه کمک‌شده با هوش مصنوعی را متحول می‌کند. کلیک، درگ و مستقیماً UI خود را دستکاری کنید تا تغییرات کد دقیق با کنترل قطعی تولید کنید."
 ---
 
-# پل بصری-به-کد
+# پل Visual-to-Code
 
-> **تبدیل مستقیم از تعامل بصری به تغییرات دقیق کد.**
+پل Visual-to-Code ویژگی امضای Hatcher است که نحوه تعامل توسعه‌دهندگان با دستیارهای کدنویسی هوش مصنوعی را متحول می‌کند. به جای توصیف تغییرات در متن، مستقیماً رابط بصری برنامه خود را دستکاری می‌کنید و Hatcher اقدامات شما را به تغییرات کد دقیق ترجمه می‌کند.
 
-## نمای کلی
+## چگونه کار می‌کند
 
-پل بصری-به-کد ویژگی اصلی Hatcher است که به توسعه‌دهندگان اجازه می‌دهد با اپلیکیشن‌هایشان به صورت بصری تعامل کنند در حالی که تغییرات دقیق و قطعی کد تولید می‌کند.
+### مشکل سنتی
 
-## نحوه کارکرد
-
-### 1. حالت بازرسی بصری
-
-حالت بازرسی را برای شروع انتخاب عناصر در اپلیکیشن خود فعال کنید:
-
-```bash
-# شروع سرور توسعه با بازرسی بصری
-hatcher dev --visual-inspect
+```mermaid
+graph LR
+    A[قصد توسعه‌دهنده] --> B[توضیح متنی]
+    B --> C[تفسیر هوش مصنوعی]
+    C --> D[تولید کد]
+    D --> E[اغلب نتیجه اشتباه]
+    E --> F[اصلاح دستی]
+    F --> B
 ```
 
-### 2. انتخاب عناصر
+**مثال چرخه ناامید‌کننده:**
 
-- **Hover**: عناصر را برای دیدن اطلاعات ساختار هایلایت کنید
-- **Click**: عنصری را برای تغییر انتخاب کنید
-- **Multi-select**: از Cmd/Ctrl + کلیک برای انتخاب چندین عنصر استفاده کنید
+- توسعه‌دهنده: "Make the header blue and center it"
+- هوش مصنوعی: CSS تولید می‌کند که عنصر اشتباه را آبی می‌کند
+- توسعه‌دهنده: "No, the main header, not the sidebar header"
+- هوش مصنوعی: سایه اشتباه آبی را می‌سازد
+- توسعه‌دهنده: "Make it #3B82F6 and also increase the font size"
+- ... و همین‌طور ادامه دارد
 
-### 3. زمینه خودکار
+### رویکرد Visual-to-Code Hatcher: حالت‌های دوگانه پل
 
-وقتی عنصری را انتخاب می‌کنید، Hatcher به طور خودکار:
+پل Visual-to-Code بسته به ماموریت پروژه شما متفاوت عمل می‌کند و تعادل مناسب آزادی و کنترل را فراهم می‌کند.
 
-- کامپوننت‌ها و فایل‌های مرتبط را شناسایی می‌کند
-- ساختار سلسله‌مراتبی را آنالیز می‌کند
-- Playbook‌های مرتبط را بارگیری می‌کند
-- زمینه را برای AI آماده می‌کند
+**در حالت Generative: ایجاد کمک‌شده با هوش مصنوعی**
 
-## انواع تغییرات
+در یک پروژه `Generative`، پل به عنوان یک سیستم هدف‌یابی با دقت بالا برای هوش مصنوعی عمل می‌کند. گردش کار:
 
-### استایل‌دهی و چیدمان
+1. **زمینه را لنگر می‌اندازید:** برای انتخاب یک عنصر کلیک کنید.
 
-```typescript
-// قبل: عنصر به صورت بصری انتخاب شده
-<div className="container">
-  <h1>عنوان</h1>
-</div>
+2. **فرمان را ارائه می‌دهید:** از زبان طبیعی برای توصیف تغییر مورد نظر استفاده کنید.
 
-// دستور: "عنوان را آبی و وسط‌چین کن"
-// بعد: کد به طور خودکار تغییر یافته
-<div className="container">
-  <h1 className="text-blue-600 text-center">عنوان</h1>
-</div>
-```
+3. **هوش مصنوعی اجرا می‌کند:** کد لازم را تولید می‌کند، محدود به دامنه‌ای که تعریف کردید.
 
-### ساختار کامپوننت
+**در یک EGG: دستکاری قطعی**
 
-```typescript
-// قبل: کامپوننت ساده
-function Header() {
-  return <h1>خوش آمدید</h1>
-}
+در یک EGG (Enforced Governance Guardrails)، پل به ابزار دستکاری مستقیم تبدیل می‌شود که تولید کد هوش مصنوعی برای تغییرات بصری استفاده نمی‌شود. گردش کار 100% قطعی است:
 
-// دستور: "ناوبری با منوی خانه و درباره اضافه کن"
-// بعد: ساختار گسترش یافته
-function Header() {
-  return (
-    <header>
-      <h1>خوش آمدید</h1>
-      <nav>
-        <a href="/">خانه</a>
-        <a href="/about">درباره</a>
-      </nav>
-    </header>
-  )
-}
-```
+1. **مستقیماً دستکاری می‌کنید:** درگ، تغییر اندازه یا ویرایش ویژگی‌ها در یک پانل بصری.
 
-### منطق کسب‌وکار
+2. **موتور رویداد را ضبط می‌کند:** Hatcher تغییر را به عنوان یک به‌روزرسانی ساختاریافته ثبت می‌کند.
+
+3. **پیکربندی به‌روزرسانی می‌شود:** تغییر به فایل پیکربندی پروژه نوشته می‌شود، نه به عنوان کد منبع جدید تولید شده.
+
+## ویژگی‌های اصلی
+
+### 1. انتخاب عنصر
+
+**سیستم انتخاب هوشمند**
+
+- روی هر عنصر برای انتخاب آن کلیک کنید
+- نگه دارید برای پیش‌نمایش مرزهای انتخاب
+- عناصر متعدد را برای عملیات دسته‌ای انتخاب کنید
+- انتخاب سلسله‌مراتبی (فرزند، والد، خواهر و برادرها)
 
 ```typescript
-// قبل: کامپوننت استاتیک
-function Counter() {
-  return <div>0</div>
-}
-
-// دستور: "این را به شمارنده‌ای تبدیل کن که با کلیک افزایش یابد"
-// بعد: منطق اضافه شده
-function Counter() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div onClick={() => setCount(count + 1)}>
-      {count}
-    </div>
-  )
+// مثال: انتخاب یک دکمه
+const selection = {
+  element: 'button.submit-btn',
+  properties: {
+    position: { x: 120, y: 45 },
+    dimensions: { width: 100, height: 36 },
+    styles: {
+      backgroundColor: '#3B82F6',
+      borderRadius: '6px',
+      fontSize: '14px',
+    },
+  },
+  context: {
+    parent: 'form.checkout-form',
+    siblings: ['input.email', 'input.password'],
+    framework: 'Vue 3',
+    component: 'SubmitButton.vue',
+  },
 }
 ```
 
-## نقشه‌برداری بصری-به-کد
+### 2. دستکاری بصری
 
-### شناسایی کامپوننت
+**ویرایش مستقیم ویژگی**
 
-Hatcher از چندین استراتژی برای نقشه‌برداری عناصر بصری به کد استفاده می‌کند:
+- عناصر را به موقعیت‌های جدید بکشید
+- با کشیدن گوشه‌ها اندازه تغییر دهید
+- انتخابگر رنگ برای پس‌زمینه و متن
+- کنترل‌های تایپوگرافی (فونت، اندازه، وزن)
+- کنترل‌های فاصله (margin، padding)
 
-1. **React DevTools Integration**: استفاده از ابزارهای توسعه React
-2. **Source Maps**: نقشه‌برداری از عناصر DOM به کد منبع
-3. **AST Analysis**: آنالیز درخت نحو انتزاعی برای درک ساختار
-4. **Convention Detection**: تشخیص خودکار الگوها و کنوانسیون‌های پروژه
+**پیش‌نمایش زنده**
 
-### حل سلسله‌مراتب
+- تغییرات را فوراً در برنامه خود ببینید
+- نیازی به refresh یا rebuild نیست
+- یکپارچه‌سازی hot module replacement
+- به‌روزرسانی‌های CSS لحظه‌ای
 
-```typescript
-// ساختار عنصر انتخاب شده
-App
-  └── Layout
-      └── Content
-          └── ProductCard  // ← عنصر انتخاب شده
-              ├── Image
-              ├── Title
-              └── Price
+### 3. تشخیص قصد
+
+Hatcher تغییرات بصری شما را تجزیه‌وتحلیل می‌کند و درک می‌کند:
+
+**تغییرات چیدمان**
+
+- تغییرات موقعیت (absolute، relative، flex)
+- تنظیمات اندازه (width، height، responsive)
+- تغییرات همترازی (center، flex، grid)
+
+**تغییرات استایل**
+
+- تغییرات رنگ (hex، RGB، HSL، متغیرهای CSS)
+- به‌روزرسانی‌های تایپوگرافی (خانواده فونت، اندازه، وزن، ارتفاع خط)
+- افکت‌های بصری (سایه‌ها، حاشیه‌ها، گرادیان‌ها)
+
+**تغییرات کامپوننت**
+
+- تغییرات props
+- به‌روزرسانی‌های state
+- افزودن event handler
+
+### 4. تولید کد
+
+بر اساس قصد بصری شما، Hatcher تولید می‌کند:
+
+**کد خاص Framework**
+
+```vue
+<!-- مثال Vue 3 -->
+<template>
+  <button
+    class="submit-btn"
+    :style="{
+      transform: `translate(${position.x}px, ${position.y}px)`,
+      backgroundColor: '#3B82F6',
+    }"
+    @click="handleSubmit"
+  >
+    Submit
+  </button>
+</template>
 ```
 
-وقتی `ProductCard` انتخاب می‌شود، Hatcher درک می‌کند:
+**به‌روزرسانی‌های CSS**
 
-- کامپوننت والد (`Content`)
-- کامپوننت‌های فرزند (`Image`, `Title`, `Price`)
-- Props و state موجود
-- استایل‌های اعمال شده
+```css
+.submit-btn {
+  position: absolute;
+  left: 120px;
+  top: 45px;
+  background-color: #3b82f6;
+  width: 100px;
+  height: 36px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+```
 
-## پیکربندی
+**یکپارچه‌سازی TypeScript**
 
-### تنظیمات فریمورک
+```typescript
+interface ButtonProps {
+  position: { x: number; y: number }
+  variant: 'primary' | 'secondary'
+  size: 'sm' | 'md' | 'lg'
+}
+```
 
-```json
-// hatcher.config.json
-{
-  "visualBridge": {
-    "framework": "react",
-    "bundler": "vite",
-    "sourceMapEnabled": true,
-    "devtoolsIntegration": true
+## قابلیت‌های پیشرفته
+
+### 1. طراحی Responsive
+
+**ویرایش چندنقطه‌شکست**
+
+- اندازه‌های مختلف صفحه را به طور همزمان ویرایش کنید
+- به طور خودکار CSS responsive تولید کنید
+- سازگاری طراحی را در دستگاه‌ها حفظ کنید
+
+```css
+/* کد responsive تولیدشده */
+.submit-btn {
+  /* موبایل */
+  width: 100%;
+  margin: 0 16px;
+}
+
+@media (min-width: 768px) {
+  /* تبلت */
+  .submit-btn {
+    width: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* دسکتاپ */
+  .submit-btn {
+    width: 150px;
+    position: absolute;
+    left: 120px;
   }
 }
 ```
 
-### نقشه‌برداری انتخابگرها
+### 2. تغییرات آگاه به کامپوننت
 
-```json
-{
-  "selectorMapping": {
-    "components": {
-      "[data-component]": "component",
-      ".card": "ui-element",
-      "#main": "layout"
-    }
+**تشخیص هوشمند کامپوننت**
+
+- کامپوننت‌های Vue، React، Svelte را تشخیص می‌دهد
+- props و state کامپوننت را درک می‌کند
+- مرزهای کامپوننت را حفظ می‌کند
+
+**مثال: تغییر یک کامپوننت Vue**
+
+```vue
+<!-- قبل -->
+<UserCard :user="currentUser" size="medium" />
+
+<!-- بعد از تغییر بصری -->
+<UserCard
+  :user="currentUser"
+  size="large"
+  :style="{ marginTop: '24px' }"
+  show-avatar
+/>
+```
+
+### 3. یکپارچه‌سازی سیستم طراحی
+
+**استفاده خودکار از Token**
+
+- tokenهای سیستم طراحی را تشخیص می‌دهد
+- مقادیر مناسب را پیشنهاد می‌کند
+- سازگاری را حفظ می‌کند
+
+```css
+/* به جای مقادیر دلخواه */
+color: #3b82f6;
+padding: 12px;
+
+/* از tokenهای طراحی استفاده می‌کند */
+color: var(--color-primary-500);
+padding: var(--spacing-3);
+```
+
+## مثال‌های گردش کار
+
+### مثال 1: تنظیم چیدمان
+
+**هدف**: جابجایی sidebar از سمت چپ به راست
+
+1. **انتخاب**: روی کامپوننت sidebar کلیک کنید
+2. **درگ**: آن را به سمت راست صفحه بکشید
+3. **بررسی**: تغییرات flex/grid تولیدشده را ببینید
+4. **اعمال**: تغییرات CSS را بپذیرید
+
+**کد تولیدشده**:
+
+```css
+.layout-container {
+  display: flex;
+  flex-direction: row; /* از row-reverse تغییر کرد */
+}
+
+.sidebar {
+  order: 2; /* از 1 تغییر کرد */
+  margin-left: auto; /* اضافه شد */
+}
+```
+
+### مثال 2: استایل کامپوننت
+
+**هدف**: تغییر ظاهر دکمه برای مطابقت با طراحی
+
+1. **انتخاب**: روی دکمه کلیک کنید
+2. **استایل**: از انتخابگر رنگ استفاده کنید، اندازه را تنظیم کنید، حاشیه را تغییر دهید
+3. **پیش‌نمایش**: تغییرات را زنده در برنامه ببینید
+4. **تولید**: به‌روزرسانی‌های props کامپوننت را دریافت کنید
+
+**کد تولیدشده**:
+
+```vue
+<script setup>
+const buttonStyle = {
+  variant: 'primary',
+  size: 'lg',
+  rounded: true,
+}
+</script>
+
+<template>
+  <AppButton v-bind="buttonStyle"> Submit Order </AppButton>
+</template>
+```
+
+### مثال 3: تنظیم Responsive
+
+**هدف**: responsive کردن یک grid
+
+1. **انتخاب**: ظرف grid را انتخاب کنید
+2. **تغییر اندازه**: ستون‌ها را برای نقاط شکست مختلف تنظیم کنید
+3. **تست**: روی موبایل/تبلت/دسکتاپ پیش‌نمایش کنید
+4. **اعمال**: CSS Grid responsive تولید کنید
+
+**کد تولیدشده**:
+
+```css
+.product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* موبایل */
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* تبلت */
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr); /* دسکتاپ */
   }
 }
 ```
 
-## حالت دیباگ
+## یکپارچه‌سازی با موتورهای هوش مصنوعی
 
-### بازرسی عمیق
+پل Visual-to-Code به طور یکپارچه با موتورهای هوش مصنوعی پشتیبانی‌شده کار می‌کند:
 
-```bash
-# حالت دیباگ با اطلاعات تفصیلی
-hatcher dev --visual-inspect --debug
+### یکپارچه‌سازی Claude Code
+
+```typescript
+const visualIntent = captureVisualChange(selection, modification)
+const codeChange = await claudeCode.generateChange({
+  intent: visualIntent,
+  context: projectContext,
+  playbook: teamPlaybook,
+})
 ```
 
-در حالت دیباگ، می‌توانید ببینید:
+### یکپارچه‌سازی Gemini CLI
 
-- نقشه‌برداری عنصر-به-فایل در زمان واقعی
-- نودهای AST شناسایی شده
-- زمینه ارسال شده به AI
-- پیش‌بینی تغییرات قبل از اعمال
-
-### اطلاعات همپوشان
-
-حالت دیباگ اطلاعات همپوشان نمایش می‌دهد:
-
-- مسیر فایل کامپوننت
-- Props موجود
-- State فعلی
-- Playbook فعال
+```typescript
+const prompt = buildVisualPrompt(visualIntent, codeContext)
+const suggestion = await geminiCLI.complete(prompt)
+const refinedCode = refineWithPlaybook(suggestion)
+```
 
 ## بهترین شیوه‌ها
 
-### 1. استفاده از Data Attributes
+### 1. کوچک شروع کنید
 
-```typescript
-// کمک به شناسایی کامپوننت
-<div data-component="ProductCard" data-id={product.id}>
-  <img src={product.image} data-element="product-image" />
-  <h3 data-element="product-title">{product.title}</h3>
-</div>
-```
+- تغییرات بصری تدریجی ایجاد کنید
+- هر تغییر را قبل از رفتن به بعدی تست کنید
+- تغییرات پیچیده را از مراحل کوچکتر بسازید
 
-### 2. ساختار کامپوننت واضح
+### 2. از Playbooks استفاده کنید
 
-```typescript
-// ساختار قابل شناسایی آسان
-function ProductCard({ product }: Props) {
-  return (
-    <article className="product-card">
-      <ProductImage src={product.image} />
-      <ProductInfo title={product.title} price={product.price} />
-    </article>
-  )
-}
-```
+- الگوهای کامپوننت را در playbooksتان تعریف کنید
+- قوانین استایل سازگار تأسیس کنید
+- الگوهای طراحی رایج را مستند کنید
 
-### 3. ثبات در نام‌گذاری
+### 3. کد تولیدشده را بررسی کنید
 
-```typescript
-// الگوی نام‌گذاری ثابت
-const ProductCard = () => {}
-const ProductImage = () => {}
-const ProductInfo = () => {}
-```
+- همیشه diff کد را قبل از اعمال بررسی کنید
+- اطمینان حاصل کنید کد تولیدشده از استانداردهای شما پیروی می‌کند
+- در صورت نیاز promptها را برای نتایج بهتر بهبود دهید
 
-## عیب‌یابی
+### 4. به طور کامل تست کنید
 
-### عنصر تشخیص داده نمی‌شود
-
-```bash
-# بررسی پیکربندی فریمورک
-hatcher doctor --visual-bridge
-
-# تأیید source maps
-hatcher dev --debug-source-maps
-```
-
-### تغییرات نادرست
-
-1. Playbook را برای زمینه مشخص‌تر بررسی کنید
-2. از انتخابگرهای data attribute صریح‌تر استفاده کنید
-3. تأیید کنید که ساختار کامپوننت مطابق کنوانسیون است
-
-### مسائل عملکرد
-
-```json
-// بهینه‌سازی برای پروژه‌های بزرگ
-{
-  "visualBridge": {
-    "throttleInspection": true,
-    "cacheComponentMap": true,
-    "limitScanDepth": 5
-  }
-}
-```
+- از تست‌های خودکار برای اعتبارسنجی تغییرات استفاده کنید
+- رفتار responsive را بررسی کنید
+- انطباق دسترسی‌پذیری را تأیید کنید
 
 ---
 
-**پل بصری-به-کد شهود بصری را به پیاده‌سازی دقیق کد متصل می‌کند و توسعه UI را طبیعی‌تر و کارآمدتر می‌سازد.**
+پل Visual-to-Code نشان‌دهنده یک تغییر اساسی در نحوه تعامل ما با هوش مصنوعی برای توسعه است. با حذف لایه ترجمه بین قصد و پیاده‌سازی، یک تجربه توسعه شهودی‌تر، دقیق‌تر و کارآمدتر ایجاد می‌کند.

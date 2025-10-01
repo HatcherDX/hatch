@@ -1,49 +1,63 @@
 ---
-title: Arsitektur | Desain Teknis & Prinsip Engineering Hatcher IDE
-description: Jelajahi arsitektur teknis Hatcher yang dirancang untuk Amplifikasi Terkontrol. Pelajari tentang desain deterministik, pendekatan model-agnostic, dan prinsip engineering open-source.
+title: "Arsitektur | Empat Pilar Hatcher"
+description: "Jelajahi arsitektur teknis Hatcher, implementasi langsung dari Empat Pilar kami. Pelajari bagaimana kami membangun IDE yang deterministik, model-agnostic, dan berpusat pada developer."
 ---
 
 # Arsitektur Hatcher
 
-Arsitektur Hatcher sengaja dirancang untuk mewujudkan filosofi inti kami: **Amplifikasi Terkontrol**. Setiap komponen dan pilihan teknologi melayani misi kami untuk menciptakan lingkungan pengembangan yang deterministik, kuat, dan dapat diperluas yang menjaga developer tetap dalam kendali penuh.
+Arsitektur Hatcher adalah terjemahan langsung dari **Empat Pilar** kami menjadi kode. Setiap pilihan adalah langkah yang disengaja menuju lingkungan pengembangan yang deterministik, kuat, dan menjaga komandan manusia dalam kontrol absolut.
 
-## Prinsip Arsitektur
+Engineering kami dipandu oleh satu pertanyaan: **Apakah ini melayani pilar-pilar?**
 
-- **Deterministik berdasarkan Desain:** Sistem dirancang agar dapat diprediksi. Kami menghindari "black box" demi tindakan yang jelas dan dapat ditinjau.
-- **Developer dalam Kendali:** Developer adalah otoritas tertinggi. Arsitektur menyediakan alat untuk memperkuat niat mereka, bukan menggantikannya.
-- **Model-Agnostik:** Meskipun dioptimalkan untuk model terdepan, arsitektur dirancang sebagai bidang kontrol universal, mampu terintegrasi dengan multiple AI engine.
-- **Open Core:** IDE inti sisi klien adalah dan akan selalu open-source (MIT). Nilai untuk tim dibangun di atas layanan terpisah berbasis cloud.
+## Empat Pilar: Fondasi Arsitektur Kami
 
-## Komponen Inti
+Alih-alih prinsip abstrak, arsitektur kami dibangun di atas empat pilar konkret yang menopang beban. Mereka adalah sistemnya.
 
-### 1. Jembatan Visual-to-Code
+### <DocIcon type="constitutional" inline /> Constitutional Engineering
 
-Jantung inovasi Hatcher. Engine ini menerjemahkan interaksi pada UI yang dirender (klik, seret, seleksi) ke dalam pemahaman struktural kode sumber melalui analisis Abstract Syntax Tree (AST). Ini adalah engine sinkronisasi real-time antara niat visual dan realitas kode.
+Ini adalah lapisan governance. Didukung oleh **Sistem Playbooks** (mesin konteks dinamis) dan ditegakkan oleh **Hatcher Actions**. Setiap operasi, terutama dari AI, divalidasi terhadap konstitusi yang ditentukan pengguna ini. Pilar ini memungkinkan **Sistem Autopilots** untuk dieksekusi dengan percaya diri sambil menghormati aturan Anda.
 
-### 2. Integrasi AI Engine (Lapisan Orkestrasi)
+### <DocIcon type="time-graph" inline /> The Time Graph
 
-Ini adalah sistem saraf pusat aplikasi. Menerima niat dari developer, mengumpulkan konteks yang sesuai dari Sistem Playbooks, membangun prompt yang tepat untuk AI engine yang dipilih (seperti Claude atau Gemini), dan mengelola respons. Bertindak sebagai bidang kontrol universal, model-agnostik.
+Ini adalah lapisan keamanan dan auditabilitas. Didukung oleh **mesin Git kustom berkinerja tinggi** yang dibangun untuk perubahan granular dan frekuensi tinggi dari pengembangan AI. Ini menyediakan riwayat yang tidak dapat diubah yang menggerakkan **The Time Graph HAT** dan log yang dapat diaudit untuk setiap misi Autopilot.
 
-### 3. Sistem Playbooks (Engine Konteks Konstitusional)
+### <DocIcon type="ai-command" inline /> AI Under Command
 
-Solusi kami untuk masalah konteks, dan inti dari penawaran komersial "Teams" kami. Ini adalah layanan proprietari berbasis cloud yang:
+Ini adalah lapisan orkestrasi. Bertindak sebagai control plane model-agnostic, mengelola **armada model AI** (seperti Claude dan Gemini). Menerjemahkan niat manusia menjadi operasi AI yang tepat dan terikat secara konstitusional. Pilar ini menggerakkan **Gen HAT** dan **Code HAT**, memberi Anda komando atas beberapa agen AI.
 
-- **Menyediakan Tata Kelola Terpusat:** Menyimpan dan melayani "Playbooks" berversi untuk tim.
-- **Menyuntikkan Konteks Dinamis:** Memberikan AI aturan arsitektur yang tepat pada waktu yang tepat, menyelesaikan masalah file statis seperti `Claude.md`.
+### <DocIcon type="universal-fabricator" inline /> The Universal Fabricator
 
-## Justifikasi Technology Stack
+Ini adalah lapisan eksekusi dan modernisasi. Menggunakan **WebAssembly** untuk menjalankan **Hatcher Functions** polyglot (Delphi, C++, Rust, dll.) di dalam lingkungan Hatcher **EGG** (Enforced Governance Guardrails) yang aman dan deterministik. Ini memungkinkan kode legacy berjalan di mana saja sambil menghormati standar modern.
 
-| Komponen          | Teknologi      | Mengapa Kami Memilihnya                                                                                            |
-| :---------------- | :------------- | :----------------------------------------------------------------------------------------------------------------- |
-| **Desktop Shell** | **Electron**   | Menyediakan kemampuan cross-platform terbaik dan integrasi OS yang mendalam yang diperlukan untuk IDE profesional. |
-| **UI Framework**  | **Vue.js 3**   | Composition API dan model reaktivitasnya ideal untuk membangun antarmuka yang kompleks dan stateful.               |
-| **Bahasa**        | **TypeScript** | Memastikan type-safety dan skalabilitas, yang non-negotiable untuk proyek dengan kompleksitas ini.                 |
-| **Monorepo**      | **Turborepo**  | Memungkinkan kami mengelola arsitektur multi-paket (klien, cloud, pustaka bersama) secara efisien.                 |
+## Technology Stack & Visi
 
-## Keamanan & Privasi
+Pilihan teknologi kami pragmatis dan berpandangan jauh ke depan, menyeimbangkan kebutuhan untuk inovasi cepat dengan komitmen jangka panjang terhadap performa dan keamanan.
 
-Keamanan dan kepercayaan adalah fundamental bagi Hatcher.
+| Komponen         | Teknologi                | Mengapa Kami Memilihnya                                                                                                                        |
+| :---------------- | :------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Desktop Shell** | **Electron (Saat Ini)**    | Menyediakan fondasi yang kuat dan teruji untuk pengembangan lintas platform yang cepat, memungkinkan kami fokus pada proposisi nilai inti kami. |
+| **UI Framework**  | **Vue.js 3 + TypeScript** | Composition API dan type-safety-nya ideal untuk antarmuka IDE profesional yang kompleks dan stateful.                                          |
+| **Core (Visi)** | **Tauri + Rust**          | Visi jangka panjang kami adalah menempa inti Hatcher dalam Rust untuk performa, memory safety, dan jaminan keamanan yang tak tertandingi.      |
 
-- **Local-First:** Semua kode sumber Anda tetap berada di mesin lokal Anda. Hanya diteruskan ke AI engine sebagai konteks untuk tindakan spesifik yang dimulai pengguna.
-- **Tidak Ada Penyimpanan Kode:** Kami tidak menyimpan kode Anda di server kami. Backend cloud kami hanya mengelola "Playbooks" dan akun pengguna.
-- **Kontrol Deterministik:** Seluruh workflow dirancang untuk transparan. Anda melihat setiap perubahan yang diusulkan AI sebelum diterapkan, menghilangkan modifikasi kode yang tidak terduga atau berbahaya.
+"Path to Rust" ini adalah pusat janji kami. Kami membangun masa depan pada prototipe yang terbukti, dengan endgame arsitektur yang jelas yang memprioritaskan standar tertinggi dari keunggulan engineering.
+
+## Keamanan & Privasi by Design
+
+Keamanan bukan fitur; ini prasyarat arsitektur.
+
+- **Local-First by Default:** Kode sumber dan riwayat Anda hidup di mesin Anda. Tidak ada yang dikirim ke layanan cloud tanpa tindakan eksplisit Anda, seperti mengaktifkan sinkronisasi tim untuk log audit yang tidak dapat diubah.
+
+- **Zero Code Storage:** Layanan cloud kami (untuk fitur tim seperti Playbooks) **tidak menyimpan salinan lengkap repository Anda**. Kami hanya menyimpan data governance yang diperlukan (seperti Playbooks dan entri log audit), tidak pernah seluruh codebase Anda saat istirahat.
+
+- **Sandboxed Execution:** Hatcher Functions berjalan dalam sandbox WebAssembly yang aman tanpa akses ke sistem Anda secara default.
+
+- **Transparent Operations:** Time Graph dan Human Firewall memastikan Anda memiliki catatan yang jelas dan dapat diaudit dari setiap tindakan dan kata terakhir pada setiap perubahan.
+
+<PageCTA
+  title="Siap Menyelam Lebih Dalam?"
+  subtitle="Jelajahi bagaimana arsitektur kami memungkinkan generasi berikutnya dari pengembangan yang dibantu AI"
+  buttonText="Baca Filosofi"
+  buttonLink="/id/philosophy"
+  buttonStyle="secondary"
+  footer="Dibangun dengan keamanan, privasi, dan kontrol developer sebagai intinya"
+/>

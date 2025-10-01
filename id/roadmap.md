@@ -1,133 +1,103 @@
 ---
-title: Roadmap | Rencana Pengembangan Masa Depan Hatcher IDE
-description: Jelajahi roadmap pengembangan Hatcher dan fitur-fitur yang akan datang. Lihat apa yang direncanakan untuk pengembangan berbantuan AI, integrasi baru, dan peningkatan platform.
+title: Roadmap | Masa Depan IDE Constitutional
+description: Jelajahi roadmap strategis Hatcher. Dari 'luxury scaffolding' fondasi kami hingga menyalakan flywheel PLG dan meluncurkan platform EGG enterprise, lihat bagaimana kami membangun masa depan pengembangan AI yang dikontrol.
 ---
 
-# Roadmap
+# Roadmap Hatcher
 
-Roadmap Hatcher menguraikan perjalanan kami dari proof-of-concept saat ini menjadi platform pengembangan berbantuan AI yang komprehensif.
+Dokumen ini menguraikan prioritas strategis kami untuk membawa **Hatcher IDE** ke pasar. Misinya adalah mengevangelisasi visi kami, membangun pengikut yang dedicated, dan menetapkan Hatcher sebagai thought leader definitif di era pengembangan AI.
 
-## Status Saat Ini: Alpha (v0.1)
+## ✅ Phase 0: Fondasi (Selesai)
 
-Kami berada di tahap awal membangun fitur dasar Hatcher. Teknologi inti Visual-to-Code telah divalidasi dalam pengujian pribadi, dan sekarang kami sedang mengembangkan MVP.
+**Objektif:** Bangun dan validasi "luxury scaffolding"—pilar arsitektural tingkat enterprise yang diperlukan untuk mendukung visi ambisius kami.
 
-### Yang Berfungsi Hari Ini
+**Key Results:**
 
-- ✅ Framework aplikasi Electron dasar
-- ✅ Renderer Vue.js dengan TypeScript
-- ✅ Sistem dokumentasi
-- ✅ Tool build dan pengembangan
+- **Status**: Selesai. Kami mengirimkan fondasi kelas dunia termasuk Git Engine kustom kami, Secure Storage Engine (dengan vault AES-256), dan Professional Terminal yang dipercepat GPU.
+- **Key Outcome**: Mencapai ~90% test coverage dan pipeline CI/CD yang kuat dan multi-platform. Ini membuktikan komitmen kami terhadap keunggulan engineering yang diperlukan untuk alat mission-critical.
 
-### Pengembangan Aktif (Q1 2025)
+## 🟡 Phase 1: Validasi Nilai Inti (Sedang Berlangsung)
 
-- 🔄 **Visual-to-Code Bridge**: Seleksi elemen inti dan generasi kode
-- 🔄 **Integrasi Claude**: Koneksi ke Claude API Anthropic
-- 🔄 **Integrasi Git**: Sistem visual diff dan review perubahan
-- 🔄 **Playbooks Dasar**: Sistem manajemen konteks awal
+**Objektif:** Validasi filosofi "Controlled Amplification" inti kami dengan memberikan pengalaman yang fokus dan mengesankan dalam **Gen HAT**.
 
-## Fase 1: Rilis MVP (Q2 2025)
+**Fokus Strategis:** Seluruh tim kami didedikasikan untuk menyempurnakan satu alur kerja "ajaib": `Prompt -> Constitutional Validation -> Time Graph Review -> Commit`.
 
-Rilis besar pertama kami akan menetapkan Hatcher sebagai IDE fungsional berbantuan AI.
+**Catatan Strategis:** Penyelesaian sukses Phase 1 akan mencapai puncaknya dalam aplikasi kami ke Y Combinator. Tujuan kami adalah mempresentasikan MVP yang tervalidasi, testimoni design partner yang kuat, dan visi yang jelas untuk kepemimpinan pasar.
 
-### Fitur Inti
+**Key Results:**
 
-- **Seleksi Elemen Visual**: Interface klik-untuk-pilih elemen
-- **Generasi Kode AI**: Menghasilkan modifikasi kode yang presisi
-- **Sistem Review Diff**: Review perubahan kode visual
-- **Integrasi AI Dasar**: Dukungan Claude Code CLI
+- `[Sedang Berlangsung]` **Alur Kerja Generative End-to-End**: Hubungkan UI ke mesin AI berbasis cloud yang kuat dan pastikan output AI diparse dan ditampilkan dengan benar di editor.
 
-## Fase 2: Integrasi AI yang Ditingkatkan (Q3 2025)
+- `[To Do]` **Immutable Diff Panel:** **Time Graph** harus menyediakan proses review yang jelas dan deterministik untuk semua kode yang dihasilkan AI. Ini adalah jantung yang tidak dapat dinegosiasikan dari janji governance kami.
 
-Memperluas kemampuan AI dan meningkatkan pengalaman developer.
+- `[To Do]` **Validasi Playbook First-Pass:** Implementasikan Constitutional Validation awal melalui playbooks untuk memastikan tindakan AI selaras dengan aturan proyek dan nilai manusia.
 
-### Fitur yang Direncanakan
+- `[To Do]` **Pengalaman yang Fokus:** Secara agresif sembunyikan atau nonaktifkan semua mode dan fitur yang belum lengkap lainnya. Tujuannya adalah mempresentasikan pengalaman yang stabil dan menakjubkan yang berpusat secara eksklusif pada loop generative inti.
 
-- **Dukungan Multi-Engine**: Integrasi Gemini CLI
-- **Kecerdasan Konteks**: Sistem Playbooks lanjutan
-- **Loop Auto-Koreksi**: Testing dan perbaikan otomatis
-- **Optimasi Performa**: Generasi kode yang lebih cepat
+## <DocIcon type="rocket" inline /> Phase 2: Menyalakan Flywheel (Selanjutnya)
 
-## Fase 3: Scaling Trust & Konsistensi
+**Objektif:** Luncurkan tier gratis **Hatcher IDE**, fokus pada pengalaman **Gen HAT**, ke publik, memulai Product-Led Growth (PLG) dan flywheel komunitas kami.
 
-Mengubah Hatcher menjadi platform pengembangan berorientasi tim.
+**Fokus Strategis:** Dorong adopsi massal, kumpulkan umpan balik pengguna kritis, dan budidayakan cohort awal community champions kami.
 
-### Fitur Tim
+**Key Results:**
 
-- **Playbooks Bersama**: Standar coding seluruh tim
-- **Review Kolaboratif**: Review kode multi-developer
-- **Sistem Izin**: Kontrol akses berbasis peran
-- **Analytics Tim**: Wawasan kecepatan pengembangan
+- **Launch:** Rilis versi **Hatcher IDE** yang dipoles dan tersedia untuk publik, dengan **Gen HAT** sebagai pengalaman inti, gratis untuk penggunaan lokal.
 
-## Fase 4: Marketplace & Ekosistem (2026)
+- **Activation:** Capai tingkat aktivasi yang kuat, diukur dengan persentase pengguna yang berhasil mengeksekusi pembuatan kode AI pertama mereka dan meninjau di **Time Graph**.
 
-Membangun ekosistem yang berkembang dari pengetahuan dan workflow bersama.
+- **Community:** Mendorong pembuatan dan berbagi **Playbooks** publik pertama, flight plans yang menggerakkan **Autopilots** kami.
 
-### Fitur Marketplace
+## 💰 Phase 3: Monetisasi & Platform EGG (v1.0.0 dan Seterusnya)
 
-- **Berbagi Playbook**: Standar yang didorong komunitas
-- **Template Workflow**: Pola pengembangan yang dapat digunakan ulang
-- **Marketplace Model AI**: Model yang dilatih khusus
-- **Library Komponen**: Komponen UI yang dapat dibagikan
+**Objektif:** Luncurkan tier komersial kami dan jalankan strategi platform penuh kami dengan menawarkan dua konfigurasi EGG berbeda untuk menyelesaikan tantangan enterprise spesifik.
 
-## Visi Jangka Panjang (2026+)
+**Track 1: Evolusi Produk Inti (Tier Gratis)**
 
-Mengubah pengembangan perangkat lunak menjadi proses kolaboratif antara manusia dan AI.
+- **Mission:** Terus membangun IDE gratis yang paling kuat untuk penggunaan lokal untuk pengembangan yang didukung AI.
 
-### Fitur Revolusioner
+- **Roadmap:**
+  - **Dukungan LLM Lokal:** Integrasikan dengan model lokal melalui Ollama untuk memenuhi janji AI Sovereignty kami.
+  - **Expanded Playbook Library:** Kembangkan marketplace publik **Playbooks**, meningkatkan kemampuan **Hatcher Autopilots**.
+  - **Peningkatan Performa:** Terus tingkatkan kecepatan dan efisiensi IDE inti.
 
-- **Generasi Full-Stack**: Scaffolding aplikasi lengkap
-- **Pemrograman Bahasa Natural**: Mendeskripsikan fitur dalam bahasa Indonesia sederhana
-- **Testing Otomatis**: Generasi test komprehensif
-- **Otomasi Deployment**: Generasi pipeline CI/CD
+**Track 2: Platform EGG**
 
-## Komunitas & Open Source
+- **Mission:** Sediakan platform terpadu untuk membangun software mission-critical, memungkinkan tim memilih konfigurasi optimal untuk kebutuhan mereka.
 
-### Milestone Komunitas
+- **Roadmap:**
+  - **Teams Tier (v1.0.0):** Perkenalkan fitur berbayar pertama kami: Private Playbook Marketplaces. Ini memungkinkan tim mengkodifikasi dan berbagi flight plans kustom untuk **Autopilots** internal mereka.
+  - **Enterprise Tier (v1.1.0):** Luncurkan Platform Hatcher EGGs (Enforced Governance Guardrails), menampilkan:
+    - **EGG "Compatibility":** Solusi untuk deployment enterprise skala besar di mana konsistensi visual dan fungsional 100% adalah **prioritas tertinggi.** Konfigurasi ini memanfaatkan **Tauri dengan embedded CEF (Chromium) engine.**
+    - **EGG "Performance":** Solusi untuk lingkungan di mana **efisiensi, footprint minimal, dan tingkat keamanan tertinggi adalah yang terpenting.** Konfigurasi ini menggunakan **native OS WebView Tauri.**
+  - **Auditability & Compliance:** Kirim fitur **Time Graph** lanjutan untuk compliance officers dan perkenalkan robust audit logging.
+  - **Hatcher BaaS:** Luncurkan Backend-as-a-Service terintegrasi kami untuk menyediakan solusi deployment end-to-end zero-friction untuk Hatcher EGGs.
 
-- **Q1 2025**: 100 bintang GitHub
-- **Q2 2025**: 500 bintang GitHub, 50 kontributor
-- **Q3 2025**: 1,000 bintang GitHub, 100 kontributor
-- **Q4 2025**: 2,500 bintang GitHub, 200 kontributor
+**Track 3: Masa Depan: Community & Core**
 
-### Komitmen Open Source
+- **Mission:** Penuhi visi arsitektur jangka panjang kami dengan memberdayakan komunitas dan menempa inti kami dalam Rust.
 
-- **Lisensi MIT**: Selalu gratis dan terbuka
-- **Pengembangan Transparan**: Roadmap publik dan pengembangan
-- **Governance Komunitas**: Proses pengambilan keputusan demokratis
-- **Documentation First**: Panduan dan contoh komprehensif
+- **Roadmap:**
+  - **Community-Powered Performance** Secara aktif bekerja dengan komunitas open-source untuk menyempurnakan konsistensi lintas platform komponen EGG "Performance" (Tauri Native) kami.
+  - **The Path to Rust:** Mulai migrasi strategis **Hatcher IDE** itu sendiri dari prototipe Electron yang terbukti kami ke engine generasi berikutnya yang ditempa dalam Rust.
 
-## Evolusi Teknologi
+## Prinsip Pemandu Kami
 
-### Stack Saat Ini
-
-- **Frontend**: Vue.js 3, TypeScript, Vite
-- **Desktop**: Electron, Node.js
-- **AI**: Claude API, Gemini CLI
-- **Build**: Turborepo, ESLint, Prettier
-
-## Metrik Kesuksesan
-
-### Pengalaman Developer
-
-- **Time to Value**: <5 menit dari instalasi hingga generasi kode pertama
-- **Learning Curve**: <1 jam untuk menjadi produktif
-- **Error Rate**: <5% false positive dalam generasi kode
-- **Kepuasan**: >90% feedback positif developer
-
-## Cara Berkontribusi
-
-### Untuk Developer
-
-- **Fitur Inti**: Bantu membangun teknologi Visual-to-Code
-- **Integrasi AI**: Tingkatkan koneksi AI engine
-- **Dokumentasi**: Tulis panduan dan contoh
-- **Testing**: Buat test suite komprehensif
+Roadmap ini mencerminkan komitmen kami terhadap pendekatan bertahap yang disengaja. Kami menyeimbangkan stabilitas fondasi dengan inovasi ambisius untuk menetapkan Hatcher sebagai IDE Constitutional definitif untuk era AI.
 
 ## Tetap Update
 
 - **GitHub**: Watch [repository](https://github.com/HatcherDX/dx-engine) untuk update
 - **Discord**: Bergabung dengan [community chat](https://discord.gg/hatcher) kami
 - **Twitter**: Ikuti [@HatcherDX](https://twitter.com/HatcherDX)
-- **Newsletter**: Berlangganan untuk update bulanan
 
-Roadmap ini adalah dokumen hidup yang berkembang berdasarkan feedback komunitas dan kemajuan teknologi. Kami membangun Hatcher secara publik dan menyambut masukan Anda tentang arah kami.
+Roadmap ini adalah dokumen hidup yang berkembang berdasarkan umpan balik komunitas dan kemajuan teknologi. Kami membangun Hatcher secara publik dan menerima input Anda tentang arah kami.
+
+<PageCTA
+  title="Bentuk Masa Depan Bersama Kami"
+  subtitle="Umpan balik dan kontribusi Anda mendorong roadmap kami maju"
+  buttonText="Bergabung dengan Diskusi"
+  buttonLink="https://discord.gg/hatcher"
+  buttonStyle="secondary"
+  footer="Membangun masa depan pengembangan, bersama-sama"
+/>
