@@ -482,7 +482,7 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Hatcher | Command AI Fleets That Code While You Sleep' }],
     ['meta', { property: 'og:description', content: 'The Constitutional IDE where you are the commander, not the debugger. Deploy autonomous AI drones that follow your playbooks with military precision.' }],
-    ['meta', { property: 'og:image', content: 'https://hatch.rs/fb.png' }],
+    ['meta', { property: 'og:image', content: 'https://hatch.rs/og-image.png' }],
     ['meta', { property: 'og:image:width', content: '1200' }],
     ['meta', { property: 'og:image:height', content: '630' }],
     ['meta', { property: 'og:url', content: 'https://hatch.rs' }],
@@ -492,7 +492,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:title', content: 'Hatcher | Command AI Fleets That Code While You Sleep' }],
     ['meta', { name: 'twitter:description', content: 'The Constitutional IDE where you are the commander, not the debugger.' }],
-    ['meta', { name: 'twitter:image', content: 'https://hatch.rs/fb.png' }],
+    ['meta', { name: 'twitter:image', content: 'https://hatch.rs/og-image.png' }],
     ['meta', { name: 'twitter:site', content: '@HatcherDX' }]
   ],
 
