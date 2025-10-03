@@ -391,11 +391,13 @@ const props = withDefaults(defineProps<AdmiralSectionProps>(), {
   padding-left: 2rem !important;
 }
 
+/* Quote emphasis with golden color */
 .quote-emphasis {
   color: #dfa927 !important;
   font-weight: 600 !important;
   display: block !important;
   margin-top: 0.5rem !important;
+  text-shadow: 0 2px 4px rgba(223, 169, 39, 0.2) !important;
 }
 
 /* Responsive Design */
@@ -452,5 +454,16 @@ const props = withDefaults(defineProps<AdmiralSectionProps>(), {
   .stat-number {
     font-size: 1.25rem !important;
   }
+}
+</style>
+
+<style>
+/* Global styles for v-html quote emphasis - not scoped */
+.quote-emphasis {
+  color: #dfa927 !important;
+  font-weight: 600 !important;
+  display: block !important;
+  margin-top: 0.5rem !important;
+  text-shadow: 0 2px 4px rgba(223, 169, 39, 0.2) !important;
 }
 </style>

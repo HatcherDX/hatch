@@ -13,18 +13,54 @@
 
 /* MOBILE FIRST - Default styles for mobile */
 .VPLocalNav {
-  padding: 8px 16px !important;
+  padding: 8px 0 !important;  /* Remove ALL horizontal padding */
   min-height: auto !important;
   border-bottom: 1px solid var(--vp-c-divider) !important;
   box-sizing: border-box !important;
+  width: 100% !important;
 }
 
-/* Container should take full width without extra padding */
+/* Override any theme padding on all screen sizes */
+@media (max-width: 1280px) {
+  .VPLocalNav {
+    padding: 8px 0 !important;
+  }
+}
+
+/* Force override VitePress default responsive padding */
+@media (min-width: 640px) {
+  .VPLocalNav {
+    padding: 8px 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+  .VPLocalNav {
+    padding: 8px 0 !important;
+  }
+
+  .VPLocalNav .container {
+    padding: 0 24px !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPLocalNav {
+    padding: 8px 0 !important;
+  }
+
+  .VPLocalNav .container {
+    padding: 0 32px !important;
+  }
+}
+
+/* Container should take full width with appropriate padding */
 .VPLocalNav .container {
   width: 100% !important;
   max-width: 100% !important;
-  padding: 0 !important;
+  padding: 0 16px !important;  /* Add horizontal padding here instead */
   margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
 /* Make the local-nav wrapper take full width */
@@ -33,6 +69,20 @@
   display: flex !important;
   justify-content: space-between !important;
   gap: 8px !important;
+}
+
+/* Fix menu button padding - only on mobile */
+@media (max-width: 767px) {
+  .VPLocalNav .menu {
+    padding: 12px 12px 11px 12px !important;  /* Equal padding on both sides for mobile only */
+  }
+}
+
+/* Adjust menu padding for tablet */
+@media (min-width: 768px) {
+  .VPLocalNav .menu {
+    padding: 0 26px !important;
+  }
 }
 
 /* Center button content vertically - good practice for all screen sizes */
@@ -111,14 +161,14 @@
 
 /* iPhone SE and very small screens */
 @media (max-width: 375px) {
-  /* Match content padding for small screens */
+  /* VPLocalNav stays without horizontal padding */
   .VPLocalNav {
-    padding: 0 24px !important;
+    padding: 8px 0 !important;
   }
 
-  /* Remove container padding since VPLocalNav has it */
+  /* Container gets the padding for small screens */
   .VPLocalNav .container {
-    padding: 0 !important;
+    padding: 0 24px !important;
   }
 
   .VPLocalNav button {

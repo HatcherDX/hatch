@@ -313,8 +313,7 @@ const currentYear = computed(() => new Date().getFullYear())
   color: var(--vp-c-text-3) !important;
   opacity: 0.7 !important;
   line-height: 1.6 !important;
-  word-wrap: break-word !important;
-  display: inline-block !important;
+  display: block !important;
   max-width: 100% !important;
 }
 
@@ -354,6 +353,26 @@ const currentYear = computed(() => new Date().getFullYear())
   display: none !important;
 }
 
+/* Keep attribution text in one line - apply to all screen sizes */
+.footer-legal p:nth-child(2) {
+  white-space: nowrap !important;
+}
+
+.footer-legal p:nth-child(2) * {
+  display: inline !important;
+}
+
+.footer-legal p:nth-child(2) svg {
+  display: inline-block !important;
+}
+
+/* Allow wrapping on very small screens if needed */
+@media (max-width: 380px) {
+  .footer-legal p:nth-child(2) {
+    white-space: normal !important;
+  }
+}
+
 /* Heart icon styling - elegant gold */
 .heart-icon {
   display: inline-block !important;
@@ -388,6 +407,20 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 }
 
+/* Stack tagline below logo for smaller screens */
+@media (max-width: 880px) {
+  .footer-brand {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+
+  .footer-tagline {
+    margin: 0 !important;
+    text-align: left !important;
+  }
+}
+
 /* Tablets - Keep 2 columns */
 @media (max-width: 768px) and (min-width: 641px) {
   .landing-footer {
@@ -408,7 +441,12 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 
   .footer-brand {
-    flex-direction: row !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .footer-legal {
+    text-align: center !important;
     align-items: center !important;
   }
 
@@ -429,6 +467,7 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 }
 
+/* Mobile - Single column, everything centered */
 @media (max-width: 640px) {
   .landing-footer {
     margin-top: 80px !important;
@@ -456,6 +495,12 @@ const currentYear = computed(() => new Date().getFullYear())
     align-items: center !important;
     gap: 0.5rem !important;
     text-align: center !important;
+  }
+
+  /* Keep legal text centered on mobile */
+  .footer-legal {
+    text-align: center !important;
+    align-items: center !important;
   }
 
   .footer-logo {

@@ -277,9 +277,9 @@ function initScrollAnimation(): void {
     // Get the image height for calculation (use either image, they're the same size)
     const imageHeight = lightImage.offsetHeight || viewportHeight * 0.5
 
-    // Animation starts after scrolling 30% of image height
-    // User sees less of the image before animation begins - starts earlier
-    const scrollTriggerPoint = imageHeight * 0.3
+    // Animation starts after scrolling 25% of image height
+    // User sees less of the image before animation begins - starts a bit earlier
+    const scrollTriggerPoint = imageHeight * 0.25
     const scrollAfterBuffer = Math.max(0, currentScrollY - scrollTriggerPoint)
 
     // Define the scroll range over which the animation happens

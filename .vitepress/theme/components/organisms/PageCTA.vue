@@ -44,7 +44,7 @@ const props = withDefaults(defineProps<Props>(), {
 <style scoped>
 /* Page CTA Section */
 .page-cta-section {
-  padding: 60px 2rem !important;
+  padding: 60px 0rem !important;
   margin: 0 auto !important;
   position: relative !important;
   overflow: hidden !important;
