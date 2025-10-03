@@ -1,54 +1,33 @@
 <template>
   <div class="hero-logo-container">
-    <!-- Logo principal (redondo) para pantallas pequeñas - centrado -->
+    <!-- Logo principal (redondo) para pantallas pequeñas -->
     <img
-      v-if="isDark && !isLargeScreen"
       src="/logo-hero-dark.svg"
       alt="Hatcher DX Engine"
-      class="hero-logo-main"
+      class="hero-logo-main dark-only"
     />
     <img
-      v-else-if="!isDark && !isLargeScreen"
       src="/logo-hero-light.svg"
       alt="Hatcher DX Engine"
-      class="hero-logo-main"
+      class="hero-logo-main light-only"
     />
 
-    <!-- Logo inline para pantallas grandes - alineado a la izquierda -->
+    <!-- Logo inline para pantallas grandes -->
     <img
-      v-else-if="isDark && isLargeScreen"
       src="/logo-inline-dark.svg"
       alt="Hatcher DX Engine"
-      class="hero-logo-inline"
+      class="hero-logo-inline dark-only"
     />
     <img
-      v-else
       src="/logo-inline-light.svg"
       alt="Hatcher DX Engine"
-      class="hero-logo-inline"
+      class="hero-logo-inline light-only"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useData } from 'vitepress'
-import { ref, onMounted, onUnmounted } from 'vue'
-
-const { isDark } = useData()
-const isLargeScreen = ref(false)
-
-const checkScreenSize = () => {
-  isLargeScreen.value = window.innerWidth >= 960
-}
-
-onMounted(() => {
-  checkScreenSize()
-  window.addEventListener('resize', checkScreenSize)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', checkScreenSize)
-})
+// No longer need reactive data since we're using CSS for theme switching
 </script>
 
 <style scoped>
@@ -56,6 +35,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   width: 100%;
+  justify-content: center;
 }
 
 /* Logo principal (redondo) para pantallas pequeñas - centrado */
@@ -64,6 +44,7 @@ onUnmounted(() => {
   max-width: 80vw;
   height: auto;
   margin: 0 auto;
+  display: block;
 }
 
 /* Logo inline para pantallas grandes - ocupando todo el espacio disponible */
@@ -72,12 +53,56 @@ onUnmounted(() => {
   max-width: 180px;
   height: auto;
   margin: 0;
+  display: none;
 }
 
-/* En pantallas grandes, logo inline a la izquierda */
+/* Theme-based visibility */
+.light-only {
+  display: block;
+}
+
+.dark-only {
+  display: none;
+}
+
+:global(.dark) .light-only {
+  display: none;
+}
+
+:global(.dark) .dark-only {
+  display: block;
+}
+
+/* En pantallas grandes, mostrar inline y ocultar main */
 @media (min-width: 960px) {
+  .hero-logo-container {
+    justify-content: flex-start;
+  }
+
+  .hero-logo-main {
+    display: none;
+  }
+
   .hero-logo-inline {
+    display: block;
     max-width: 160px;
+  }
+
+  /* Mantener el tema correcto en pantallas grandes */
+  .hero-logo-inline.light-only {
+    display: block;
+  }
+
+  .hero-logo-inline.dark-only {
+    display: none;
+  }
+
+  :global(.dark) .hero-logo-inline.light-only {
+    display: none;
+  }
+
+  :global(.dark) .hero-logo-inline.dark-only {
+    display: block;
   }
 }
 

@@ -4,16 +4,14 @@
       <!-- Logo -->
       <div class="hero-logo">
         <img
-          v-if="isDark"
           src="/logo-small-inline-dark.svg"
           :alt="logoAlt"
-          class="hero-logo-image"
+          class="hero-logo-image dark-only"
         />
         <img
-          v-else
           src="/logo-small-inline-light.svg"
           :alt="logoAlt"
-          class="hero-logo-image"
+          class="hero-logo-image light-only"
         />
       </div>
 
@@ -117,6 +115,8 @@ const { isDark } = useData()
   max-width: 90vw;
   object-fit: contain;
 }
+
+/* Theme-based logo visibility will be in global styles below */
 
 /* Larger screens */
 @media (min-width: 768px) {
@@ -365,5 +365,24 @@ const { isDark } = useData()
     rgba(223, 169, 39, 0.03) 0%,
     transparent 50%
   );
+}
+</style>
+
+<style>
+/* Global styles for theme-based logo visibility */
+.hero-logo-image.light-only {
+  display: block !important;
+}
+
+.hero-logo-image.dark-only {
+  display: none !important;
+}
+
+.dark .hero-logo-image.light-only {
+  display: none !important;
+}
+
+.dark .hero-logo-image.dark-only {
+  display: block !important;
 }
 </style>
